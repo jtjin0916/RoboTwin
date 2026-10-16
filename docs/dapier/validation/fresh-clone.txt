@@ -1,0 +1,6 @@
+GitHub recursive clone at RoboTwin 86aa2129940e4320c635843073b78f0a75f96c00 and XPolicyLab dd503a1328fe4f53ff212f9ed6e85468f56ceb73 passed.
+GIT_LFS_SKIP_SMUDGE=1 used for unrelated upstream policy figures.
+Static gripper/camera/action contract, all 22 referenced mesh SHA256s, syntax and clean trees passed.
+Initial python -m training help failed: historical trainer imports sibling modules by bare name. Corrected documentation to PYTHONPATH="$PWD:$PWD/dapier_act" python dapier_act/train_multimodal.py --help; this command passed. Trainer/model source unchanged.
+Later commits update documentation/evidence and submodule README only.
+No fresh virtualenv/dependency installation or GPU rendering/planning passed on this host.

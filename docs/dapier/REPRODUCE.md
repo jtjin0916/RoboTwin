@@ -18,7 +18,7 @@ source .venv/bin/activate
 python -m pip install -r docs/dapier/requirements-runtime.txt
 python -m pip install -e ./XPolicyLab --no-deps
 python scripts/dapier_smoke.py
-python -m dapier_act.train_multimodal --help
+PYTHONPATH="$PWD:$PWD/dapier_act" python dapier_act/train_multimodal.py --help
 ```
 
 The requirements capture the observed working versions of direct runtime
@@ -70,7 +70,7 @@ Mimic is applied by robot.py from config.yml, not URDF mimic tags.
 
 ```bash
 # Training uses the preserved historical loader. Read the RGB caveat below.
-python -m dapier_act.train_multimodal \
+PYTHONPATH="$PWD:$PWD/dapier_act" python dapier_act/train_multimodal.py \
   --dataset-dir /path/to/episode_hdf5_directory \
   --output-dir checkpoints/new_run --no-pretrained-wrist-backbone
 # Replay once for each source dir: this clone/dapier_act, the public repository's

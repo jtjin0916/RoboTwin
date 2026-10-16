@@ -1,0 +1,28 @@
+usage: train_multimodal.py [-h] --dataset-dir DATASET_DIR
+                           [--output-dir OUTPUT_DIR] [--epochs EPOCHS]
+                           [--batch-size BATCH_SIZE] [--chunk-size CHUNK_SIZE]
+                           [--lr LR] [--kl-weight KL_WEIGHT]
+                           [--val-episodes VAL_EPISODES]
+                           [--split-seed SPLIT_SEED]
+                           [--num-point-samples NUM_POINT_SAMPLES]
+                           [--candidate-points CANDIDATE_POINTS]
+                           [--device DEVICE] [--no-pretrained-wrist-backbone]
+
+options:
+  -h, --help            show this help message and exit
+  --dataset-dir DATASET_DIR
+  --output-dir OUTPUT_DIR
+  --epochs EPOCHS
+  --batch-size BATCH_SIZE
+  --chunk-size CHUNK_SIZE
+  --lr LR
+  --kl-weight KL_WEIGHT
+  --val-episodes VAL_EPISODES
+  --split-seed SPLIT_SEED
+  --num-point-samples NUM_POINT_SAMPLES
+                        Number of metric-space FPS points fed to the
+                        DP3-inspired point encoder. Head ACT tokens stay fixed
+                        at 1.
+  --candidate-points CANDIDATE_POINTS
+  --device DEVICE
+  --no-pretrained-wrist-backbone

@@ -491,7 +491,7 @@
     }
   ],
   "xpolicylab_fork": "https://github.com/jtjin0916/XPolicyLab",
-  "xpolicylab_commit": "dd503a1328fe4f53ff212f9ed6e85468f56ceb73",
+  "xpolicylab_commit": "f4b9dc0873af9179345240efd1a4066324e28c18",
   "act_source_mapping": [
     {
       "path": "dapier_act/dataset.py",
