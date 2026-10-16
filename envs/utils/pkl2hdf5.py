@@ -160,6 +160,58 @@ def create_xpolicylab_hdf5(data, hdf5_path, instructions, frequency):
             action.create_dataset(target_name, data=values[1:])
 
         vision = f.create_group("vision")
+
+        # DAPIER: save variable-length RoboTwin head point clouds
+        if "pointcloud" in data:
+            pointcloud_frames = data["pointcloud"]
+
+            if len(pointcloud_frames) != frame_num:
+                raise ValueError(
+                    f"Pointcloud frame count mismatch: "
+                    f"{len(pointcloud_frames)} != {frame_num}"
+                )
+
+            pointcloud_group = vision.create_group(
+                "pointcloud"
+            )
+
+            pointcloud_group.attrs[
+                "storage_format"
+            ] = "variable_length_frames"
+
+            pointcloud_group.attrs[
+                "num_frames"
+            ] = frame_num - 1
+
+            for frame_index, frame in enumerate(
+                pointcloud_frames[:-1]
+            ):
+                frame = np.asarray(
+                    frame,
+                    dtype=np.float32,
+                )
+
+                if frame.ndim != 2:
+                    raise ValueError(
+                        f"Unexpected pointcloud frame shape "
+                        f"at frame {frame_index}: "
+                        f"{frame.shape}"
+                    )
+
+                if frame.shape[1] < 3:
+                    raise ValueError(
+                        f"Pointcloud frame must contain XYZ "
+                        f"at frame {frame_index}: "
+                        f"{frame.shape}"
+                    )
+
+                pointcloud_group.create_dataset(
+                    f"{frame_index:06d}",
+                    data=frame,
+                    compression="gzip",
+                    compression_opts=4,
+                )
+
         observations = data["observation"]
         for source_name, target_name in CAMERA_MAP.items():
             if source_name not in observations or "rgb" not in observations[source_name]:
@@ -214,8 +266,57 @@ def pkl_files_to_hdf5_and_video(
         pkl_file = load_pkl_file(pkl_file_path)
         append_data_to_structure(data_list, pkl_file)
 
-    images_to_video(np.array(data_list["observation"]["head_camera"]["rgb"]), out_path=video_path)
-    return create_xpolicylab_hdf5(data_list, hdf5_path, instructions, frequency)
+    observations = data_list["observation"]
+
+    video_dir = os.path.dirname(video_path)
+    video_stem = os.path.splitext(
+        os.path.basename(video_path)
+    )[0]
+
+    camera_video_map = {
+        "head_camera": video_path,
+        "left_camera": os.path.join(
+            video_dir,
+            f"{video_stem}_left_wrist.mp4",
+        ),
+        "right_camera": os.path.join(
+            video_dir,
+            f"{video_stem}_right_wrist.mp4",
+        ),
+    }
+
+    for camera_name, output_path in camera_video_map.items():
+        if camera_name not in observations:
+            print(
+                f"[VIDEO] Camera not found: {camera_name}"
+            )
+            continue
+
+        if "rgb" not in observations[camera_name]:
+            print(
+                f"[VIDEO] RGB not found: {camera_name}"
+            )
+            continue
+
+        frames = np.array(
+            observations[camera_name]["rgb"]
+        )
+
+        print(
+            f"[VIDEO] Saving {camera_name}: {output_path}"
+        )
+
+        images_to_video(
+            frames,
+            out_path=output_path,
+        )
+
+    return create_xpolicylab_hdf5(
+        data_list,
+        hdf5_path,
+        instructions,
+        frequency,
+    )
 
 
 def process_folder_to_hdf5_video(

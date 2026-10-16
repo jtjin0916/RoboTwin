@@ -1,0 +1,557 @@
+{
+  "robotwin_upstream": "45a853a9c87bd190e028db911137be01c2087d54",
+  "xpolicylab_base": "ee2735c598a9f66547d3886f0923047958232a49",
+  "dapier_act_public": "afd3808ca1e916e623b74089397f196fc520e7db",
+  "files": [
+    {
+      "path": ".gitignore",
+      "original_sha256": "71ef30c519df31c9d33af29202649d92326eed6636d57b51f10e90f3f54f1ea2",
+      "release_sha256": "374d227bd4a82c96fba7f709f20b6f8f447ad25298477d7407831f012006b785",
+      "exact_working_copy": false
+    },
+    {
+      "path": ".gitmodules",
+      "original_sha256": "0c5a43bb9e9eb87e5080014bdebce30a46a1838c26991b6e82139277832748b5",
+      "release_sha256": "83ef5d636d3443d72a0a151a98a17d45a7baae2e16abc07629ae4e009ea20a4d",
+      "exact_working_copy": false
+    },
+    {
+      "path": "README.md",
+      "original_sha256": "22bb97b74aeecf444e50e44932077fdb2af86a97c4295dc89e9c3e4b8bd74d40",
+      "release_sha256": "e756456c15d823b77bd5f587b227fa973a6e9118978fc19bddb2114128b43244",
+      "exact_working_copy": false
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/MIGRATION_ZERO_RADIAN.md",
+      "original_sha256": "9e6ba1e6fdaea9cf2feafed02eed2fd29f5f9619916511a8046999290738f204",
+      "release_sha256": "9e6ba1e6fdaea9cf2feafed02eed2fd29f5f9619916511a8046999290738f204",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/README.md",
+      "original_sha256": "103328279b4e3d5cd498e74d16c13b9245f557127f3af75be312ac6236efbd14",
+      "release_sha256": "103328279b4e3d5cd498e74d16c13b9245f557127f3af75be312ac6236efbd14",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/CameraMount_square_27mm.stl",
+      "original_sha256": "3191faa66b87c20fbdd3596b7691017083a82afd3348761623bab2aaa39e8f32",
+      "release_sha256": "3191faa66b87c20fbdd3596b7691017083a82afd3348761623bab2aaa39e8f32",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/Gripper_Base_v1_1.stl",
+      "original_sha256": "ff0c113090056f6211368eb0a20138caef245c7e490793821e85c92c53301900",
+      "release_sha256": "ff0c113090056f6211368eb0a20138caef245c7e490793821e85c92c53301900",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/Gripper_Gear_v1_1.stl",
+      "original_sha256": "0c6e45bbd7115b1e6a346af11e5ee331d2eaebb2780b51f8c519893e14bff3a5",
+      "release_sha256": "0c6e45bbd7115b1e6a346af11e5ee331d2eaebb2780b51f8c519893e14bff3a5",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/Gripper_Jaw_01_v1_1.stl",
+      "original_sha256": "3efe42f96b3cbe4b9c5db59fb3c3f395647b098f1a93de98889672dc07ecaaa1",
+      "release_sha256": "3efe42f96b3cbe4b9c5db59fb3c3f395647b098f1a93de98889672dc07ecaaa1",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/Gripper_Jaw_02_v1_1.stl",
+      "original_sha256": "d615ada9f3bee9d44b75cefbbbe1fb8d3687664a57871891f1a6047a59df13b7",
+      "release_sha256": "d615ada9f3bee9d44b75cefbbbe1fb8d3687664a57871891f1a6047a59df13b7",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/ST3215_8_v1_1.stl",
+      "original_sha256": "4aebce2fef7b4a946c332c94075e369c3c2667237c0a89c07ff6dddcf5dd3507",
+      "release_sha256": "4aebce2fef7b4a946c332c94075e369c3c2667237c0a89c07ff6dddcf5dd3507",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/base_motor_holder_so101_v1.stl",
+      "original_sha256": "8cd2f241037ea377af1191fffe0dd9d9006beea6dcc48543660ed41647072424",
+      "release_sha256": "8cd2f241037ea377af1191fffe0dd9d9006beea6dcc48543660ed41647072424",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/base_so101_v2.stl",
+      "original_sha256": "bb12b7026575e1f70ccc7240051f9d943553bf34e5128537de6cd86fae33924d",
+      "release_sha256": "bb12b7026575e1f70ccc7240051f9d943553bf34e5128537de6cd86fae33924d",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/motor_holder_so101_base_v1.stl",
+      "original_sha256": "31242ae6fb59d8b15c66617b88ad8e9bded62d57c35d11c0c43a70d2f4caa95b",
+      "release_sha256": "31242ae6fb59d8b15c66617b88ad8e9bded62d57c35d11c0c43a70d2f4caa95b",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/motor_holder_so101_wrist_v1.stl",
+      "original_sha256": "887f92e6013cb64ea3a1ab8675e92da1e0beacfd5e001f972523540545e08011",
+      "release_sha256": "887f92e6013cb64ea3a1ab8675e92da1e0beacfd5e001f972523540545e08011",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/rotation_pitch_so101_v1.stl",
+      "original_sha256": "9be900cc2a2bf718102841ef82ef8d2873842427648092c8ed2ca1e2ef4ffa34",
+      "release_sha256": "9be900cc2a2bf718102841ef82ef8d2873842427648092c8ed2ca1e2ef4ffa34",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/sts3215_03a_no_horn_v1.stl",
+      "original_sha256": "75ef3781b752e4065891aea855e34dc161a38a549549cd0970cedd07eae6f887",
+      "release_sha256": "75ef3781b752e4065891aea855e34dc161a38a549549cd0970cedd07eae6f887",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/sts3215_03a_v1.stl",
+      "original_sha256": "a37c871fb502483ab96c256baf457d36f2e97afc9205313d9c5ab275ef941cd0",
+      "release_sha256": "a37c871fb502483ab96c256baf457d36f2e97afc9205313d9c5ab275ef941cd0",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/under_arm_so101_v1.stl",
+      "original_sha256": "d01d1f2de365651dcad9d6669e94ff87ff7652b5bb2d10752a66a456a86dbc71",
+      "release_sha256": "d01d1f2de365651dcad9d6669e94ff87ff7652b5bb2d10752a66a456a86dbc71",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/upper_arm_so101_v1.stl",
+      "original_sha256": "475056e03a17e71919b82fd88ab9a0b898ab50164f2a7943652a6b2941bb2d4f",
+      "release_sha256": "475056e03a17e71919b82fd88ab9a0b898ab50164f2a7943652a6b2941bb2d4f",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/waveshare_mounting_plate_so101_v2.stl",
+      "original_sha256": "e197e24005a07d01bbc06a8c42311664eaeda415bf859f68fa247884d0f1a6e9",
+      "release_sha256": "e197e24005a07d01bbc06a8c42311664eaeda415bf859f68fa247884d0f1a6e9",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets/wrist_roll_pitch_so101_v2.stl",
+      "original_sha256": "6c7ec5525b4d8b9e397a30ab4bb0037156a5d5f38a4adf2c7d943d6c56eda5ae",
+      "release_sha256": "6c7ec5525b4d8b9e397a30ab4bb0037156a5d5f38a4adf2c7d943d6c56eda5ae",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets_meter/Gripper_Base_v1_1.stl",
+      "original_sha256": "2b79a2549cfe51399dafef96cf3502d6ef35ef31aef55b25c9a4e61ccbf4e54c",
+      "release_sha256": "2b79a2549cfe51399dafef96cf3502d6ef35ef31aef55b25c9a4e61ccbf4e54c",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets_meter/Gripper_Gear_v1_1.stl",
+      "original_sha256": "3c121dad07648df83f92e399925c87b8c84c6eaa6abcbece13b11331731ea6d9",
+      "release_sha256": "3c121dad07648df83f92e399925c87b8c84c6eaa6abcbece13b11331731ea6d9",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets_meter/Gripper_Jaw_01_v1_1.stl",
+      "original_sha256": "bc162a9cbb95ecfa8b94070a55026e87c07994b97e7a0d7048ddf3634f5f7cc4",
+      "release_sha256": "bc162a9cbb95ecfa8b94070a55026e87c07994b97e7a0d7048ddf3634f5f7cc4",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets_meter/Gripper_Jaw_02_v1_1.stl",
+      "original_sha256": "1c7d35d068a3a692a9aec988f76ef1be876505e230ba6ec7252dc982958f8862",
+      "release_sha256": "1c7d35d068a3a692a9aec988f76ef1be876505e230ba6ec7252dc982958f8862",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/assets_meter/ST3215_8_v1_1.stl",
+      "original_sha256": "e79052fe1d6776efaaeadabec68545d777866353ba55f9f0ff147f12b7f20a5b",
+      "release_sha256": "e79052fe1d6776efaaeadabec68545d777866353ba55f9f0ff147f12b7f20a5b",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/config.yml",
+      "original_sha256": "18abb571e7271cebd54ef02c62704cfe400e65376fc484f14c814aa632f6e709",
+      "release_sha256": "18abb571e7271cebd54ef02c62704cfe400e65376fc484f14c814aa632f6e709",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/curobo.yml",
+      "original_sha256": "ad3c7382cb9e8994c1b860ad54a99dd5e7ce21007a03c5f38b91a508b486688c",
+      "release_sha256": "973156659f8f652b025afa2bb8575437a007a8619e1cb88bebb3e096d213bcc8",
+      "exact_working_copy": false
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/so101_pgripper.urdf",
+      "original_sha256": "fd371814d7b1a27b516fb40bf0584cc5c7b50680972f7519fcea345daec4e3e0",
+      "release_sha256": "fd371814d7b1a27b516fb40bf0584cc5c7b50680972f7519fcea345daec4e3e0",
+      "exact_working_copy": true
+    },
+    {
+      "path": "assets/embodiments/so101-pgripper/so101_pgripper_calib.urdf",
+      "original_sha256": "57a21f6517f1d88a90dcf2bb4f77fbc94e88b766c9a588ce0915c0395c0211aa",
+      "release_sha256": "57a21f6517f1d88a90dcf2bb4f77fbc94e88b766c9a588ce0915c0395c0211aa",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/dataset.py",
+      "original_sha256": "1f1c54120bfd67698691f4df519cc13a7d946bddc16f64b4fc142a4a0d76df60",
+      "release_sha256": "1f1c54120bfd67698691f4df519cc13a7d946bddc16f64b4fc142a4a0d76df60",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/dataset_multimodal.py",
+      "original_sha256": "a0bb54762f40b1dc27fcfc0c9a25f06ebd67e9b4e91a7dbe9645ef4abfe0cf4c",
+      "release_sha256": "a0bb54762f40b1dc27fcfc0c9a25f06ebd67e9b4e91a7dbe9645ef4abfe0cf4c",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/eval_inference.py",
+      "original_sha256": "f4927db59631078e521575b658e4731573d2d25c2d2289faaa2138c72b5d9aeb",
+      "release_sha256": "f4927db59631078e521575b658e4731573d2d25c2d2289faaa2138c72b5d9aeb",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/model.py",
+      "original_sha256": "62dca4bc1166d7c1741a86c63fe8b4dc5ead303dc79adf21d335729e5b46c82b",
+      "release_sha256": "62dca4bc1166d7c1741a86c63fe8b4dc5ead303dc79adf21d335729e5b46c82b",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/model_multimodal.py",
+      "original_sha256": "215490cdf85f08b18bd24473859ae4a8e50e710910f3ad1796ee71f2164122b0",
+      "release_sha256": "215490cdf85f08b18bd24473859ae4a8e50e710910f3ad1796ee71f2164122b0",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/model_spatial.py",
+      "original_sha256": "e5ca2dc863bf904b874279688226a5936b1a88af7ab80f05c3defa511b43840d",
+      "release_sha256": "e5ca2dc863bf904b874279688226a5936b1a88af7ab80f05c3defa511b43840d",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/pointcloud_preprocess.py",
+      "original_sha256": "8638ce5905ec4899b8737991bef9cb5ad4419073517e90c2a273b48b25eac34e",
+      "release_sha256": "8638ce5905ec4899b8737991bef9cb5ad4419073517e90c2a273b48b25eac34e",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/train.py",
+      "original_sha256": "a73fed26da525d1e090b352a539e731e081d7addf186c9743525dd2953ef2d31",
+      "release_sha256": "a73fed26da525d1e090b352a539e731e081d7addf186c9743525dd2953ef2d31",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/train_multimodal.py",
+      "original_sha256": "fddc194c8518000091b1d7ac62b2ea42e0e4e56e0ca1fddf92a5d2b892f9dcf3",
+      "release_sha256": "fddc194c8518000091b1d7ac62b2ea42e0e4e56e0ca1fddf92a5d2b892f9dcf3",
+      "exact_working_copy": true
+    },
+    {
+      "path": "dapier_act/train_spatial.py",
+      "original_sha256": "1f2a6278df61652810ea65b5be52789de696372e7f123ff5a9b6603b1040129f",
+      "release_sha256": "1f2a6278df61652810ea65b5be52789de696372e7f123ff5a9b6603b1040129f",
+      "exact_working_copy": true
+    },
+    {
+      "path": "description/task_instruction/handover_block_so101_fixed.json",
+      "original_sha256": "9cd615d0839a73d5c644729a1f36be9044d711cdb1efc431021f94befc9b40ed",
+      "release_sha256": "9cd615d0839a73d5c644729a1f36be9044d711cdb1efc431021f94befc9b40ed",
+      "exact_working_copy": true
+    },
+    {
+      "path": "description/task_instruction/move_marker_randomized.json",
+      "original_sha256": "73a6290cea2fa4b73121bbd1f8415d5d0534a165d489674627257268d4510b76",
+      "release_sha256": "73a6290cea2fa4b73121bbd1f8415d5d0534a165d489674627257268d4510b76",
+      "exact_working_copy": true
+    },
+    {
+      "path": "description/task_instruction/move_woodenblock_fixed.json",
+      "original_sha256": "5820c4ae50e413b7ff6379972dda9755ddc38a78b71e07fac8021f2267f48bae",
+      "release_sha256": "5820c4ae50e413b7ff6379972dda9755ddc38a78b71e07fac8021f2267f48bae",
+      "exact_working_copy": true
+    },
+    {
+      "path": "description/task_instruction/move_woodenblock_randomized.json",
+      "original_sha256": "5820c4ae50e413b7ff6379972dda9755ddc38a78b71e07fac8021f2267f48bae",
+      "release_sha256": "5820c4ae50e413b7ff6379972dda9755ddc38a78b71e07fac8021f2267f48bae",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/robot/_robot_info.json",
+      "original_sha256": "83daffbc03e3f1cdf91883e55ca363af7811f22831bf3e823bdb5299277b4769",
+      "release_sha256": "83daffbc03e3f1cdf91883e55ca363af7811f22831bf3e823bdb5299277b4769",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/so101_pgripper.yml",
+      "original_sha256": "dc21a1326758cfcea7cd19d371c6456b621467a9ee55323bd42fa0a2877c11fa",
+      "release_sha256": "dc21a1326758cfcea7cd19d371c6456b621467a9ee55323bd42fa0a2877c11fa",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/_camera_config.yml",
+      "original_sha256": "4342872233ad1319003ad2c943b56036b801157019fb49a97e561e32c672f12e",
+      "release_sha256": "4342872233ad1319003ad2c943b56036b801157019fb49a97e561e32c672f12e",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/_embodiment_config.yml",
+      "original_sha256": "5acb34be66112425cfdc9e53ea1a722566084814cac710258c1ca301aa942b38",
+      "release_sha256": "5acb34be66112425cfdc9e53ea1a722566084814cac710258c1ca301aa942b38",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_baseline_control.yml",
+      "original_sha256": "446c1f0f938a5742b78acb1bfa46056017651d774f322a8f2e20321ec3a01866",
+      "release_sha256": "446c1f0f938a5742b78acb1bfa46056017651d774f322a8f2e20321ec3a01866",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_between_grid36.yml",
+      "original_sha256": "ebfa3e75a5c09b95eea1d7dc47ad5e405082ed3dd784b861fe9102dab02f8269",
+      "release_sha256": "ebfa3e75a5c09b95eea1d7dc47ad5e405082ed3dd784b861fe9102dab02f8269",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_calib.yml",
+      "original_sha256": "2a334c20caa96f4c5ad91e64ce5a448fa7a2a26f331aa1a583c6a85a9d6c3839",
+      "release_sha256": "2a334c20caa96f4c5ad91e64ce5a448fa7a2a26f331aa1a583c6a85a9d6c3839",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_calib_before_rawpcd.yml",
+      "original_sha256": "ab069ad2f70a669f8fbf1709fa2671352a5bc7153a6e8ba895ba60d5390eecc0",
+      "release_sha256": "ab069ad2f70a669f8fbf1709fa2671352a5bc7153a6e8ba895ba60d5390eecc0",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_calib_nocrop.yml",
+      "original_sha256": "eb194b398a4390941acd29c65a03c780102e005b05de4a2af0032dc71173b358",
+      "release_sha256": "eb194b398a4390941acd29c65a03c780102e005b05de4a2af0032dc71173b358",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_cropoff_control.yml",
+      "original_sha256": "50fd35a583f9604961a049f8bba3ee8415744178dda486197e56a490de06c992",
+      "release_sha256": "50fd35a583f9604961a049f8bba3ee8415744178dda486197e56a490de06c992",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_marker_angle_smoke10.yml",
+      "original_sha256": "13e119c98716f288b70884bf2c43ead48c66b52a69bb1aae5564d95a9c2749f3",
+      "release_sha256": "13e119c98716f288b70884bf2c43ead48c66b52a69bb1aae5564d95a9c2749f3",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_marker_grid50.yml",
+      "original_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "release_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_marker_grid500.yml",
+      "original_sha256": "361f7f10441ce2f6db41b92c0ca79576417d592fb62650c75f3b789367f57d7e",
+      "release_sha256": "361f7f10441ce2f6db41b92c0ca79576417d592fb62650c75f3b789367f57d7e",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_marker_smoke.yml",
+      "original_sha256": "fe9ca45565bf7254d0d6f63955de136c2e55b21a9aa9940815853777f0f0e8b5",
+      "release_sha256": "fe9ca45565bf7254d0d6f63955de136c2e55b21a9aa9940815853777f0f0e8b5",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_os30a_30.yml",
+      "original_sha256": "47ced2a4aa05b0b54efd11934e3f90ad9dbf5490663f243bdf942eec645fadfc",
+      "release_sha256": "47ced2a4aa05b0b54efd11934e3f90ad9dbf5490663f243bdf942eec645fadfc",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_os30a_smoke.yml",
+      "original_sha256": "879556f02f0fac0950750d0f0cdac74fc2b2aff862d71bc599bd8e2969ecf5fd",
+      "release_sha256": "879556f02f0fac0950750d0f0cdac74fc2b2aff862d71bc599bd8e2969ecf5fd",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_randomized.yml",
+      "original_sha256": "780c5490dd7367a13a3e65cbe6a5928de716f3b6ee218c638b3900718fcf2ab3",
+      "release_sha256": "780c5490dd7367a13a3e65cbe6a5928de716f3b6ee218c638b3900718fcf2ab3",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_randomized_crop_replay.yml",
+      "original_sha256": "446c1f0f938a5742b78acb1bfa46056017651d774f322a8f2e20321ec3a01866",
+      "release_sha256": "446c1f0f938a5742b78acb1bfa46056017651d774f322a8f2e20321ec3a01866",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_slim_can_grid50.yml",
+      "original_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "release_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_slim_can_smoke.yml",
+      "original_sha256": "fe9ca45565bf7254d0d6f63955de136c2e55b21a9aa9940815853777f0f0e8b5",
+      "release_sha256": "fe9ca45565bf7254d0d6f63955de136c2e55b21a9aa9940815853777f0f0e8b5",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_stow_grid50.yml",
+      "original_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "release_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_stow_grid50_diag.yml",
+      "original_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "release_sha256": "aebc9b4d0f583566083c4dc6c3034280813f5938461cc8e739a3ebe4588f3375",
+      "exact_working_copy": true
+    },
+    {
+      "path": "env_cfg/task_config/demo_so101_pgripper_stow_smoke.yml",
+      "original_sha256": "fe9ca45565bf7254d0d6f63955de136c2e55b21a9aa9940815853777f0f0e8b5",
+      "release_sha256": "fe9ca45565bf7254d0d6f63955de136c2e55b21a9aa9940815853777f0f0e8b5",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/_base_task.py",
+      "original_sha256": "eddb867132e8a6966a6989ed49b778ab15525754e8b0a43bd74efc69b8a4b54d",
+      "release_sha256": "eddb867132e8a6966a6989ed49b778ab15525754e8b0a43bd74efc69b8a4b54d",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/camera/camera.py",
+      "original_sha256": "3b180949c174e2d653a0e53773a061531be515233fa08499e135b2c0b5990e2c",
+      "release_sha256": "3b180949c174e2d653a0e53773a061531be515233fa08499e135b2c0b5990e2c",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/handover_block_so101_fixed.py",
+      "original_sha256": "a0c10786f064f360801e78893699233324801a9090921d9ce46177d004083d81",
+      "release_sha256": "a0c10786f064f360801e78893699233324801a9090921d9ce46177d004083d81",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/move_marker_randomized.py",
+      "original_sha256": "18c78a1839cc363b951e27fe396029b139d8a8d7a82603da85cdf6d43e137b6b",
+      "release_sha256": "18c78a1839cc363b951e27fe396029b139d8a8d7a82603da85cdf6d43e137b6b",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/move_slim_can_randomized.py",
+      "original_sha256": "8948ea69cbb0d11a4409c656c65350b3a18277ec87867ae10ee1dd9a380492e2",
+      "release_sha256": "8948ea69cbb0d11a4409c656c65350b3a18277ec87867ae10ee1dd9a380492e2",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/move_woodenblock_between_grid.py",
+      "original_sha256": "ffce3de413e5c540b7559992a2af4064d0f4d5b7c035b4dd502dd1302a77592a",
+      "release_sha256": "ffce3de413e5c540b7559992a2af4064d0f4d5b7c035b4dd502dd1302a77592a",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/move_woodenblock_fixed.py",
+      "original_sha256": "4ba8a09054a15e5aec5f91acd0668263a591f3cc34e1ffd258310b9bf9bd646c",
+      "release_sha256": "4ba8a09054a15e5aec5f91acd0668263a591f3cc34e1ffd258310b9bf9bd646c",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/move_woodenblock_randomized.py",
+      "original_sha256": "0a78dfb88c4d7d7d74eea54acf5b62f7b0141b3c1e5693722cb82ea81a0c6dd0",
+      "release_sha256": "0a78dfb88c4d7d7d74eea54acf5b62f7b0141b3c1e5693722cb82ea81a0c6dd0",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/robot/planner.py",
+      "original_sha256": "ae2ff46f67b1cf84449a5a8f81c74600789131a2edf7a90dfe0e9754fa295e2b",
+      "release_sha256": "4e69a1fd0737b3de4fd96eb8792aa67c19f714436d98e61c0c6fb8390d96238f",
+      "exact_working_copy": false
+    },
+    {
+      "path": "envs/robot/robot.py",
+      "original_sha256": "9a4dbd6e14395511f99df0e3a601adc77c97ad74e0e67638433d4877362882c1",
+      "release_sha256": "9a4dbd6e14395511f99df0e3a601adc77c97ad74e0e67638433d4877362882c1",
+      "exact_working_copy": true
+    },
+    {
+      "path": "envs/utils/pkl2hdf5.py",
+      "original_sha256": "925f8b62f070cdc66411131a2eb3da0672a4375a789bb5700b735ee57925abde",
+      "release_sha256": "925f8b62f070cdc66411131a2eb3da0672a4375a789bb5700b735ee57925abde",
+      "exact_working_copy": true
+    },
+    {
+      "path": "scripts/compare_so101_urdf_kinematics.py",
+      "original_sha256": "6e28cd003ac0715bf7900f80cef228938e756b048347e3b245cbe508d79b4ef4",
+      "release_sha256": "8aabd276f0cdc6878899b519d474fbb9179e908c6fdbe30618f413f1680e1ebd",
+      "exact_working_copy": false
+    },
+    {
+      "path": "scripts/eval_policy_xpolicylab.py",
+      "original_sha256": "d9d0aebb2723dd787d20dfce42958da5cbbe3ebb725ccd93fb9b016a4c76d4c7",
+      "release_sha256": "d9d0aebb2723dd787d20dfce42958da5cbbe3ebb725ccd93fb9b016a4c76d4c7",
+      "exact_working_copy": true
+    }
+  ],
+  "xpolicylab_fork": "https://github.com/jtjin0916/XPolicyLab",
+  "xpolicylab_commit": "dd503a1328fe4f53ff212f9ed6e85468f56ceb73",
+  "act_source_mapping": [
+    {
+      "path": "dapier_act/dataset.py",
+      "sha256": "1f1c54120bfd67698691f4df519cc13a7d946bddc16f64b4fc142a4a0d76df60",
+      "matches_frozen_reference": true,
+      "matches_public_runtime": true
+    },
+    {
+      "path": "dapier_act/dataset_multimodal.py",
+      "sha256": "a0bb54762f40b1dc27fcfc0c9a25f06ebd67e9b4e91a7dbe9645ef4abfe0cf4c",
+      "matches_frozen_reference": true,
+      "matches_public_runtime": false
+    },
+    {
+      "path": "dapier_act/eval_inference.py",
+      "sha256": "f4927db59631078e521575b658e4731573d2d25c2d2289faaa2138c72b5d9aeb",
+      "matches_frozen_reference": false,
+      "matches_public_runtime": false
+    },
+    {
+      "path": "dapier_act/model.py",
+      "sha256": "62dca4bc1166d7c1741a86c63fe8b4dc5ead303dc79adf21d335729e5b46c82b",
+      "matches_frozen_reference": true,
+      "matches_public_runtime": true
+    },
+    {
+      "path": "dapier_act/model_multimodal.py",
+      "sha256": "215490cdf85f08b18bd24473859ae4a8e50e710910f3ad1796ee71f2164122b0",
+      "matches_frozen_reference": true,
+      "matches_public_runtime": true
+    },
+    {
+      "path": "dapier_act/model_spatial.py",
+      "sha256": "e5ca2dc863bf904b874279688226a5936b1a88af7ab80f05c3defa511b43840d",
+      "matches_frozen_reference": true,
+      "matches_public_runtime": true
+    },
+    {
+      "path": "dapier_act/pointcloud_preprocess.py",
+      "sha256": "8638ce5905ec4899b8737991bef9cb5ad4419073517e90c2a273b48b25eac34e",
+      "matches_frozen_reference": true,
+      "matches_public_runtime": true
+    },
+    {
+      "path": "dapier_act/train.py",
+      "sha256": "a73fed26da525d1e090b352a539e731e081d7addf186c9743525dd2953ef2d31",
+      "matches_frozen_reference": false,
+      "matches_public_runtime": false
+    },
+    {
+      "path": "dapier_act/train_multimodal.py",
+      "sha256": "fddc194c8518000091b1d7ac62b2ea42e0e4e56e0ca1fddf92a5d2b892f9dcf3",
+      "matches_frozen_reference": true,
+      "matches_public_runtime": false
+    },
+    {
+      "path": "dapier_act/train_spatial.py",
+      "sha256": "1f2a6278df61652810ea65b5be52789de696372e7f123ff5a9b6603b1040129f",
+      "matches_frozen_reference": false,
+      "matches_public_runtime": false
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+Selected staged files reviewed: no >=100MB additions; no credential-shaped literals matched the limited scan.
+22 referenced meshes admitted by exact source hashes or verified 0.001 vertex conversion.
+Original URDF/README trailing whitespace is preserved intentionally; git diff --check reports it. No changed kinematics is hidden by formatting cleanup.

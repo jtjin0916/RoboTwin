@@ -1,3 +1,8 @@
+> **DAPIER SO-101 P-gripper + Custom ACT branch:** [clone, setup, smoke, replay,
+> validation and known gaps](docs/dapier/REPRODUCE.md). Includes licensed active
+> gripper meshes, a pinned XPolicyLab fork and the preserved working ACT code.
+> GPU / real-robot closed-loop reproduction is not yet verified.
+
 <h1 align="center">
   <a href="https://robotwin-benchmark.github.io"><b>RoboTwin</b> Bimanual Robotic Manipulation Platform<br></a>
 </h1>

@@ -1,0 +1,182 @@
+{
+  "so101_source": "TheRobotStudio/SO-ARM100@a758567c3978dfeefe282ede0500085a48fe8f78",
+  "normacore_source": "norma-core/norma-core@0d17bb300d712eeb5437d41ddb95ce380b5384e6",
+  "files": [
+    {
+      "path": "assets/CameraMount_square_27mm.stl",
+      "sha256": "3191faa66b87c20fbdd3596b7691017083a82afd3348761623bab2aaa39e8f32",
+      "source_family": "normacore",
+      "source_path": "hardware/elrobot/STL/gripper_camera_mounts/CameraMount_square_27mm.stl",
+      "git_blob": "3d4ff6a05b186dbae90a3bef964d3b607f308f0d",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/Gripper_Base_v1_1.stl",
+      "sha256": "ff0c113090056f6211368eb0a20138caef245c7e490793821e85c92c53301900",
+      "source_family": "normacore",
+      "source_path": "hardware/elrobot/simulation/assets/Gripper_Base_v1_1.stl",
+      "git_blob": "b2dd2a628636eb53f980a8d21afcf5e6045feb4f",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/Gripper_Gear_v1_1.stl",
+      "sha256": "0c6e45bbd7115b1e6a346af11e5ee331d2eaebb2780b51f8c519893e14bff3a5",
+      "source_family": "normacore",
+      "source_path": "hardware/elrobot/simulation/assets/Gripper_Gear_v1_1.stl",
+      "git_blob": "e172f344440791ae5c47254c7285eefa5ca6666d",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/Gripper_Jaw_01_v1_1.stl",
+      "sha256": "3efe42f96b3cbe4b9c5db59fb3c3f395647b098f1a93de98889672dc07ecaaa1",
+      "source_family": "normacore",
+      "source_path": "hardware/elrobot/simulation/assets/Gripper_Jaw_01_v1_1.stl",
+      "git_blob": "46696eabcfed0e191c9820c8fc46fdda20eabaf3",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/Gripper_Jaw_02_v1_1.stl",
+      "sha256": "d615ada9f3bee9d44b75cefbbbe1fb8d3687664a57871891f1a6047a59df13b7",
+      "source_family": "normacore",
+      "source_path": "hardware/elrobot/simulation/assets/Gripper_Jaw_02_v1_1.stl",
+      "git_blob": "995549b5b57306264a0a8a04db00c5fc4085efe9",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/ST3215_8_v1_1.stl",
+      "sha256": "4aebce2fef7b4a946c332c94075e369c3c2667237c0a89c07ff6dddcf5dd3507",
+      "source_family": "normacore",
+      "source_path": "hardware/elrobot/simulation/assets/ST3215_8_v1_1.stl",
+      "git_blob": "71076fd418e4355fd03ed22428f6f239f8b56a79",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/base_motor_holder_so101_v1.stl",
+      "sha256": "8cd2f241037ea377af1191fffe0dd9d9006beea6dcc48543660ed41647072424",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/base_motor_holder_so101_v1.stl",
+      "git_blob": "cac2b8dd98d3d8a6dcdf429b36aaa4b576d82041",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/base_so101_v2.stl",
+      "sha256": "bb12b7026575e1f70ccc7240051f9d943553bf34e5128537de6cd86fae33924d",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/base_so101_v2.stl",
+      "git_blob": "ed10aa61d1181f8001c908ee5cae5c4f970ba417",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/motor_holder_so101_base_v1.stl",
+      "sha256": "31242ae6fb59d8b15c66617b88ad8e9bded62d57c35d11c0c43a70d2f4caa95b",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/motor_holder_so101_base_v1.stl",
+      "git_blob": "9eaf67243a5ffc2dacb3fbd026b4c0620adcdd66",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/motor_holder_so101_wrist_v1.stl",
+      "sha256": "887f92e6013cb64ea3a1ab8675e92da1e0beacfd5e001f972523540545e08011",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/motor_holder_so101_wrist_v1.stl",
+      "git_blob": "d0aa18b15a9cd63f41fa4d48e82df7a3b618c75d",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/rotation_pitch_so101_v1.stl",
+      "sha256": "9be900cc2a2bf718102841ef82ef8d2873842427648092c8ed2ca1e2ef4ffa34",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/rotation_pitch_so101_v1.stl",
+      "git_blob": "5c05dee570623f62c4ab7597d76c7bdea20eacea",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/sts3215_03a_no_horn_v1.stl",
+      "sha256": "75ef3781b752e4065891aea855e34dc161a38a549549cd0970cedd07eae6f887",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/sts3215_03a_no_horn_v1.stl",
+      "git_blob": "2a89597702f5ec6849b6b1b894c867b35b98ca42",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/sts3215_03a_v1.stl",
+      "sha256": "a37c871fb502483ab96c256baf457d36f2e97afc9205313d9c5ab275ef941cd0",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/sts3215_03a_v1.stl",
+      "git_blob": "fe05403dbfac7a26822b8c8cd0fc3d5288a69fc8",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/under_arm_so101_v1.stl",
+      "sha256": "d01d1f2de365651dcad9d6669e94ff87ff7652b5bb2d10752a66a456a86dbc71",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/under_arm_so101_v1.stl",
+      "git_blob": "480e0583c8bb27ff9affefbebee72b784fb054c8",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/upper_arm_so101_v1.stl",
+      "sha256": "475056e03a17e71919b82fd88ab9a0b898ab50164f2a7943652a6b2941bb2d4f",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/upper_arm_so101_v1.stl",
+      "git_blob": "9c0f9b275a51f720476e529c92193f4f69d4784c",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/waveshare_mounting_plate_so101_v2.stl",
+      "sha256": "e197e24005a07d01bbc06a8c42311664eaeda415bf859f68fa247884d0f1a6e9",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/waveshare_mounting_plate_so101_v2.stl",
+      "git_blob": "4dba1f22b01ab9afef2466872fcb3e1efca89e38",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets/wrist_roll_pitch_so101_v2.stl",
+      "sha256": "6c7ec5525b4d8b9e397a30ab4bb0037156a5d5f38a4adf2c7d943d6c56eda5ae",
+      "source_family": "so101",
+      "source_path": "Simulation/SO101/assets/wrist_roll_pitch_so101_v2.stl",
+      "git_blob": "ac5172a35e6da3e9fdea21e25803f23cc61e31f1",
+      "status": "exact-source-match"
+    },
+    {
+      "path": "assets_meter/Gripper_Base_v1_1.stl",
+      "status": "verified-meter-conversion",
+      "source": "assets/Gripper_Base_v1_1.stl",
+      "scale": 0.001,
+      "max_abs_error": 2.9802322387695312e-08,
+      "sha256": "2b79a2549cfe51399dafef96cf3502d6ef35ef31aef55b25c9a4e61ccbf4e54c"
+    },
+    {
+      "path": "assets_meter/Gripper_Gear_v1_1.stl",
+      "status": "verified-meter-conversion",
+      "source": "assets/Gripper_Gear_v1_1.stl",
+      "scale": 0.001,
+      "max_abs_error": 2.9802322387695312e-08,
+      "sha256": "3c121dad07648df83f92e399925c87b8c84c6eaa6abcbece13b11331731ea6d9"
+    },
+    {
+      "path": "assets_meter/Gripper_Jaw_01_v1_1.stl",
+      "status": "verified-meter-conversion",
+      "source": "assets/Gripper_Jaw_01_v1_1.stl",
+      "scale": 0.001,
+      "max_abs_error": 2.9802322387695312e-08,
+      "sha256": "bc162a9cbb95ecfa8b94070a55026e87c07994b97e7a0d7048ddf3634f5f7cc4"
+    },
+    {
+      "path": "assets_meter/Gripper_Jaw_02_v1_1.stl",
+      "status": "verified-meter-conversion",
+      "source": "assets/Gripper_Jaw_02_v1_1.stl",
+      "scale": 0.001,
+      "max_abs_error": 2.9802322387695312e-08,
+      "sha256": "1c7d35d068a3a692a9aec988f76ef1be876505e230ba6ec7252dc982958f8862"
+    },
+    {
+      "path": "assets_meter/ST3215_8_v1_1.stl",
+      "status": "verified-meter-conversion",
+      "source": "assets/ST3215_8_v1_1.stl",
+      "scale": 0.001,
+      "max_abs_error": 2.9802322387695312e-08,
+      "sha256": "e79052fe1d6776efaaeadabec68545d777866353ba55f9f0ff147f12b7f20a5b"
+    }
+  ]
+}

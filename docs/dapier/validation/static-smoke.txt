@@ -1,0 +1,1 @@
+PASS config, two-arm action_dim=12, head/wrist config, all mesh hashes, jaw boxes, runtime/planner arm joints

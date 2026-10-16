@@ -1,0 +1,14 @@
+/home/user/Documents/Codex/2026-10-16/notion-plugin-notion-openai-curated-remote-2/work/RoboTwin-migration/XPolicyLab/policy/DAPIER_ACT/model.py:144: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(
+/home/user/RoboTwin/venv/lib/python3.10/site-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+[DAPIER_ACT] checkpoint: /home/user/RoboTwin/checkpoints/dapier_act_multimodal_dp3head256_grid30_far_v4/policy_best.pt
+[DAPIER_ACT] stats: /home/user/RoboTwin/checkpoints/dapier_act_multimodal_dp3head256_grid30_far_v4/dataset_stats.pkl
+[DAPIER_ACT] initialized device=cpu chunk=20 samples=512 candidates=8192
+[DAPIER_ACT] Task crop: min= (0.0, -0.25, 0.005) max= (0.4, 0.25, 0.3)
+[DAPIER_ACT] point limits: min= [0.030199378728866577, -0.15336677432060242, 0.0050008296966552734] max= [0.2908546030521393, 0.15257608890533447, 0.263857364654541]
+[DAPIER_ACT OBS] world_pcd=(76800, 3) crop_pcd=(8597, 3) qpos=(1, 12) left=(1, 3, 240, 320) right=(1, 3, 240, 320)
+[DAPIER_ACT OBS] crop xyz: min= [0.03724873065948486, -0.15136811137199402, 0.005026400089263916] max= [0.22406423091888428, 0.15238624811172485, 0.17617154121398926]
+[DAPIER_ACT TEMPORAL] step=0 predictions=1 weights=[1.0]
+action shapes: {'left_arm_joint_state': (5,), 'left_ee_joint_state': (1,), 'right_arm_joint_state': (5,), 'right_ee_joint_state': (1,)}
+PASS adapter CPU recorded-observation inference: 12 finite values; runtime RGB unchanged

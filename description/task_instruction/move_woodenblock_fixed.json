@@ -1,0 +1,14 @@
+{
+  "full_description": "Grasp the wooden block and lift it upward.",
+  "schema": "{A} describes the grasp and lift task.",
+  "preference": "Use a short manipulation instruction.",
+  "seen": [
+    "{A}",
+    "Perform {A}.",
+    "Execute {A}."
+  ],
+  "unseen": [
+    "Complete {A}.",
+    "Carry out {A}."
+  ]
+}

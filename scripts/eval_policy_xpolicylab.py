@@ -707,29 +707,23 @@ def run_one_batch_episode(
             if len(action_chunk) == 0:
                 raise RuntimeError("Policy returned an empty action chunk.")
 
-            for action_idx, action in enumerate(action_chunk):
-                flat_action, robotwin_action_type = xpolicylab_action_to_robotwin(
-                    action,
-                    action_type=action_type,
-                    current_observation=observation,
-                )
-                task_env.take_action(flat_action, action_type=robotwin_action_type)
+            # Receding-horizon closed loop:
+            # predict a full ACT chunk, but execute only the first action.
+            action = action_chunk[0]
 
-                if task_env.eval_success:
-                    succ = True
-                    break
-                if is_episode_end(task_env) or action_idx + 1 == len(action_chunk):
-                    break
+            flat_action, robotwin_action_type = xpolicylab_action_to_robotwin(
+                action,
+                action_type=action_type,
+                current_observation=observation,
+            )
 
-                observation = task_env.get_obs()
-                xpl_obs = robotwin_obs_to_xpolicylab(
-                    observation,
-                    instruction=task_env.get_instruction(),
-                    env_idx=worker_id,
-                    frequency=frequency,
-                    task_env=task_env,
-                )
-                model_client.call(func_name="update_obs", obs=xpl_obs)
+            task_env.take_action(
+                flat_action,
+                action_type=robotwin_action_type,
+            )
+
+            if task_env.eval_success:
+                succ = True
 
             if succ:
                 break
@@ -893,30 +887,25 @@ def eval_remote_policy(
                 if len(action_chunk) == 0:
                     raise RuntimeError("Policy returned an empty action chunk.")
 
-                for action_idx, action in enumerate(action_chunk):
-                    flat_action, robotwin_action_type = xpolicylab_action_to_robotwin(
-                        action,
-                        action_type=action_type,
-                        current_observation=observation,
-                    )
-                    task_env.take_action(flat_action, action_type=robotwin_action_type)
-                    rollout_steps += 1
+                # Receding-horizon closed loop:
+                # predict a full ACT chunk, but execute only the first action.
+                action = action_chunk[0]
 
-                    if task_env.eval_success:
-                        succ = True
-                        break
-                    if is_episode_end(task_env) or action_idx + 1 == len(action_chunk):
-                        break
+                flat_action, robotwin_action_type = xpolicylab_action_to_robotwin(
+                    action,
+                    action_type=action_type,
+                    current_observation=observation,
+                )
 
-                    observation = task_env.get_obs()
-                    xpl_obs = robotwin_obs_to_xpolicylab(
-                        observation,
-                        instruction=task_env.get_instruction(),
-                        env_idx=0,
-                        frequency=frequency,
-                        task_env=task_env,
-                    )
-                    model_client.call(func_name="update_obs", obs=xpl_obs)
+                task_env.take_action(
+                    flat_action,
+                    action_type=robotwin_action_type,
+                )
+
+                rollout_steps += 1
+
+                if task_env.eval_success:
+                    succ = True
 
                 if succ:
                     break
@@ -1162,6 +1151,19 @@ def xpolicylab_action_to_robotwin(
 def convert_vision(observation: Mapping[str, Any]) -> dict[str, Any]:
     source = observation.get("observation", {})
     vision = {}
+
+    if "pointcloud" in observation:
+        pointcloud = np.asarray(
+            observation["pointcloud"],
+            dtype=np.float32,
+        )
+
+        if pointcloud.ndim != 2 or pointcloud.shape[1] < 3:
+            raise ValueError(
+                f"Expected pointcloud [N, >=3], got {pointcloud.shape}"
+            )
+
+        vision["pointcloud"] = pointcloud[:, :3]
 
     for robotwin_name, xpolicylab_name in CAMERA_NAME_MAP.items():
         if robotwin_name in source:

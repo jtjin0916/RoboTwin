@@ -1,0 +1,261 @@
+{
+  "action_order": [
+    "left shoulder_pan",
+    "left shoulder_lift",
+    "left elbow_flex",
+    "left wrist_flex",
+    "left wrist_roll",
+    "left gripper normalized 0=closed 1=open",
+    "right shoulder_pan",
+    "right shoulder_lift",
+    "right elbow_flex",
+    "right wrist_flex",
+    "right wrist_roll",
+    "right gripper normalized 0=closed 1=open"
+  ],
+  "joint_units": "radians for revolute; meters for prismatic",
+  "joints": {
+    "Rigid 17": {
+      "type": "fixed",
+      "origin": {
+        "xyz": "0.000776 0.045242 -0.000409",
+        "rpy": "0 0 0"
+      },
+      "parent": {
+        "link": "Gripper_Base_v1_1"
+      },
+      "child": {
+        "link": "ST3215_8_v1_1"
+      }
+    },
+    "rev_motor_08": {
+      "type": "revolute",
+      "origin": {
+        "xyz": "0.0 0.0 0.0",
+        "rpy": "0 0 0"
+      },
+      "parent": {
+        "link": "ST3215_8_v1_1"
+      },
+      "child": {
+        "link": "Gripper_Gear_v1_1"
+      },
+      "axis": {
+        "xyz": "0.017144 0.999812 -0.009029"
+      },
+      "limit": {
+        "upper": "2.2028",
+        "lower": "0",
+        "effort": "2.94",
+        "velocity": "4.71"
+      }
+    },
+    "rev_motor_08_1": {
+      "type": "prismatic",
+      "origin": {
+        "xyz": "0.311734 -0.199648 0.032849",
+        "rpy": "0 0 0"
+      },
+      "parent": {
+        "link": "Gripper_Base_v1_1"
+      },
+      "child": {
+        "link": "Gripper_Jaw_02_v1_1"
+      },
+      "axis": {
+        "xyz": "-0.999697 0.0173 0.017525"
+      },
+      "limit": {
+        "upper": "0.0",
+        "lower": "-0.0255",
+        "effort": "2.94",
+        "velocity": "4.71"
+      }
+    },
+    "rev_motor_08_2": {
+      "type": "prismatic",
+      "origin": {
+        "xyz": "0.308573 -0.243367 -0.049391",
+        "rpy": "0 0 0"
+      },
+      "parent": {
+        "link": "Gripper_Base_v1_1"
+      },
+      "child": {
+        "link": "Gripper_Jaw_01_v1_1"
+      },
+      "axis": {
+        "xyz": "-0.999697 0.0173 0.017525"
+      },
+      "limit": {
+        "upper": "0.0255",
+        "lower": "0.0",
+        "effort": "2.94",
+        "velocity": "4.71"
+      }
+    },
+    "wrist_roll": {
+      "type": "revolute",
+      "origin": {
+        "xyz": "5.55112e-17 -0.0611 0.0181",
+        "rpy": "3.141592654 1.570796327 0"
+      },
+      "parent": {
+        "link": "wrist_link"
+      },
+      "child": {
+        "link": "Gripper_Base_v1_1"
+      },
+      "axis": {
+        "xyz": "0 -1 0"
+      },
+      "limit": {
+        "effort": "10",
+        "velocity": "10",
+        "lower": "-2.74385",
+        "upper": "2.84121"
+      }
+    },
+    "wrist_flex": {
+      "type": "revolute",
+      "origin": {
+        "xyz": "-0.1349 0.0052 3.62355e-17",
+        "rpy": "4.02456e-15 8.67362e-16 -1.5708"
+      },
+      "parent": {
+        "link": "lower_arm_link"
+      },
+      "child": {
+        "link": "wrist_link"
+      },
+      "axis": {
+        "xyz": "0 0 1"
+      },
+      "limit": {
+        "effort": "10",
+        "velocity": "10",
+        "lower": "-1.65806",
+        "upper": "1.65806"
+      }
+    },
+    "elbow_flex": {
+      "type": "revolute",
+      "origin": {
+        "xyz": "-0.11257 -0.028 1.73763e-16",
+        "rpy": "-3.63608e-16 8.74301e-16 1.5708"
+      },
+      "parent": {
+        "link": "upper_arm_link"
+      },
+      "child": {
+        "link": "lower_arm_link"
+      },
+      "axis": {
+        "xyz": "0 0 1"
+      },
+      "limit": {
+        "effort": "10",
+        "velocity": "10",
+        "lower": "-1.69",
+        "upper": "1.69"
+      }
+    },
+    "shoulder_lift": {
+      "type": "revolute",
+      "origin": {
+        "xyz": "-0.0303992 -0.0182778 -0.0542",
+        "rpy": "-1.5708 -1.5708 0"
+      },
+      "parent": {
+        "link": "shoulder_link"
+      },
+      "child": {
+        "link": "upper_arm_link"
+      },
+      "axis": {
+        "xyz": "0 0 1"
+      },
+      "limit": {
+        "effort": "10",
+        "velocity": "10",
+        "lower": "-1.74533",
+        "upper": "1.74533"
+      }
+    },
+    "shoulder_pan": {
+      "type": "revolute",
+      "origin": {
+        "xyz": "0.0388353 -8.97657e-09 0.0624",
+        "rpy": "3.14159 4.18253e-17 -3.14159"
+      },
+      "parent": {
+        "link": "base_link"
+      },
+      "child": {
+        "link": "shoulder_link"
+      },
+      "axis": {
+        "xyz": "0 0 1"
+      },
+      "limit": {
+        "effort": "10",
+        "velocity": "10",
+        "lower": "-1.91986",
+        "upper": "1.91986"
+      }
+    },
+    "camera_mount_joint": {
+      "type": "fixed",
+      "origin": {
+        "xyz": "0.000507994 0.014701043 0.014800385",
+        "rpy": "0 0 1.570796327"
+      },
+      "parent": {
+        "link": "Gripper_Base_v1_1"
+      },
+      "child": {
+        "link": "camera_mount_link"
+      }
+    },
+    "wrist_camera_joint": {
+      "type": "fixed",
+      "origin": {
+        "xyz": "-0.004845385 0 0.051032050",
+        "rpy": "-2.0071286395897934 5.175581012758936e-17 -1.570796326589793"
+      },
+      "parent": {
+        "link": "camera_mount_link"
+      },
+      "child": {
+        "link": "wrist_camera_link"
+      }
+    },
+    "wrist_camera_optical_joint": {
+      "type": "fixed",
+      "origin": {
+        "xyz": "0 0 0.007",
+        "rpy": "0 0 0"
+      },
+      "parent": {
+        "link": "wrist_camera_link"
+      },
+      "child": {
+        "link": "wrist_camera_optical_frame"
+      }
+    },
+    "robotwin_camera_joint": {
+      "type": "fixed",
+      "origin": {
+        "xyz": "0 0 0",
+        "rpy": "1.570796327 -1.570796327 0"
+      },
+      "parent": {
+        "link": "wrist_camera_optical_frame"
+      },
+      "child": {
+        "link": "camera"
+      }
+    }
+  },
+  "warning": "Simulation geometry only. No real motor zero/sign/mount/extrinsic mapping is certified."
+}

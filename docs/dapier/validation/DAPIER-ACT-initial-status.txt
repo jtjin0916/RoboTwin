@@ -1,0 +1,2 @@
+$ git status --short --branch
+## main...origin/main

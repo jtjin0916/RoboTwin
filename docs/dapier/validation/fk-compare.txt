@@ -1,0 +1,140 @@
+==========================================
+SO101 URDF KINEMATICS COMPARISON
+==========================================
+Production: /home/user/Documents/Codex/2026-10-16/notion-plugin-notion-openai-curated-remote-2/work/RoboTwin-migration/assets/embodiments/so101-pgripper/so101_pgripper.urdf
+Calibration: /home/user/Documents/Codex/2026-10-16/notion-plugin-notion-openai-curated-remote-2/work/RoboTwin-migration/assets/embodiments/so101-pgripper/so101_pgripper_calib.urdf
+
+------------------------------------------
+JOINT: shoulder_pan
+------------------------------------------
+type:
+  production : revolute
+  calibration: continuous
+parent:
+  production : base_link
+  calibration: base_link
+child:
+  production : shoulder_link
+  calibration: shoulder_link
+origin xyz:
+  production : [ 3.88353e-02 -8.97657e-09  6.24000e-02]
+  calibration: [ 3.88353e-02 -8.97657e-09  6.24000e-02]
+  max diff   : 0.0
+origin rpy:
+  production : [ 3.14159e+00  4.18253e-17 -3.14159e+00]
+  calibration: [ 3.14159e+00  4.18253e-17 -3.14159e+00]
+  max diff   : 0.0
+axis:
+  production : [0. 0. 1.]
+  calibration: [0. 0. 1.]
+  max diff   : 0.0
+KINEMATICS: MATCH
+------------------------------------------
+JOINT: shoulder_lift
+------------------------------------------
+type:
+  production : revolute
+  calibration: continuous
+parent:
+  production : shoulder_link
+  calibration: shoulder_link
+child:
+  production : upper_arm_link
+  calibration: upper_arm_link
+origin xyz:
+  production : [-0.0303992 -0.0182778 -0.0542   ]
+  calibration: [-0.0303992 -0.0182778 -0.0542   ]
+  max diff   : 0.0
+origin rpy:
+  production : [-1.5708 -1.5708  0.    ]
+  calibration: [-1.5708 -1.5708  0.    ]
+  max diff   : 0.0
+axis:
+  production : [0. 0. 1.]
+  calibration: [0. 0. 1.]
+  max diff   : 0.0
+KINEMATICS: MATCH
+------------------------------------------
+JOINT: elbow_flex
+------------------------------------------
+type:
+  production : revolute
+  calibration: continuous
+parent:
+  production : upper_arm_link
+  calibration: upper_arm_link
+child:
+  production : lower_arm_link
+  calibration: lower_arm_link
+origin xyz:
+  production : [-1.12570e-01 -2.80000e-02  1.73763e-16]
+  calibration: [-1.12570e-01 -2.80000e-02  1.73763e-16]
+  max diff   : 0.0
+origin rpy:
+  production : [-3.63608e-16  8.74301e-16  1.57080e+00]
+  calibration: [-3.63608e-16  8.74301e-16  1.57080e+00]
+  max diff   : 0.0
+axis:
+  production : [0. 0. 1.]
+  calibration: [0. 0. 1.]
+  max diff   : 0.0
+KINEMATICS: MATCH
+------------------------------------------
+JOINT: wrist_flex
+------------------------------------------
+type:
+  production : revolute
+  calibration: continuous
+parent:
+  production : lower_arm_link
+  calibration: lower_arm_link
+child:
+  production : wrist_link
+  calibration: wrist_link
+origin xyz:
+  production : [-1.34900e-01  5.20000e-03  3.62355e-17]
+  calibration: [-1.34900e-01  5.20000e-03  3.62355e-17]
+  max diff   : 0.0
+origin rpy:
+  production : [ 4.02456e-15  8.67362e-16 -1.57080e+00]
+  calibration: [ 4.02456e-15  8.67362e-16 -1.57080e+00]
+  max diff   : 0.0
+axis:
+  production : [0. 0. 1.]
+  calibration: [0. 0. 1.]
+  max diff   : 0.0
+KINEMATICS: MATCH
+------------------------------------------
+JOINT: wrist_roll
+------------------------------------------
+type:
+  production : revolute
+  calibration: continuous
+parent:
+  production : wrist_link
+  calibration: wrist_link
+child:
+  production : Gripper_Base_v1_1
+  calibration: Gripper_Base_v1_1
+origin xyz:
+  production : [ 5.55112e-17 -6.11000e-02  1.81000e-02]
+  calibration: [ 5.55112e-17 -6.11000e-02  1.81000e-02]
+  max diff   : 0.0
+origin rpy:
+  production : [3.14159265 1.57079633 0.        ]
+  calibration: [3.14159265 1.57079633 0.        ]
+  max diff   : 0.0
+axis:
+  production : [ 0. -1.  0.]
+  calibration: [ 0. -1.  0.]
+  max diff   : 0.0
+KINEMATICS: MATCH
+------------------------------------------
+JOINT: gripper_frame_joint
+------------------------------------------
+Production: MISSING
+Calibration: FOUND
+
+==========================================
+KINEMATIC DIFFERENCE FOUND
+==========================================

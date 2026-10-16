@@ -1,0 +1,15 @@
+PASS config, two-arm action_dim=12, head/wrist config, all mesh hashes, jaw boxes, runtime/planner arm joints
+Traceback (most recent call last):
+  File "/home/user/Documents/Codex/2026-10-16/notion-plugin-notion-openai-curated-remote-2/work/RoboTwin-migration/scripts/dapier_smoke.py", line 38, in <module>
+    robot=loader.load(str(base/'so101_pgripper.urdf'));assert robot is not None
+  File "/home/user/RoboTwin/venv/lib/python3.10/site-packages/sapien/wrapper/urdf_loader.py", line 738, in load
+    articulation_builders, actor_builders, cameras = self.parse(
+  File "/home/user/RoboTwin/venv/lib/python3.10/site-packages/sapien/wrapper/urdf_loader.py", line 678, in parse
+    return self._parse_urdf(urdf_string)
+  File "/home/user/RoboTwin/venv/lib/python3.10/site-packages/sapien/wrapper/urdf_loader.py", line 656, in _parse_urdf
+    articulation_builders.append(self._parse_articulation(root, fix_base))
+  File "/home/user/RoboTwin/venv/lib/python3.10/site-packages/sapien/wrapper/urdf_loader.py", line 480, in _parse_articulation
+    self._build_link(link, link_builder)
+  File "/home/user/RoboTwin/venv/lib/python3.10/site-packages/sapien/wrapper/urdf_loader.py", line 279, in _build_link
+    material = RenderMaterial()
+RuntimeError: vk::PhysicalDevice::createDeviceUnique: ErrorExtensionNotPresent

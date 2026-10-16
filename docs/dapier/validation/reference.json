@@ -1,0 +1,795 @@
+{
+  "source": "/home/user/DAPIER-ACT/reference/robotwin_dapier_act",
+  "episode": "/media/user/1E262021261FF90B/RoboTwin_legacy_2026-10-16/data/demo_so101_pgripper_stow_grid50/move_woodenblock_randomized/so101_pgripper_so101_pgripper/data/episode_0000000.hdf5",
+  "episode_sha256": "f27bfb286da1b4110cc0f6f3bbf042d31bf021b97a65348ce32700386cb8aa4e",
+  "checkpoint_sha256": "9b26076b1ebc73286da99022220be7e41702e5c659a2818450e9622c61ca1c18",
+  "stats_sha256": "bf1c8321c41c94df36257a303e8f650b45c1b08b8db82492c9b30a77905b825c",
+  "timestep": 0,
+  "model_parameters": 31637708,
+  "strict_missing": [],
+  "strict_unexpected": [],
+  "schema": {
+    "action/left_arm_joint_states": {
+      "shape": [
+        72,
+        5
+      ],
+      "dtype": "float32"
+    },
+    "action/left_ee_joint_states": {
+      "shape": [
+        72,
+        1
+      ],
+      "dtype": "float32"
+    },
+    "action/left_ee_poses": {
+      "shape": [
+        72,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "action/right_arm_joint_states": {
+      "shape": [
+        72,
+        5
+      ],
+      "dtype": "float32"
+    },
+    "action/right_ee_joint_states": {
+      "shape": [
+        72,
+        1
+      ],
+      "dtype": "float32"
+    },
+    "action/right_ee_poses": {
+      "shape": [
+        72,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "additional_info/frequency": {
+      "shape": [],
+      "dtype": "int32"
+    },
+    "data_format_version": {
+      "shape": [],
+      "dtype": "object"
+    },
+    "instructions": {
+      "shape": [],
+      "dtype": "object"
+    },
+    "state/left_arm_joint_states": {
+      "shape": [
+        72,
+        5
+      ],
+      "dtype": "float32"
+    },
+    "state/left_ee_joint_states": {
+      "shape": [
+        72,
+        1
+      ],
+      "dtype": "float32"
+    },
+    "state/left_ee_poses": {
+      "shape": [
+        72,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "state/right_arm_joint_states": {
+      "shape": [
+        72,
+        5
+      ],
+      "dtype": "float32"
+    },
+    "state/right_ee_joint_states": {
+      "shape": [
+        72,
+        1
+      ],
+      "dtype": "float32"
+    },
+    "state/right_ee_poses": {
+      "shape": [
+        72,
+        7
+      ],
+      "dtype": "float32"
+    },
+    "vision/cam_head/colors": {
+      "shape": [
+        72
+      ],
+      "dtype": "|S16824"
+    },
+    "vision/cam_head/depths": {
+      "shape": [
+        72,
+        240,
+        320
+      ],
+      "dtype": "float64"
+    },
+    "vision/cam_head/extrinsics_matrix": {
+      "shape": [
+        72,
+        4,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "vision/cam_head/intrinsic_matrix": {
+      "shape": [
+        72,
+        3,
+        3
+      ],
+      "dtype": "float32"
+    },
+    "vision/cam_head/shape": {
+      "shape": [
+        3
+      ],
+      "dtype": "int32"
+    },
+    "vision/cam_left_wrist/colors": {
+      "shape": [
+        72
+      ],
+      "dtype": "|S8430"
+    },
+    "vision/cam_left_wrist/depths": {
+      "shape": [
+        72,
+        240,
+        320
+      ],
+      "dtype": "float64"
+    },
+    "vision/cam_left_wrist/extrinsics_matrix": {
+      "shape": [
+        72,
+        4,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "vision/cam_left_wrist/intrinsic_matrix": {
+      "shape": [
+        72,
+        3,
+        3
+      ],
+      "dtype": "float32"
+    },
+    "vision/cam_left_wrist/shape": {
+      "shape": [
+        3
+      ],
+      "dtype": "int32"
+    },
+    "vision/cam_right_wrist/colors": {
+      "shape": [
+        72
+      ],
+      "dtype": "|S12435"
+    },
+    "vision/cam_right_wrist/depths": {
+      "shape": [
+        72,
+        240,
+        320
+      ],
+      "dtype": "float64"
+    },
+    "vision/cam_right_wrist/extrinsics_matrix": {
+      "shape": [
+        72,
+        4,
+        4
+      ],
+      "dtype": "float32"
+    },
+    "vision/cam_right_wrist/intrinsic_matrix": {
+      "shape": [
+        72,
+        3,
+        3
+      ],
+      "dtype": "float32"
+    },
+    "vision/cam_right_wrist/shape": {
+      "shape": [
+        3
+      ],
+      "dtype": "int32"
+    },
+    "vision/pointcloud/000000": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000001": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000002": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000003": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000004": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000005": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000006": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000007": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000008": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000009": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000010": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000011": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000012": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000013": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000014": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000015": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000016": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000017": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000018": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000019": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000020": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000021": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000022": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000023": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000024": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000025": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000026": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000027": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000028": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000029": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000030": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000031": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000032": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000033": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000034": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000035": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000036": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000037": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000038": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000039": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000040": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000041": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000042": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000043": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000044": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000045": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000046": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000047": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000048": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000049": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000050": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000051": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000052": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000053": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000054": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000055": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000056": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000057": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000058": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000059": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000060": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000061": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000062": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000063": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000064": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000065": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000066": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000067": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000068": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000069": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000070": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    },
+    "vision/pointcloud/000071": {
+      "shape": [
+        76800,
+        6
+      ],
+      "dtype": "float32"
+    }
+  },
+  "arrays": {
+    "input_qpos": [
+      12
+    ],
+    "input_pointcloud": [
+      8597,
+      3
+    ],
+    "input_left_wrist": [
+      3,
+      240,
+      320
+    ],
+    "input_right_wrist": [
+      3,
+      240,
+      320
+    ],
+    "input_actions": [
+      20,
+      12
+    ],
+    "input_is_pad": [
+      20
+    ],
+    "sampled_xyz": [
+      1,
+      512,
+      3
+    ],
+    "point_features": [
+      1,
+      1,
+      256
+    ],
+    "head_tokens": [
+      1,
+      1,
+      256
+    ],
+    "left_tokens": [
+      1,
+      80,
+      256
+    ],
+    "right_tokens": [
+      1,
+      80,
+      256
+    ],
+    "left_feature_map": [
+      1,
+      256,
+      8,
+      10
+    ],
+    "right_feature_map": [
+      1,
+      256,
+      8,
+      10
+    ],
+    "context": [
+      1,
+      163,
+      256
+    ],
+    "action": [
+      1,
+      20,
+      12
+    ]
+  },
+  "inference": "z=0; historical RGB loader; no temporal ensemble"
+}

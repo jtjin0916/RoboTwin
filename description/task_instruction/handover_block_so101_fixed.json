@@ -1,0 +1,14 @@
+{
+  "full_description": "Pick up the red block with the left arm and hand it over to the right arm.",
+  "schema": "{A} describes the dual-arm handover task.",
+  "preference": "Use a short bimanual manipulation instruction.",
+  "seen": [
+    "{A}",
+    "Perform {A}.",
+    "Execute {A}."
+  ],
+  "unseen": [
+    "Complete {A}.",
+    "Carry out {A}."
+  ]
+}

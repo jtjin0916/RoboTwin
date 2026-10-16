@@ -490,6 +490,52 @@ class Robot:
                 arms_tag="right",
             )
 
+    def left_plan_joint_path(
+        self,
+        target_joint_pos,
+        last_qpos=None,
+    ):
+        if last_qpos is None:
+            now_qpos = self.left_entity.get_qpos()
+        else:
+            now_qpos = deepcopy(last_qpos)
+
+        if self.communication_flag:
+            self.left_conn.send({
+                "cmd": "plan_joint_path",
+                "qpos": now_qpos,
+                "target_joint_pos": target_joint_pos,
+            })
+            return self.left_conn.recv()
+
+        return self.left_planner.plan_joint_path(
+            now_qpos,
+            target_joint_pos,
+        )
+
+    def right_plan_joint_path(
+        self,
+        target_joint_pos,
+        last_qpos=None,
+    ):
+        if last_qpos is None:
+            now_qpos = self.right_entity.get_qpos()
+        else:
+            now_qpos = deepcopy(last_qpos)
+
+        if self.communication_flag:
+            self.right_conn.send({
+                "cmd": "plan_joint_path",
+                "qpos": now_qpos,
+                "target_joint_pos": target_joint_pos,
+            })
+            return self.right_conn.recv()
+
+        return self.right_planner.plan_joint_path(
+            now_qpos,
+            target_joint_pos,
+        )
+
     # The data of gripper has been normalized
     def get_left_arm_jointState(self) -> list:
         jointState_list = []
@@ -683,6 +729,13 @@ def planner_process_worker(conn, args):
                     msg["target_pose_list"],
                     constraint_pose=msg.get("constraint_pose", None),
                     arms_tag=msg["arms_tag"],
+                )
+                conn.send(result)
+
+            elif msg["cmd"] == "plan_joint_path":
+                result = planner.plan_joint_path(
+                    msg["qpos"],
+                    msg["target_joint_pos"],
                 )
                 conn.send(result)
 

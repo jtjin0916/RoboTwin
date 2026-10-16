@@ -1,0 +1,14 @@
+{
+  "seen": [
+    "Pick up the marker and return to the stow pose.",
+    "Grasp the marker, lift it, and move back to stow.",
+    "Lift the marker from the table and return the arm to stow.",
+    "Pick up the marker from above and carry it back to the stow position.",
+    "Grasp and lift the marker, then return to the stow configuration."
+  ],
+  "unseen": [
+    "Lift the marker and bring the arm back to its stow pose.",
+    "Pick the marker up and finish in the stow configuration.",
+    "Take the marker from the table and return to stow."
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "public": {
+    "input_qpos": {
+      "shape": [
+        12
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_pointcloud": {
+      "shape": [
+        8597,
+        3
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_left_wrist": {
+      "shape": [
+        3,
+        240,
+        320
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_right_wrist": {
+      "shape": [
+        3,
+        240,
+        320
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_actions": {
+      "shape": [
+        20,
+        12
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_is_pad": {
+      "shape": [
+        20
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "sampled_xyz": {
+      "shape": [
+        1,
+        512,
+        3
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "point_features": {
+      "shape": [
+        1,
+        1,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "head_tokens": {
+      "shape": [
+        1,
+        1,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "left_tokens": {
+      "shape": [
+        1,
+        80,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "right_tokens": {
+      "shape": [
+        1,
+        80,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "left_feature_map": {
+      "shape": [
+        1,
+        256,
+        8,
+        10
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "right_feature_map": {
+      "shape": [
+        1,
+        256,
+        8,
+        10
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "context": {
+      "shape": [
+        1,
+        163,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "action": {
+      "shape": [
+        1,
+        20,
+        12
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    }
+  },
+  "working": {
+    "input_qpos": {
+      "shape": [
+        12
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_pointcloud": {
+      "shape": [
+        8597,
+        3
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_left_wrist": {
+      "shape": [
+        3,
+        240,
+        320
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_right_wrist": {
+      "shape": [
+        3,
+        240,
+        320
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_actions": {
+      "shape": [
+        20,
+        12
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "input_is_pad": {
+      "shape": [
+        20
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "sampled_xyz": {
+      "shape": [
+        1,
+        512,
+        3
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "point_features": {
+      "shape": [
+        1,
+        1,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "head_tokens": {
+      "shape": [
+        1,
+        1,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "left_tokens": {
+      "shape": [
+        1,
+        80,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "right_tokens": {
+      "shape": [
+        1,
+        80,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "left_feature_map": {
+      "shape": [
+        1,
+        256,
+        8,
+        10
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "right_feature_map": {
+      "shape": [
+        1,
+        256,
+        8,
+        10
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "context": {
+      "shape": [
+        1,
+        163,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    },
+    "action": {
+      "shape": [
+        1,
+        20,
+        12
+      ],
+      "max_abs_error": 0.0,
+      "exact_equal": true
+    }
+  }
+}

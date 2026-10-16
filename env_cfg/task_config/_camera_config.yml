@@ -17,3 +17,9 @@ Large_D435:
   fovy: 37
   w: 640
   h: 480
+OS30A:
+  fovy: 60
+  w: 640
+  h: 460
+  near: 0.2
+  far: 2.5

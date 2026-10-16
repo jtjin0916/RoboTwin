@@ -1,0 +1,111 @@
+urdf_path: ./so101_pgripper.urdf
+joint_stiffness: 1000
+joint_damping: 200
+gripper_stiffness: 1000
+gripper_damping: 200
+move_group:
+- Gripper_Base_v1_1
+- Gripper_Base_v1_1
+ee_joints:
+- wrist_roll
+- wrist_roll
+arm_joints_name:
+- - shoulder_pan
+  - shoulder_lift
+  - elbow_flex
+  - wrist_flex
+  - wrist_roll
+- - shoulder_pan
+  - shoulder_lift
+  - elbow_flex
+  - wrist_flex
+  - wrist_roll
+gripper_name:
+- base: rev_motor_08
+  mimic:
+  - - rev_motor_08_1
+    - -0.0115
+    - 0.0
+  - - rev_motor_08_2
+    - 0.0115
+    - 0.0
+- base: rev_motor_08
+  mimic:
+  - - rev_motor_08_1
+    - -0.0115
+    - 0.0
+  - - rev_motor_08_2
+    - 0.0115
+    - 0.0
+gripper_bias: 0.08224
+gripper_scale:
+- 2.2028
+- 0.0
+homestate:
+- - 0.0
+  - -1.519
+  - 1.507
+  - 0.0
+  - 0.0
+- - 0.0
+  - -1.519
+  - 1.507
+  - 0.0
+  - 0.0
+delta_matrix:
+- - 0.0
+  - -1.0
+  - 0.0
+- - 1.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 1.0
+global_trans_matrix:
+- - 0.0
+  - -1.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 1.0
+- - -1.0
+  - 0.0
+  - 0.0
+robot_pose:
+- - 0.0
+  - -0.35
+  - 0.74
+  - 0.7071068
+  - 0.0
+  - 0.0
+  - 0.7071068
+- - 0.0
+  - -0.35
+  - 0.74
+  - 0.7071068
+  - 0.0
+  - 0.0
+  - 0.7071068
+planner: curobo
+dual_arm: false
+rotate_lim:
+- 0.1
+- 0.8
+grasp_perfect_direction:
+- right
+- left
+static_camera_list:
+- name: head_camera
+  position:
+  - 0.0
+  - -0.35
+  - 1.12
+  forward:
+  - 0.0
+  - 0.422618
+  - -0.906308
+  left:
+  - -1.0
+  - 0.0
+  - 0.0

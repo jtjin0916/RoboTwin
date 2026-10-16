@@ -51,6 +51,15 @@ try:
             # translate from baselink to arm's base
             with open(self.yml_path, "r") as f:
                 yml_data = yaml.safe_load(f)
+            # DAPIER portability: resolve embodiment paths beside this YAML.
+            # Preserve absolute paths and CuRobo's built-in robot lookup for others.
+            from pathlib import Path
+            kinematics = yml_data["robot_cfg"]["kinematics"]
+            for key in ("urdf_path", "asset_root_path"):
+                value = kinematics.get(key)
+                if value and str(value).startswith("./"):
+                    kinematics[key] = str((Path(self.yml_path).resolve().parent / value).resolve())
+            robot_config = yml_data["robot_cfg"]
             self.frame_bias = yml_data["planner"]["frame_bias"]
 
             # motion generation
@@ -72,7 +81,7 @@ try:
                     }
                 }
             motion_gen_config = MotionGenConfig.load_from_robot_config(
-                self.yml_path,
+                robot_config,
                 world_config,
                 interpolation_dt=1 / 250,
                 num_trajopt_seeds=1,
@@ -81,7 +90,7 @@ try:
             self.motion_gen = MotionGen(motion_gen_config)
             self.motion_gen.warmup()
             motion_gen_config = MotionGenConfig.load_from_robot_config(
-                self.yml_path,
+                robot_config,
                 world_config,
                 interpolation_dt=1 / 250,
                 num_trajopt_seeds=1,
@@ -152,6 +161,76 @@ try:
                 res_result["position"] = np.array(result.interpolated_plan.position.to("cpu"))
                 res_result["velocity"] = np.array(result.interpolated_plan.velocity.to("cpu"))
                 return res_result
+
+        def plan_joint_path(
+            self,
+            curr_joint_pos,
+            target_joint_pos,
+        ):
+            """Plan a collision-free path to an explicit joint-space goal."""
+            joint_indices = [
+                self.all_joints.index(name)
+                for name in self.active_joints_name
+                if name in self.all_joints
+            ]
+            joint_angles = [
+                round(float(curr_joint_pos[index]), 5)
+                for index in joint_indices
+            ]
+            target_joint_pos = [float(q) for q in target_joint_pos]
+
+            if len(target_joint_pos) != len(self.active_joints_name):
+                raise ValueError(
+                    f"target_joint_pos has {len(target_joint_pos)} joints, "
+                    f"expected {len(self.active_joints_name)}"
+                )
+
+            start_joint_states = JointState.from_position(
+                torch.tensor(
+                    joint_angles,
+                    dtype=torch.float32,
+                ).cuda().reshape(1, -1),
+                joint_names=self.active_joints_name,
+            )
+            goal_joint_states = JointState.from_position(
+                torch.tensor(
+                    target_joint_pos,
+                    dtype=torch.float32,
+                ).cuda().reshape(1, -1),
+                joint_names=self.active_joints_name,
+            )
+
+            plan_config = MotionGenPlanConfig(max_attempts=10)
+
+            print(
+                "[JOINT PLAN] start =",
+                np.round(joint_angles, 4),
+            )
+            print(
+                "[JOINT PLAN] goal  =",
+                np.round(target_joint_pos, 4),
+            )
+
+            result = self.motion_gen.plan_single_js(
+                start_joint_states,
+                goal_joint_states,
+                plan_config,
+            )
+
+            if not result.success.item():
+                print("[JOINT PLAN] success = False")
+                return {"status": "Fail"}
+
+            print("[JOINT PLAN] success = True")
+            return {
+                "status": "Success",
+                "position": np.array(
+                    result.interpolated_plan.position.to("cpu")
+                ),
+                "velocity": np.array(
+                    result.interpolated_plan.velocity.to("cpu")
+                ),
+            }
 
         def plan_batch(
             self,

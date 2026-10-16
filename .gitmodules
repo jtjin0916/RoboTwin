@@ -1,4 +1,4 @@
 [submodule "XPolicyLab"]
 	path = XPolicyLab
-	url = https://github.com/XPolicyLab/XPolicyLab.git
-	branch = main
+	url = https://github.com/jtjin0916/XPolicyLab.git
+	branch = dapier-act-so101

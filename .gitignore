@@ -29,3 +29,16 @@ envs/curobo/*
 
 /*.json*
 /*.txt
+
+# DAPIER local-only outputs
+venv/
+.venv/
+logs/
+analysis/
+visualization/
+*.pt
+*.pkl
+*.mp4
+*.hdf5
+*.before_*
+*.bak

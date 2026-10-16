@@ -798,6 +798,75 @@ class Base_Task(gym.Env):
 
         return right_result
 
+    def move_to_joint_state(
+        self,
+        arm_tag: ArmTag,
+        target_joint_pos,
+        save_freq=-1,
+    ):
+        """Plan, cache/replay, and execute a single-arm joint-space motion."""
+        if not self.plan_success:
+            return False
+
+        if arm_tag == "left":
+            if self.need_plan:
+                result = self.robot.left_plan_joint_path(
+                    target_joint_pos
+                )
+                self.left_joint_path.append(
+                    deepcopy(result)
+                )
+            else:
+                result = deepcopy(
+                    self.left_joint_path[self.left_cnt]
+                )
+                self.left_cnt += 1
+
+        elif arm_tag == "right":
+            if self.need_plan:
+                result = self.robot.right_plan_joint_path(
+                    target_joint_pos
+                )
+                self.right_joint_path.append(
+                    deepcopy(result)
+                )
+            else:
+                result = deepcopy(
+                    self.right_joint_path[self.right_cnt]
+                )
+                self.right_cnt += 1
+
+        else:
+            raise ValueError(
+                f'arm_tag must be either "left" or "right", not {arm_tag}'
+            )
+
+        if result is None or result.get("status") != "Success":
+            self.plan_success = False
+            print(
+                f"[JOINT MOVE] {arm_tag} planning failed"
+            )
+            return False
+
+        print(
+            f"[JOINT MOVE] {arm_tag} trajectory steps =",
+            result["position"].shape[0],
+        )
+
+        control_seq = {
+            "left_arm": None,
+            "left_gripper": None,
+            "right_arm": None,
+            "right_gripper": None,
+        }
+        control_seq[f"{arm_tag}_arm"] = result
+
+        self.take_dense_action(
+            control_seq,
+            save_freq=save_freq,
+        )
+        return True
+
     def together_move_to_pose(
         self,
         left_target_pose,
