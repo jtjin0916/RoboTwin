@@ -45,6 +45,13 @@ robot_cfg:
 planner:
   # Collision support surface top in World. Do not change legacy profile.
   support_top_world_z: 0.0
+  # Top of cuboid = z=-0.14-0.02+0.02=-0.14 in SO-101 base frame;
+  # ground top is World z=0, 140 mm below the SO-101 base.
+  # Cuboid centre lies 20 cm in front of each arm origin.
+  # This is *only* the floor, not a TurtleBot collision model.
+  support_cuboid_base_frame:
+    dims: [0.7, 1.0, 0.04]
+    pose: [0.20, 0.0, -0.16, 1.0, 0.0, 0.0, 0.0]
   frame_bias:
   - 0.0
   - 0.0

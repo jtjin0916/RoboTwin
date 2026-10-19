@@ -15,3 +15,7 @@ ur5-wsg:
 
 so101-pgripper:
   file_path: "./assets/embodiments/so101-pgripper"
+
+# 2026-10-19 isolated mounted Sweepick embodiment.
+so101-pgripper-sweepick:
+  file_path: "./assets/embodiments/so101-pgripper-sweepick"

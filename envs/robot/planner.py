@@ -63,22 +63,31 @@ try:
             self.frame_bias = yml_data["planner"]["frame_bias"]
             # Sweepick floor top is z=0.0; legacy RoboTwin still defaults to 0.74.
             support_top_world_z = float(yml_data["planner"].get("support_top_world_z", 0.74))
+            # Legacy table pose remains untouched. Sweepick explicitly
+            # supplies a floor cuboid already expressed in the robot base frame.
+            floor_cuboid = yml_data["planner"].get("support_cuboid_base_frame")
 
             # motion generation
             if True:
                 world_config = {
                     "cuboid": {
                         "table": {
-                            "dims": [0.7, 2, 0.04],  # x, y, z
-                            "pose": [
-                                self.robot_origion_pose.p[1],
-                                0.0,
-                                support_top_world_z - self.robot_origion_pose.p[2],
-                                1,
-                                0,
-                                0,
-                                0.0,
-                            ],  # x, y, z, qw, qx, qy, qz
+                            "dims": (
+                                floor_cuboid["dims"] if floor_cuboid
+                                else [0.7, 2, 0.04]
+                            ),
+                            "pose": (
+                                floor_cuboid["pose"] if floor_cuboid
+                                else [
+                                    self.robot_origion_pose.p[1],
+                                    0.0,
+                                    support_top_world_z - self.robot_origion_pose.p[2],
+                                    1,
+                                    0,
+                                    0,
+                                    0.0,
+                                ]
+                            ),  # robot-base frame, legacy defaults preserved
                         },
                     }
                 }

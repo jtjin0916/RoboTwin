@@ -304,16 +304,22 @@ class Base_Task(gym.Env):
             is_static=True,
         )
 
-        self.table = create_table(
-            self.scene,
-            sapien.Pose(p=[table_xy_bias[0], table_xy_bias[1], table_height]),
-            length=1.2,
-            width=0.7,
-            height=table_height,
-            thickness=0.05,
-            is_static=True,
-            texture_id=self.table_texture,
-        )
+        if table_height <= 0:
+            # Sweepick is a true floor task: setup_scene() already calls
+            # scene.add_ground(0). A table with height=0 would construct
+            # negative-half-length table legs in create_table().
+            self.table = None
+        else:
+            self.table = create_table(
+                self.scene,
+                sapien.Pose(p=[table_xy_bias[0], table_xy_bias[1], table_height]),
+                length=1.2,
+                width=0.7,
+                height=table_height,
+                thickness=0.05,
+                is_static=True,
+                texture_id=self.table_texture,
+            )
 
     def get_cluttered_table(self, cluttered_numbers=10, xlim=[-0.59, 0.59], ylim=[-0.34, 0.34], zlim=[0.741]):
         self.record_cluttered_objects = []  # record cluttered objects

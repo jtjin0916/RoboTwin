@@ -1,0 +1,13 @@
+{
+  "full_description": "Grasp the 40 mm block from the floor and lift it upward using the left SO-101.",
+  "schema": "{A} describes the floor grasp and lift task.",
+  "preference": "Use a short manipulation instruction.",
+  "seen": [
+    "{A}",
+    "Perform {A}."
+  ],
+  "unseen": [
+    "Complete {A}.",
+    "Carry out {A}."
+  ]
+}

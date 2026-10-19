@@ -23,3 +23,25 @@ def test_handoff_block_and_crop_normalization():
     assert z.shape == (512, 3)
     expected = 2*(task[0]-SWEEPICK_TASK.crop_min)/(np.array(SWEEPICK_TASK.crop_max)-np.array(SWEEPICK_TASK.crop_min))-1
     assert np.allclose(z[0], expected, atol=1e-5)
+
+
+def test_sweepick_embodiment_and_floor_metadata():
+    from pathlib import Path
+    import yaml
+    root = Path(__file__).resolve().parents[1]
+    embodiment_registry = yaml.safe_load(
+        (root / "env_cfg/task_config/_embodiment_config.yml").read_text()
+    )
+    assert embodiment_registry["so101-pgripper-sweepick"]["file_path"] == (
+        "./assets/embodiments/so101-pgripper-sweepick"
+    )
+    yml = yaml.safe_load(
+        (root / "assets/embodiments/so101-pgripper-sweepick/curobo.yml").read_text()
+    )
+    floor = yml["planner"]["support_cuboid_base_frame"]
+    assert np.isclose(floor["pose"][2] + floor["dims"][2] / 2, -0.14)
+    assert np.isclose(yml["planner"]["support_top_world_z"], 0.0)
+    cfg = yaml.safe_load(
+        (root / "env_cfg/task_config/demo_so101_pgripper_sweepick_block40_smoke.yml").read_text()
+    )
+    assert cfg["max_seed_attempts"] == 3

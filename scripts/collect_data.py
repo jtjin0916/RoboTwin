@@ -170,7 +170,14 @@ def run(TASK_ENV, args):
                     epid = max(seed_list) + 1
             print(f"Exist seed file, Start from: {epid} / {suc_num}")
 
+        max_seed_attempts = args.get("max_seed_attempts")
         while suc_num < args["episode_num"]:
+            if max_seed_attempts is not None and epid >= int(max_seed_attempts):
+                raise RuntimeError(
+                    f"Smoke seed search stopped after {epid} attempts: "
+                    f"{suc_num}/{args['episode_num']} successes. "
+                    "Inspect the earlier setup/IK/collision errors before retrying."
+                )
             try:
                 TASK_ENV.setup_demo(now_ep_num=suc_num, seed=epid, **args)
                 TASK_ENV.play_once()

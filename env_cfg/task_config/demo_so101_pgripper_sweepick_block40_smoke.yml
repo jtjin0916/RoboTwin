@@ -2,6 +2,8 @@
 # This file does NOT imply that collected actions are at 10Hz yet.
 render_freq: 1
 episode_num: 1
+# Bound smoke failure retries; bulk collection uses the legacy unlimited default.
+max_seed_attempts: 3
 use_seed: false
 save_freq: 15
 embodiment:
