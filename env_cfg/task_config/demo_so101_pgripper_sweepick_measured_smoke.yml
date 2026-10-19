@@ -16,7 +16,7 @@ domain_randomization:
   random_background: false
   cluttered_table: false
   clean_background_rate: 1
-  random_head_camera_dis: 0
+  random_head_camera_dis: 0  # Fixed nominal OS30A extrinsic
   random_table_height: 0
   random_light: false
   crazy_random_light_rate: 0

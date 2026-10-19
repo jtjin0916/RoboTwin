@@ -1,4 +1,4 @@
-# Isolated Sweepick combined randomization smoke (table height always fixed).
+# Background + light + optional OS30A position jitter ON, max 5mm (toggle via random_head_camera_dis).
 # This file does NOT imply that collected actions are at 10Hz yet.
 render_freq: 1
 episode_num: 1
@@ -16,7 +16,7 @@ domain_randomization:
   random_background: true
   cluttered_table: false
   clean_background_rate: 0
-  random_head_camera_dis: 0.005
+  random_head_camera_dis: 0.005  # Change to 0 to DISABLE; 0.005 = max 5mm
   random_table_height: 0
   random_light: true
   crazy_random_light_rate: 0

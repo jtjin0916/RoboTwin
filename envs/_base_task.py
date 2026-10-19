@@ -276,12 +276,28 @@ class Base_Task(gym.Env):
 
         if self.random_background:
             texture_type = "seen" if not self.eval_mode else "unseen"
-            directory_path = f"./assets/background_texture/{texture_type}"
-            file_count = len(
-                [name for name in os.listdir(directory_path) if os.path.isfile(os.path.join(directory_path, name))])
-
-            # wall_texture, table_texture = random.randint(0, file_count - 1), random.randint(0, file_count - 1)
-            wall_texture, table_texture = np.random.randint(0, file_count), np.random.randint(0, file_count)
+            directory_path = Path("./assets/background_texture") / texture_type
+            # Dataset images are external to the Git checkout. Select only
+            # filenames that exist: other files are not valid texture IDs.
+            if not directory_path.is_dir():
+                raise FileNotFoundError(
+                    f"Missing RoboTwin background textures: {directory_path}. "
+                    "Link assets/background_texture from your source checkout "
+                    "or extract RoboTwin2.0 background_texture.zip into assets/."
+                )
+            texture_ids = sorted(
+                int(p.stem) for p in directory_path.glob("*.png")
+                if p.stem.isdecimal()
+            )
+            if not texture_ids:
+                raise FileNotFoundError(
+                    f"No numbered PNG images in {directory_path}. "
+                    "Verify the external RoboTwin2.0 texture dataset extraction."
+                )
+            wall_texture, table_texture = (
+                int(np.random.choice(texture_ids)),
+                int(np.random.choice(texture_ids)),
+            )
 
             self.wall_texture, self.table_texture = (
                 f"{texture_type}/{wall_texture}",

@@ -122,3 +122,53 @@ the measured L/R Workspace Grid has been validated.
 
 **Important:** The fixed 40mm block test is not a randomization success-rate
 benchmark, and full robot collision geometry in CuRobo is still incomplete.
+
+## 2026-10-19: OS30A jitter toggle and existing textures
+
+**OS30A:** rigid mount nominal extrinsic remains calibrated/fixed; optional
+episode-wise camera POSITION jitter in SAPIEN simulates residual mounting
+uncertainty. It is not required for geometric coordinate normalization
+and does not randomize camera orientation, depth-noise patterns or intrinsic K.
+The sampled pose is saved per frame by Camera.get_config()
+(`observation.head_camera.cam2world_gl`).
+
+Choose one independent config (both keep the table and robot height fixed):
+- `demo_so101_pgripper_sweepick_rand_combined`: background + light +
+  **OS30A random_head_camera_dis=0.005m ON**.
+- `demo_so101_pgripper_sweepick_rand_combined_no_camera`: background + light +
+  **OS30A random_head_camera_dis=0 OFF**.
+
+For another camera jitter maximum, edit only the selected YAML
+`domain_randomization.random_head_camera_dis`: `0` means OFF,
+`0.005` means random 0..5mm per episode. Keep a separate `save_path`
+for each experiment to avoid mixing existing seed.txt and HDF5.
+Use fixed-camera and randomized-camera datasets separately for a
+controlled comparison before deciding whether the perturbation helps.
+
+**Background assets:** user's original checkout has
+`~/RoboTwin/assets/background_texture/seen`.
+First verify the symlink and actual PNGs in the isolated checkout:
+
+```bash
+cd ~/RoboTwin-tabletop
+ls -ld assets/background_texture
+find assets/background_texture/seen -maxdepth 1 -type f -name '*.png' | head
+test -r assets/background_texture/seen/0.png && echo "Texture 0 available"
+```
+
+The directory may have numbered PNG files but not necessarily `0.png`,
+so `find` is the authoritative existence check. The code now samples
+existing numeric `.png` IDs only. If the original texture directory
+is present, do **not** download the archive again.
+
+If BOTH original and linked dataset are empty, use the project's
+`assets/_download.py` source, dataset
+`https://huggingface.co/datasets/TianxingChen/RoboTwin2.0`,
+download only `background_texture.zip`, and extract under
+`assets/background_texture/{seen,unseen}`. Do not extract over an
+existing symlink to the user's original data without asking.
+
+**Stale seed avoidance:** `demo_so101_pgripper_sweepick_unit_scale_retest`
+uses a new dataset root for testing the newly generated unit-scale
+collision STL; the older baseline will skip because its `seed.txt`
+and episode 0 HDF5 already exist.
