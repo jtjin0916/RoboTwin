@@ -64,11 +64,14 @@ global_trans_matrix:
 - - -1.0
   - 0.0
   - 0.0
-# ISOLATED EXPERIMENT: TurtleBot base_footprint equals SAPIEN World, XYZ metres.
-# Measured SO-101 base positions; zero additional separation in task YAML.
+# ISOLATED EXPERIMENT: fixed TurtleBot base frame at World yaw+90 degrees.
+# The 0.500m translation places the wheels on the table TOP.
+# Table-height randomization is handled by the task, not in this YAML.
+# Measured body-frame SO101 roots: left=(-.060,+.150,.123)m, right=(-.060,-.150,.123)m.
+# At World t_B=(0,-.2539,.500), R_WB=Rz(+90deg), arm poses are:
 robot_pose:
-- [-0.060, 0.150, 0.123, 1.0, 0.0, 0.0, 0.0]
-- [-0.060, -0.150, 0.123, 1.0, 0.0, 0.0, 0.0]
+- [-0.150, -0.3139, 0.623, 0.7071067811865476, 0.0, 0.0, 0.7071067811865476]
+- [0.150, -0.3139, 0.623, 0.7071067811865476, 0.0, 0.0, 0.7071067811865476]
 planner: curobo
 dual_arm: false
 rotate_lim:
@@ -77,10 +80,10 @@ rotate_lim:
 grasp_perfect_direction:
 - right
 - left
-# Head camera pose transformed from the older yaw+90 RoboTwin World.
-# No new physical OS30A extrinsic calibration has been performed.
+# Existing OS30A base-relative extrinsic, transformed with base yaw+90
+# and shifted up 0.500m together with TurtleBot. STILL PROVISIONAL.
 static_camera_list:
 - name: head_camera
-  position: [-0.0330105670803, 0.0220671492958, 0.5129377312368]
-  forward: [0.34918804068007, 0.00446397203236, -0.93704204025204]
-  left: [-0.06336692873382, 0.99781206971943, -0.01886016609344]
+  position: [-0.0220671492958, -0.2869105670803, 1.0129377312368]
+  forward: [-0.00446397203236, 0.34918804068007, -0.93704204025204]
+  left: [-0.99781206971943, -0.06336692873382, -0.01886016609344]

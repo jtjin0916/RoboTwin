@@ -313,8 +313,10 @@ class Base_Task(gym.Env):
             self.table = create_table(
                 self.scene,
                 sapien.Pose(p=[table_xy_bias[0], table_xy_bias[1], table_height]),
-                length=1.2,
-                width=0.7,
+                # Other RoboTwin tasks retain original 1.2x0.7m defaults.
+                # Isolated Sweepick tabletop smoke supplies a larger work surface.
+                length=getattr(self, "table_length", 1.2),
+                width=getattr(self, "table_width", 0.7),
                 height=table_height,
                 thickness=0.05,
                 is_static=True,

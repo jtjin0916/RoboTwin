@@ -44,8 +44,11 @@ robot_cfg:
     lock_joints: null
 planner:
   # Collision support surface top in World. Do not change legacy profile.
-  support_top_world_z: 0.0
-  # Floor obstacle is 0.123m below each SO-101 base. WARNING: no TurtleBot/profiles obstacle yet.
+  support_top_world_z: 0.5
+  # Table TOP is 0.123m below each SO-101 root (world z=.623 vs .500).
+  # Relative cuboid top remains -0.123m (support centre -0.143m).
+  # Physically the SAPIEN tabletop is 2x2m, CuRobo cuboid is a local patch.
+  # WARNING: TurtleBot chassis and profiles are not obstacles in CuRobo.
   support_cuboid_base_frame:
     dims: [0.7, 1.0, 0.04]
     pose: [0.20, 0.0, -0.143, 1.0, 0.0, 0.0, 0.0]
