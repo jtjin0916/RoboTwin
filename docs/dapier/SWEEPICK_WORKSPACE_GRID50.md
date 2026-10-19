@@ -1,5 +1,8 @@
 # Sweepick measured Workspace Grid50 diagnostic
 
+For the denser 10×10 scan, see [Workspace Grid100](SWEEPICK_WORKSPACE_GRID100.md).
+Grid50 remains available with its original output path and ID mapping.
+
 **Status: code authored; actual two-arm SAPIEN tests not yet run.** Prior
 successful 40mm block smoke was only left arm, base (X,Y)=(.18,+.14)m,
 delta_z=.049857m. Do not infer entire workspace or right arm success.
