@@ -61,3 +61,64 @@ Verify correct SAPIEN camera view, table contact and 40mm lift >30mm. Save the l
 5. Hold out spatial cells and test objects; then progressively randomize validated positions, block yaw/shapes, tabletop textures, lighting and calibrated camera noise/extrinsics.
 
 The original top-level measured development branch and earlier Sweepick smoke branch are preserved.
+
+## 2026-10-19: mm mesh → unit-scale STL; table height OFF
+
+The original user-modified `Base_SO101__.stl` is encoded in millimetres.
+The old generator placed `scale="0.001 0.001 0.001"` on visual/collision
+meshes, which can trigger PhysX `Not unit scale [...]`. The **new**
+`scripts/build_sweepick_measured_unit_urdf.py` scales each STL vertex by
+0.001 in the generated binary STL itself. The new URDF references that
+metres STL at **unit scale**. Original P-gripper URDF and existing generated
+millimetre files are preserved.
+
+The first seed's scale failure and later successful seed are observed; this
+fix addresses the suspected failure path, but full SAPIEN validation is still
+needed. The Sweepick seed exception handler now prints its full traceback.
+
+```bash
+cd ~/RoboTwin-tabletop
+git status --short
+git fetch https://github.com/jtjin0916/RoboTwin.git \
+  refs/heads/feature/sweepick-tabletop-world-y-smoke-20261019
+git switch --detach FETCH_HEAD
+~/RoboTwin/venv/bin/python scripts/build_sweepick_measured_unit_urdf.py \
+  --base-stl ~/sweepick_ros2_ws/src/sweepick_description/resources/Base_SO101__.stl
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 ~/RoboTwin/venv/bin/python -m pytest \
+  tests/test_sweepick_measured_contract.py tests/test_sweepick_unit_stl.py -v
+```
+
+The existing baseline smoke config remains unrandomized. All randomized
+profiles **explicitly keep `random_table_height: 0`**: lifting/lowering
+the virtual tabletop jointly with robot/camera/object is nearly invariant in
+base_footprint and is not useful as a grasp-height augmentation.
+
+### Staged single-cube randomization verification
+
+1. `demo_so101_pgripper_sweepick_rand_background`: table/wall textures on;
+   `clean_background_rate=0` so random textures are not discarded.
+2. `demo_so101_pgripper_sweepick_rand_light`: lighting randomization on,
+   crazy-light mode off.
+3. `demo_so101_pgripper_sweepick_rand_camera`: Head camera position jitter
+   from 0 to 5mm, **not camera rotation**.
+4. `demo_so101_pgripper_sweepick_rand_combined`: all three together.
+
+```bash
+for config in \
+  demo_so101_pgripper_sweepick_rand_background \
+  demo_so101_pgripper_sweepick_rand_light \
+  demo_so101_pgripper_sweepick_rand_camera \
+  demo_so101_pgripper_sweepick_rand_combined
+do
+  bash collect_data.sh sweepick_block40_measured "$config" 0 || break
+done
+```
+
+Each config writes separate `data_sweepick_rand_{name}` artifacts so it does
+not reuse the baseline success seeds. Inspect output Head/Wrist videos and
+`LIFT TEST` logs to check both feature activation and manipulation success.
+Randomized object placement/shape and `cluttered_table` remain **off** until
+the measured L/R Workspace Grid has been validated.
+
+**Important:** The fixed 40mm block test is not a randomization success-rate
+benchmark, and full robot collision geometry in CuRobo is still incomplete.

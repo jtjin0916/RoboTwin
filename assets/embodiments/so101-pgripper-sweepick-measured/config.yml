@@ -1,4 +1,4 @@
-urdf_path: ../so101-pgripper/so101_pgripper_sweepick_measured.urdf
+urdf_path: ../so101-pgripper/so101_pgripper_sweepick_unit.urdf
 joint_stiffness: 1000
 joint_damping: 200
 gripper_stiffness: 1000

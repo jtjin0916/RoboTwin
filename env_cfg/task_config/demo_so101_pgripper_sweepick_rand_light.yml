@@ -1,0 +1,46 @@
+# Isolated Sweepick light randomization smoke (table height always fixed).
+# This file does NOT imply that collected actions are at 10Hz yet.
+render_freq: 1
+episode_num: 1
+# Bound smoke failure retries; bulk collection uses the legacy unlimited default.
+max_seed_attempts: 5
+use_seed: false
+save_freq: 15
+embodiment:
+- so101-pgripper-sweepick-measured
+- so101-pgripper-sweepick-measured
+- 0.0
+language_num: 100
+eval_instruction: seen
+domain_randomization:
+  random_background: false
+  cluttered_table: false
+  clean_background_rate: 1
+  random_head_camera_dis: 0
+  random_table_height: 0
+  random_light: true
+  crazy_random_light_rate: 0
+camera:
+  head_camera_type: SWEEPICK_OS30A_CALIBRATED
+  wrist_camera_type: SWEEPICK_WRIST_CALIBRATED
+  collect_head_camera: true
+  collect_wrist_camera: true
+data_type:
+  rgb: true
+  third_view: false
+  depth: true
+  pointcloud: true
+  observer: false
+  endpose: true
+  qpos: true
+  mesh_segmentation: false
+  actor_segmentation: false
+pcd_down_sample_num: 0
+pcd_crop: false
+# The measured task converts saved camera World XYZ to base_footprint XYZ.
+# Keep crop OFF for first smoke inspection; enable only after viewing output.
+sweepick_crop_base: false
+save_path: ./data_sweepick_rand_light
+clear_cache_freq: 5
+collect_data: true
+eval_video_log: true

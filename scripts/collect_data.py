@@ -199,6 +199,8 @@ def run(TASK_ENV, args):
                 print(" -------------")
                 print(f"simulate data episode {suc_num} fail! (seed = {epid})")
                 print("Error: ", e)
+                if str(args.get("task_name", "")).startswith("sweepick_"):
+                    traceback.print_exc()  # show SAPIEN / PhysX error location
                 print(" -------------")
                 fail_num += 1
                 TASK_ENV.close_env()
