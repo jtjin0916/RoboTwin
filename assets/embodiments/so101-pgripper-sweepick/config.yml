@@ -1,0 +1,87 @@
+urdf_path: ../so101-pgripper/so101_pgripper.urdf
+joint_stiffness: 1000
+joint_damping: 200
+gripper_stiffness: 1000
+gripper_damping: 200
+move_group:
+- Gripper_Base_v1_1
+- Gripper_Base_v1_1
+ee_joints:
+- wrist_roll
+- wrist_roll
+arm_joints_name:
+- - shoulder_pan
+  - shoulder_lift
+  - elbow_flex
+  - wrist_flex
+  - wrist_roll
+- - shoulder_pan
+  - shoulder_lift
+  - elbow_flex
+  - wrist_flex
+  - wrist_roll
+gripper_name:
+- base: rev_motor_08
+  mimic:
+  - - rev_motor_08_1
+    - -0.0115
+    - 0.0
+  - - rev_motor_08_2
+    - 0.0115
+    - 0.0
+- base: rev_motor_08
+  mimic:
+  - - rev_motor_08_1
+    - -0.0115
+    - 0.0
+  - - rev_motor_08_2
+    - 0.0115
+    - 0.0
+gripper_bias: 0.08224
+gripper_scale:
+- 2.2028
+- 0.0
+homestate:
+- [-0.0031, -1.5509, 1.5662, -0.0384, -0.0330]
+- [-0.0422, -1.6046, 1.5585, 0.0031, 0.0606]
+delta_matrix:
+- - 0.0
+  - -1.0
+  - 0.0
+- - 1.0
+  - 0.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 1.0
+global_trans_matrix:
+- - 0.0
+  - -1.0
+  - 0.0
+- - 0.0
+  - 0.0
+  - 1.0
+- - -1.0
+  - 0.0
+  - 0.0
+# Handoff SO-101 bases in tb3 base_footprint (-0.0961, +/-0.15, 0.14).
+# RoboTwin base_footprint World=(0,-0.2539,0), yaw +90 degrees.
+# Robot will place arms +/-0.15 in World X via embodiment separation 0.3.
+robot_pose:
+- [0.0, -0.35, 0.14, 0.7071068, 0.0, 0.0, 0.7071068]
+- [0.0, -0.35, 0.14, 0.7071068, 0.0, 0.0, 0.7071068]
+planner: curobo
+dual_arm: false
+rotate_lim:
+- 0.1
+- 0.8
+grasp_perfect_direction:
+- right
+- left
+# Head T_robot_from_camera (OpenCV optical) measured 2026-10-18.
+# SAPIEN camera columns are [forward,left,up] in the World frame.
+static_camera_list:
+- name: head_camera
+  position: [-0.0220671492958, -0.2869105670803, 0.5129377312368]
+  forward: [-0.00446397203236, 0.34918804068007, -0.93704204025204]
+  left: [-0.99781206971943, -0.06336692873382, -0.01886016609344]

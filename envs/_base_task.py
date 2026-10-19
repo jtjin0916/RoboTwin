@@ -117,7 +117,8 @@ class Base_Task(gym.Env):
 
         self.instruction = None  # for Eval
 
-        self.create_table_and_wall(table_xy_bias=table_xy_bias, table_height=0.74)
+        # Default remains the historical tabletop; Sweepick tasks opt in to floor z=0.
+        self.create_table_and_wall(table_xy_bias=table_xy_bias, table_height=float(kwags.get("table_height", 0.74)))
         self.load_robot(**kwags)
         self.load_camera(**kwags)
         self.robot.move_to_homestate()

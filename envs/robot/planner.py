@@ -61,6 +61,8 @@ try:
                     kinematics[key] = str((Path(self.yml_path).resolve().parent / value).resolve())
             robot_config = yml_data["robot_cfg"]
             self.frame_bias = yml_data["planner"]["frame_bias"]
+            # Sweepick floor top is z=0.0; legacy RoboTwin still defaults to 0.74.
+            support_top_world_z = float(yml_data["planner"].get("support_top_world_z", 0.74))
 
             # motion generation
             if True:
@@ -71,7 +73,7 @@ try:
                             "pose": [
                                 self.robot_origion_pose.p[1],
                                 0.0,
-                                0.74 - self.robot_origion_pose.p[2],
+                                support_top_world_z - self.robot_origion_pose.p[2],
                                 1,
                                 0,
                                 0,

@@ -23,3 +23,17 @@ OS30A:
   h: 460
   near: 0.2
   far: 2.5
+
+# Sweepick handoff 2026-10-19: Head depth measured K implies fovy≈58.7°.
+# SAPIEN's fovy camera still assumes a centred principal point; real cx/cy differ.
+SWEEPICK_OS30A_CALIBRATED:
+  fovy: 58.7
+  w: 640
+  h: 460
+  near: 0.2
+  far: 2.5
+
+SWEEPICK_WRIST_CALIBRATED:
+  fovy: 30.391880343267804
+  w: 320
+  h: 240
