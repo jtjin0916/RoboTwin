@@ -1,0 +1,12 @@
+{
+  "method": "OpenCascade BRep Boolean intersection and minimum distance, independently probed both yaw candidates; reproduce with tools/sweepick_camera_candidate/fit_probe.py",
+  "status": "geometry_candidates_not_physical_assembly_confirmation",
+  "results": [
+    {"top_yaw_deg":0,"seating_delta_mm":0,"interference_mm3":0.0,"minimum_distance_mm":2.842170943040401e-14},
+    {"top_yaw_deg":0,"seating_delta_mm":-0.15,"interference_mm3":97.3423453859224,"minimum_distance_mm":0.0},
+    {"top_yaw_deg":0,"seating_delta_mm":0.15,"interference_mm3":0.0,"minimum_distance_mm":0.14802307274650417},
+    {"top_yaw_deg":180,"seating_delta_mm":0,"interference_mm3":0.0,"minimum_distance_mm":2.842170943040401e-14},
+    {"top_yaw_deg":180,"seating_delta_mm":-0.15,"interference_mm3":97.34232976561584,"minimum_distance_mm":0.0},
+    {"top_yaw_deg":180,"seating_delta_mm":0.15,"interference_mm3":0.0,"minimum_distance_mm":0.14797454688230616}
+  ]
+}

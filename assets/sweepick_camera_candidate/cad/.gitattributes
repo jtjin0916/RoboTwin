@@ -1,0 +1,2 @@
+# Preserve original uploaded STEP bytes, including CRLF, for SHA256 provenance.
+*.step binary

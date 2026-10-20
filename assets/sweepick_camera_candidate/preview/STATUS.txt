@@ -1,0 +1,2 @@
+CANDIDATE ONLY. Assembly, optical extrinsic, full robot collisions require review.
+No optical TF or SAPIEN extrinsic is emitted without supplied optical calibration.

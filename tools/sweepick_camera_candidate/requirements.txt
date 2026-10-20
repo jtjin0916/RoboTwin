@@ -1,0 +1,6 @@
+cadquery==2.8.0
+trimesh==5.1.1
+numpy>=1.26
+PyYAML>=6
+xacro==2.1.1
+pytest>=8

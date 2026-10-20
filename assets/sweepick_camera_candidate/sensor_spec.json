@@ -1,0 +1,39 @@
+{
+  "model": "YDLIDAR OS30A",
+  "source": "https://static.generation-robots.com/media/depth-camera-ydlidar-os30a-datasheet.pdf",
+  "document": "EAI DOC 01.13.00A100, V1.0, 2022-09-01, manufacturer-authored distributor mirror",
+  "official_download_attempt": "https://www.ydlidar.com/service_support.html returned HTTP 404 on 2026-10-20",
+  "dimensions_m": {
+    "length": 0.09,
+    "depth": 0.0255,
+    "height": 0.025
+  },
+  "depth_modes": [
+    [
+      1280,
+      920
+    ],
+    [
+      640,
+      460
+    ]
+  ],
+  "nominal_hfov_deg": 78,
+  "nominal_vfov_deg": 60,
+  "fov_tolerance_deg": 3,
+  "depth_range_m": [
+    0.2,
+    2.5
+  ],
+  "interface": "USB 2.0 Type-C with screw lock",
+  "rear_attachment": "2 M3 depth 3 mm, centres 45 mm apart; Fig 5",
+  "other_attachment": "Fig 5 also shows a 34 mm pair and end-view M3 pair; view-to-body correspondence must be checked on hardware",
+  "components": "2 IR cameras, 1 dot projector, depth processor; no RGB sensor listed",
+  "optical_baseline_m": 0.045,
+  "optical_origin_from_body_m": null,
+  "depth_reference_camera": null,
+  "rectification_frame_rotation": null,
+  "intrinsic_K": null,
+  "note": "FOV is not calibrated K. Body rear midpoint, front face and left/right lens locations are distinct from the SDK depth projection origin.",
+  "source_pdf_sha256": "efaf9d1590c28539f7ba69d7e434f641ac318293be672fc3bd48672e217d96b9"
+}

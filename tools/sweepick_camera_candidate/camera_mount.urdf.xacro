@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- CANDIDATE: normalized metre meshes, shoulder seating, long bottom edge along X.
+       Camera link is rear body datum on proposed attachment face; optical TF omitted.
+       Use build.py + reviewed calibration to generate optical TF. -->
+  <xacro:macro name="sweepick_camera_mount_candidate" params="parent prefix mesh_dir mount_yaw:=0 top_yaw:=0 seating_delta:=0">
+    <link name="${prefix}mount_bottom">
+      <visual><geometry><mesh filename="${mesh_dir}/MOUNTBOTTM2_0_m.stl" scale="1 1 1"/></geometry></visual>
+      <collision><geometry><mesh filename="${mesh_dir}/MOUNTBOTTM2_0_m.stl" scale="1 1 1"/></geometry></collision>
+    </link>
+    <joint name="${prefix}mount_bottom_joint" type="fixed"><parent link="${parent}"/><child link="${prefix}mount_bottom"/><origin xyz="-0.060 0 0.123" rpy="0 0 ${mount_yaw}"/></joint>
+    <link name="${prefix}mount_top">
+      <visual><geometry><mesh filename="${mesh_dir}/cam_mount_top2_0_m.stl" scale="1 1 1"/></geometry></visual>
+      <visual><geometry><mesh filename="${mesh_dir}/cam_mount_top2_1_m.stl" scale="1 1 1"/></geometry></visual>
+      <collision><geometry><mesh filename="${mesh_dir}/cam_mount_top2_0_m.stl" scale="1 1 1"/></geometry></collision>
+      <collision><geometry><mesh filename="${mesh_dir}/cam_mount_top2_1_m.stl" scale="1 1 1"/></geometry></collision>
+    </link>
+    <joint name="${prefix}mount_top_joint" type="fixed"><parent link="${prefix}mount_bottom"/><child link="${prefix}mount_top"/><origin xyz="0 0 ${0.223712455749511 + seating_delta}" rpy="0 0 ${top_yaw}"/></joint>
+    <link name="${prefix}camera_link">
+      <visual><origin xyz="0.01275 0 0"/><geometry><box size="0.0255 0.09 0.025"/></geometry></visual>
+      <collision><origin xyz="0.01275 0 0"/><geometry><box size="0.0255 0.09 0.025"/></geometry></collision>
+    </link>
+    <joint name="${prefix}camera_body_joint" type="fixed"><parent link="${prefix}mount_top"/><child link="${prefix}camera_link"/><origin xyz="0.02369738224671755 0.0001870002746582 0.16817842666893002" rpy="0 1.1344640137963142 0"/></joint>
+  </xacro:macro>
+</robot>

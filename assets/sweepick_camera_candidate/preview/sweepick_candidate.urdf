@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="sweepick_camera_CANDIDATE">
+  <link name="base_footprint" />
+  <link name="mount_bottom">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/MOUNTBOTTM2_0_m.stl" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/MOUNTBOTTM2_0_m.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="mount_top">
+    <visual>
+      <geometry>
+        <mesh filename="meshes/cam_mount_top2_0_m.stl" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/cam_mount_top2_0_m.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/cam_mount_top2_1_m.stl" scale="1 1 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/cam_mount_top2_1_m.stl" scale="1 1 1" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mount_bottom_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="mount_bottom" />
+    <origin xyz="-0.06 0 0.123" rpy="0 0 0" />
+  </joint>
+  <joint name="mount_top_joint" type="fixed">
+    <parent link="mount_bottom" />
+    <child link="mount_top" />
+    <origin xyz="0 0 0.223712455749511" rpy="0 0 0" />
+  </joint>
+  <link name="camera_link">
+    <visual>
+      <origin xyz=".01275 0 0" />
+      <geometry>
+        <box size=".0255 .09 .025" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz=".01275 0 0" />
+      <geometry>
+        <box size=".0255 .09 .025" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_body_joint" type="fixed">
+    <parent link="mount_top" />
+    <child link="camera_link" />
+    <origin xyz="0.0236973822467175 0.0001870002746582 0.16817842666893" rpy="0 1.13446401379631 0" />
+  </joint>
+</robot>
