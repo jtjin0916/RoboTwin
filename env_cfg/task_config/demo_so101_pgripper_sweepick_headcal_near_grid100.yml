@@ -1,0 +1,51 @@
+# Isolated fixed-headcal X15cm Grid100 diagnostic; no training data saved.
+# Sweepick 2026-10-19 handoff: isolated 40mm 2x2m virtual-floor tabletop block smoke; base yaw+90deg.
+# This file does NOT imply that collected actions are at 10Hz yet.
+render_freq: 0
+episode_num: 1
+# Bound smoke failure retries; bulk collection uses the legacy unlimited default.
+max_seed_attempts: 1
+use_seed: false
+save_freq: 15
+embodiment:
+- so101-pgripper-sweepick-measured
+- so101-pgripper-sweepick-measured
+- 0.0
+language_num: 100
+eval_instruction: seen
+domain_randomization:
+  random_background: false
+  cluttered_table: false
+  clean_background_rate: 1
+  random_head_camera_dis: 0  # Fixed nominal OS30A extrinsic
+  random_table_height: 0
+  random_light: false
+  crazy_random_light_rate: 0
+camera:
+  head_camera_type: SWEEPICK_OS30A_CALIBRATED
+  wrist_camera_type: SWEEPICK_WRIST_CALIBRATED
+  collect_head_camera: true
+  collect_wrist_camera: false
+data_type:
+  rgb: false
+  third_view: false
+  depth: true
+  pointcloud: true
+  observer: false
+  endpose: true
+  qpos: true
+  mesh_segmentation: false
+  actor_segmentation: false
+pcd_down_sample_num: 0
+pcd_crop: false
+# The measured task converts saved camera World XYZ to base_footprint XYZ.
+# New task crop X minimum is .13m; visibility and collision safety NOT guaranteed.
+sweepick_crop_base: true
+save_path: ./data_sweepick_headcal_near_grid100
+clear_cache_freq: 5
+collect_data: false
+eval_video_log: false
+
+# Fixed baseline first; choose measured perturbation bounds only after validation.
+sweepick_head_translation_dr_m: 0
+sweepick_head_rotation_dr_deg: 0
