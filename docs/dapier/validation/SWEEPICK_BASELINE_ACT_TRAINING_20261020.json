@@ -1,0 +1,100 @@
+{
+  "synthetic_fixture": false,
+  "compact_smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "loss": 0.8217907652258873,
+        "l1": 0.8011071562767029,
+        "kl": 2.0683602929115295
+      },
+      "val": {
+        "loss": 0.6110530420281421,
+        "l1": 0.6043477922792179,
+        "kl": 0.670524958449762
+      },
+      "val_prior_l1": 0.6043384759133803,
+      "optimizer_steps": 20
+    },
+    {
+      "epoch": 2,
+      "train": {
+        "loss": 0.6054354637861252,
+        "l1": 0.6021509081125259,
+        "kl": 0.3284556955099106
+      },
+      "val": {
+        "loss": 0.5507488849062573,
+        "l1": 0.549099842707316,
+        "kl": 0.1649041268332251
+      },
+      "val_prior_l1": 0.5491092522482306,
+      "optimizer_steps": 20
+    },
+    {
+      "epoch": 3,
+      "train": {
+        "loss": 0.6425242736935616,
+        "l1": 0.6413971856236458,
+        "kl": 0.1127091720700264
+      },
+      "val": {
+        "loss": 0.5478944390212895,
+        "l1": 0.5469830955353733,
+        "kl": 0.09113427459965263
+      },
+      "val_prior_l1": 0.5469768381895234,
+      "optimizer_steps": 20
+    }
+  ],
+  "manifest_sha256": "a51c25695e79f6e573e22089d3df5a5eb3e607beece3da7785006baea7c4b35d",
+  "model_config": {
+    "qpos_dim": 12,
+    "action_dim": 12,
+    "chunk_size": 20,
+    "hidden_dim": 256,
+    "latent_dim": 32,
+    "num_point_samples": 512,
+    "candidate_points": 8192,
+    "point_min": [
+      0.1300000101327896,
+      -0.20414578914642334,
+      0.005002260208129883
+    ],
+    "point_max": [
+      0.3199906051158905,
+      0.20187489688396454,
+      0.369218111038208
+    ],
+    "nheads": 8,
+    "encoder_layers": 4,
+    "decoder_layers": 4,
+    "ff_dim": 1024,
+    "dropout": 0.0,
+    "pretrained_wrist_backbone": false
+  },
+  "closed_loop_evaluated": false,
+  "note": "Posterior CVAE loss and prior(z=0) L1 are offline checks, not task success.",
+  "episode_splits": {
+    "train": [
+      "baseline_runs_gpu/episodes1/train/episode_0000.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0001.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0002.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0003.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0004.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0005.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0006.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0007.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0008.hdf5",
+      "baseline_runs_gpu/episodes1/train/episode_0009.hdf5"
+    ],
+    "val": [
+      "baseline_runs_gpu/episodes1/val/episode_0010.hdf5",
+      "baseline_runs_gpu/episodes1/val/episode_0011.hdf5",
+      "baseline_runs_gpu/episodes1/val/episode_0012.hdf5",
+      "baseline_runs_gpu/episodes1/val/episode_0013.hdf5"
+    ],
+    "test": []
+  }
+}

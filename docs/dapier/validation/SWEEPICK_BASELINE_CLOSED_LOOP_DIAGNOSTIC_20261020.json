@@ -1,0 +1,130 @@
+{
+  "policy_sha256": "74bfb384756f990b52dc3179545c224f9c7f2621ee9b3c07f8a489fd221b5d93",
+  "fingerprint": "5a60cf02517307b39448dc9b175eb786bba9dd90a5e9e28e128de50090dccf2f",
+  "inference": "ACT prior z=0, first chunk action; closed loop 10Hz",
+  "evaluation_code_sha256": "40a7c63467f0fece0c8032f90c25885e6b2c44f3020e08998a9910cb6583e320",
+  "timeout_sim_seconds": 30.0,
+  "attempts": [
+    {
+      "point_id": "between09_19",
+      "arm": "left",
+      "xy": [
+        0.15777777777777777,
+        0.15
+      ],
+      "seed": 2330000,
+      "success": false,
+      "lift_success": false,
+      "stow_reached": false,
+      "hold_steps": 0,
+      "hold_valid": true,
+      "failure_stage": "command_guard",
+      "error": "left joint path exceeds measured/model limits",
+      "policy_tick": 0,
+      "physics_steps": 0,
+      "command_violations": [
+        {
+          "arm": "left",
+          "joint": "shoulder_lift",
+          "command_rad": -1.9410011768341064,
+          "min_rad": -1.7453299760818481,
+          "max_rad": 1.7453299760818481
+        }
+      ]
+    },
+    {
+      "point_id": "between25_35",
+      "arm": "left",
+      "xy": [
+        0.18888888888888888,
+        0.016666666666666663
+      ],
+      "seed": 2330001,
+      "success": false,
+      "lift_success": false,
+      "stow_reached": false,
+      "hold_steps": 0,
+      "hold_valid": true,
+      "failure_stage": "command_guard",
+      "error": "left joint path exceeds measured/model limits",
+      "policy_tick": 0,
+      "physics_steps": 0,
+      "command_violations": [
+        {
+          "arm": "left",
+          "joint": "shoulder_lift",
+          "command_rad": -1.9504001140594482,
+          "min_rad": -1.7453299760818481,
+          "max_rad": 1.7453299760818481
+        }
+      ]
+    },
+    {
+      "point_id": "between01_11",
+      "arm": "right",
+      "xy": [
+        0.15777777777777777,
+        -0.11666666666666667
+      ],
+      "seed": 2330002,
+      "success": false,
+      "lift_success": false,
+      "stow_reached": false,
+      "hold_steps": 0,
+      "hold_valid": true,
+      "failure_stage": "command_guard",
+      "error": "left joint path exceeds measured/model limits",
+      "policy_tick": 0,
+      "physics_steps": 0,
+      "command_violations": [
+        {
+          "arm": "left",
+          "joint": "shoulder_lift",
+          "command_rad": -1.9394153356552124,
+          "min_rad": -1.7453299760818481,
+          "max_rad": 1.7453299760818481
+        }
+      ]
+    },
+    {
+      "point_id": "between11_21",
+      "arm": "right",
+      "xy": [
+        0.17333333333333334,
+        -0.11666666666666667
+      ],
+      "seed": 2330003,
+      "success": false,
+      "lift_success": false,
+      "stow_reached": false,
+      "hold_steps": 0,
+      "hold_valid": true,
+      "failure_stage": "command_guard",
+      "error": "left joint path exceeds measured/model limits",
+      "policy_tick": 0,
+      "physics_steps": 0,
+      "command_violations": [
+        {
+          "arm": "left",
+          "joint": "shoulder_lift",
+          "command_rad": -1.942170262336731,
+          "min_rad": -1.7453299760818481,
+          "max_rad": 1.7453299760818481
+        }
+      ]
+    }
+  ],
+  "successes": 0,
+  "total": 4,
+  "success_rate": 0.0,
+  "per_arm": {
+    "left": {
+      "successes": 0,
+      "total": 2
+    },
+    "right": {
+      "successes": 0,
+      "total": 2
+    }
+  }
+}

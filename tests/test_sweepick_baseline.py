@@ -168,3 +168,22 @@ def test_failed_episodes_preserved_but_never_trained(tmp_path):
     splits=episode_splits(root,m,allow_synthetic=True)
     assert path.exists() and path not in splits['train']
     with pytest.raises(FileExistsError):EpisodeWriter(path,{})
+
+
+def test_closed_loop_guard_preserves_rejected_action_trace(monkeypatch):
+    import scripts.eval_sweepick_baseline as ev
+    a=np.zeros(12);a[2]=1.8
+    monkeypatch.setattr(ev,'policy_action',lambda *args:(a,np.zeros(12)))
+    class Task:
+        initial_z=0.;success=False
+        object=SimpleNamespace(get_pose=lambda:SimpleNamespace(p=np.array([0,0,.02])))
+        def __init__(self):
+            self.scene=SimpleNamespace(dt=.004,tick=0,step=lambda:None)
+            self.robot=SimpleNamespace(left_gripper_scale=[2.2028,0.],right_gripper_scale=[2.2028,0.])
+        def begin_baseline(self):self.metrics=dict(lift_success=False)
+        def arm_limits(self,arm):return np.array([[-10,10]]*5)
+    metrics,trace=ev.rollout(Task(),None,None,None,'cpu',3)
+    assert metrics['failure_stage']=='command_guard' and not metrics['success']
+    assert metrics['physics_steps']==0
+    assert metrics['command_violations'][0]['joint']=='elbow_flex'
+    assert len(trace)==1 and trace[0]['action'][2]==1.8 and not trace[0]['applied']

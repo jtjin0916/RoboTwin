@@ -1,0 +1,215 @@
+{
+  "source": "actual_simulated_expert",
+  "episodes": [
+    {
+      "file": "episode_0000.hdf5",
+      "point_id": "grid05",
+      "arm": "left",
+      "frames": 65,
+      "physics_steps": 1603,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5418058633804321,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -1.620999813079834,
+        0.709197461605072,
+        0.060600001364946365,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0001.hdf5",
+      "point_id": "grid26",
+      "arm": "left",
+      "frames": 65,
+      "physics_steps": 1615,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.54436194896698,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -1.620999813079834,
+        0.4881190359592438,
+        0.060600001364946365,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0002.hdf5",
+      "point_id": "grid46",
+      "arm": "left",
+      "frames": 66,
+      "physics_steps": 1647,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5420855283737183,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -1.620999813079834,
+        0.4268352687358856,
+        0.060600001364946365,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0003.hdf5",
+      "point_id": "grid59",
+      "arm": "left",
+      "frames": 66,
+      "physics_steps": 1637,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5439056158065796,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -1.620999813079834,
+        0.00018963146430905908,
+        0.060600001364946365,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0004.hdf5",
+      "point_id": "grid79",
+      "arm": "left",
+      "frames": 67,
+      "physics_steps": 1674,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5456753969192505,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -1.620999813079834,
+        0.000258906016824767,
+        0.060600001364946365,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0005.hdf5",
+      "point_id": "grid00",
+      "arm": "right",
+      "frames": 65,
+      "physics_steps": 1608,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5450317859649658,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -0.032999999821186066,
+        -0.032999999821186066,
+        -1.510599970817566,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0006.hdf5",
+      "point_id": "grid22",
+      "arm": "right",
+      "frames": 66,
+      "physics_steps": 1627,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5443848371505737,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -0.032999999821186066,
+        -0.032999999821186066,
+        -1.510599970817566,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0007.hdf5",
+      "point_id": "grid41",
+      "arm": "right",
+      "frames": 66,
+      "physics_steps": 1627,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5454699993133545,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -0.032999999821186066,
+        -0.032999999821186066,
+        -1.510599970817566,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0008.hdf5",
+      "point_id": "grid53",
+      "arm": "right",
+      "frames": 67,
+      "physics_steps": 1662,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5406529903411865,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -0.032999999821186066,
+        -0.032999999821186066,
+        -1.510599970817566,
+        0.060600001364946365
+      ],
+      "task_success": true
+    },
+    {
+      "file": "episode_0009.hdf5",
+      "point_id": "grid72",
+      "arm": "right",
+      "frames": 69,
+      "physics_steps": 1701,
+      "depth_shape": [
+        460,
+        640
+      ],
+      "max_q_command_abs_diff_rad": 0.5423743724822998,
+      "sensor_dense_q_equal": true,
+      "sensor_dense_action_equal": true,
+      "wrist_command_minmax": [
+        -0.032999999821186066,
+        -0.032999999821186066,
+        -1.510599970817566,
+        0.060600001364946365
+      ],
+      "task_success": true
+    }
+  ]
+}

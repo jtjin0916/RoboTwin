@@ -1,0 +1,64 @@
+{
+  "policy_sha256": "74bfb384756f990b52dc3179545c224f9c7f2621ee9b3c07f8a489fd221b5d93",
+  "fingerprint": "5a60cf02517307b39448dc9b175eb786bba9dd90a5e9e28e128de50090dccf2f",
+  "inference": "ACT prior z=0, first chunk action; closed loop 10Hz",
+  "attempts": [
+    {
+      "point_id": "between09_19",
+      "arm": "left",
+      "xy": [
+        0.15777777777777777,
+        0.15
+      ],
+      "seed": 2330000,
+      "success": false,
+      "error": "ValueError: left joint path exceeds measured/model limits"
+    },
+    {
+      "point_id": "between25_35",
+      "arm": "left",
+      "xy": [
+        0.18888888888888888,
+        0.016666666666666663
+      ],
+      "seed": 2330001,
+      "success": false,
+      "error": "ValueError: left joint path exceeds measured/model limits"
+    },
+    {
+      "point_id": "between01_11",
+      "arm": "right",
+      "xy": [
+        0.15777777777777777,
+        -0.11666666666666667
+      ],
+      "seed": 2330002,
+      "success": false,
+      "error": "ValueError: left joint path exceeds measured/model limits"
+    },
+    {
+      "point_id": "between11_21",
+      "arm": "right",
+      "xy": [
+        0.17333333333333334,
+        -0.11666666666666667
+      ],
+      "seed": 2330003,
+      "success": false,
+      "error": "ValueError: left joint path exceeds measured/model limits"
+    }
+  ],
+  "successes": 0,
+  "total": 4,
+  "success_rate": 0.0,
+  "per_arm": {
+    "left": {
+      "successes": 0,
+      "total": 2
+    },
+    "right": {
+      "successes": 0,
+      "total": 2
+    }
+  }
+}

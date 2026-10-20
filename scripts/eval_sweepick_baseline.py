@@ -11,8 +11,27 @@ import torch
 from dapier_act.model_multimodal import DapierACTMultimodal
 from dapier_act.pointcloud_preprocess import sample_task_points
 from sweepick_baseline.capture import robot_vectors
-from sweepick_baseline.contract import SEEDS, canonical_hash, digest, validate_manifest, validate_path
+from sweepick_baseline.contract import SEEDS, canonical_hash, digest, validate_manifest, validate_path, REAL_LIMITS
 from scripts.collect_sweepick_baseline import fingerprint, runtime_config
+
+
+JOINT_NAMES=('shoulder_pan','shoulder_lift','elbow_flex','wrist_flex','wrist_roll')
+
+
+def command_violations(task, action):
+    result=[]
+    for arm,off in [('left',0),('right',6)]:
+        bounds=REAL_LIMITS[arm].copy();model_bounds=task.arm_limits(arm)
+        bounds[:,0]=np.maximum(bounds[:,0],model_bounds[:,0])
+        bounds[:,1]=np.minimum(bounds[:,1],model_bounds[:,1])
+        for j,name in enumerate(JOINT_NAMES):
+            value=float(action[off+j]);lo,hi=map(float,bounds[j])
+            if value<lo-1e-6 or value>hi+1e-6:
+                result.append(dict(arm=arm,joint=name,command_rad=value,min_rad=lo,max_rad=hi))
+        lo,hi=sorted(getattr(task.robot,arm+'_gripper_scale'));value=float(action[off+5])
+        if value<lo-1e-6 or value>hi+1e-6:
+            result.append(dict(arm=arm,joint='gripper_motor',command_rad=value,min_rad=lo,max_rad=hi))
+    return result
 
 
 def apply_action(task, action):
@@ -62,11 +81,18 @@ def rollout(task, model, stats, config, device, seconds):
         raise ValueError('50Hz executor not divisible by physics dt')
     for tick in range(math.ceil(seconds*10)):
         a,q=policy_action(model,stats,config,task,device)
-        trace.append(dict(t=tick*.1,q=q.tolist(),action=a.tolist(),block_world_xyz=task.object.get_pose().p.tolist()))
+        trace.append(dict(t=tick*.1,q=q.tolist(),action=a.tolist(),block_world_xyz=task.object.get_pose().p.tolist(),applied=False))
         # Re-infer at 10Hz, update command at 50Hz, step physics at actual dt.
         for _ in range(5):
-            apply_action(task,a)
+            try:
+                apply_action(task,a)
+            except ValueError as exc:
+                task.metrics.update(success=False,failure_stage='command_guard',error=str(exc),
+                    policy_tick=tick,physics_steps=getattr(task.scene,'tick',getattr(task,'steps',None)),
+                    command_violations=command_violations(task,a))
+                return task.metrics,trace
             for _ in range(physics_per_executor):task.scene.step()
+        trace[-1]['applied']=True
         if streak*task.scene.dt>=2.:
             task.success=True;break
     task.metrics.update(success=task.success,control_hz=10,executor_hz=50,
@@ -97,7 +123,9 @@ def main():
     a.out.mkdir(parents=True,exist_ok=False)
     from envs.sweepick_block40_act_baseline import sweepick_block40_act_baseline
     cfg=runtime_config(a.profile);report=dict(policy_sha256=digest(a.checkpoint),fingerprint=sig,
-                                            inference='ACT prior z=0, first chunk action; closed loop 10Hz',attempts=[])
+                                            inference='ACT prior z=0, first chunk action; closed loop 10Hz',
+                                            evaluation_code_sha256=digest(Path(__file__)),
+                                            timeout_sim_seconds=a.seconds,attempts=[])
     for index,point in enumerate(m['splits']['test']):
         task=None;trace=[];row=dict(point_id=point['id'],arm=point['arm'],xy=point['xy'],
                                   seed=SEEDS['test']+2000000+index,success=False)
