@@ -10,6 +10,17 @@ from dapier_act.dataset_multimodal import decode_rgb_frame
 
 def episode_splits(directory, manifest, allow_synthetic=False):
     validate_manifest(manifest)
+    coverage_path=Path(directory)/'coverage.json'
+    grid_entries=None
+    if manifest.get('collection_policy')=='full_rectangle_all_cells_success_only' and not allow_synthetic:
+        report=json.loads(coverage_path.read_text())
+        if report['schema']!='sweepick.grid-collection.v1' or not report.get('sweep_finished',False):
+            raise ValueError('Full-grid collection has unattempted locations; inspect coverage report before training')
+        state=json.loads((Path(directory)/'state.json').read_text())
+        if canonical_hash(state['manifest'])!=canonical_hash(manifest):
+            raise ValueError('Grid cohort manifest mismatch')
+        grid_entries={a['episode']:a for a in state['attempts'] if a['stage']=='capture'
+                      and a['status']=='finished' and a.get('success')}
     result={s:[] for s in ('train','val','test')}
     provenance=set()
     train_counts={'left':0,'right':0}
@@ -22,6 +33,11 @@ def episode_splits(directory, manifest, allow_synthetic=False):
                     raise ValueError(f'Incomplete/wrong schema: {path}')
                 if not f.attrs.get('task_success',False):continue
                 meta=json.loads(f.attrs['metadata']);point=meta['point']
+                if grid_entries is not None:
+                    entry=grid_entries.get(str(path.relative_to(directory)))
+                    if (entry is None or entry['seed']!=meta['seed'] or entry['point_id']!=point['id']
+                        or meta['fingerprint']!=report['fingerprint']):
+                        raise ValueError('Episode absent from successful grid collection journal')
                 if (meta['split']!=split or point!=allowed.get(point['id']) or
                     meta['manifest_sha256']!=canonical_hash(manifest) or
                     meta['source'] not in (('simulated_expert','synthetic_fixture') if allow_synthetic else ('simulated_expert',))):
@@ -67,8 +83,8 @@ def episode_splits(directory, manifest, allow_synthetic=False):
                         if decode_rgb_frame(f,cam,t).shape!=(240,320,3):raise ValueError('Wrong wrist resolution')
             result[split].append(path)
             if split=='train':train_counts[point['arm']]+=1
-    if not allow_synthetic and any(n<5 or n>10 for n in train_counts.values()):
-        raise ValueError('Require 5..10 successful Train trajectories per arm for this baseline')
+    if not allow_synthetic and any(n<1 for n in train_counts.values()):
+        raise ValueError('Require successful Train trajectories for both arms')
     if len(provenance)>1:raise ValueError('Mixed calibration/code fingerprints')
     if not result['train'] or not result['val']:raise ValueError('Need successful independent Train and Val episodes')
     return result

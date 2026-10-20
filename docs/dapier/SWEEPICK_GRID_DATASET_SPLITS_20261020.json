@@ -1,0 +1,1307 @@
+{
+  "schema": "sweepick-baseline-v1",
+  "source_csv_sha256": "50cc4b29af5b4a2bdac0213616cd608165c8946f5044a16fb3029849cbf2b292",
+  "source_summary": {
+    "attempts": 300,
+    "lift": 186,
+    "success_cells": 62,
+    "failure_cells": 38
+  },
+  "yaw_rad": 0,
+  "table_world_xy": [
+    0,
+    -0.25
+  ],
+  "seeds": {
+    "train": 110000,
+    "val": 220000,
+    "test": 330000
+  },
+  "splits": {
+    "train": [
+      {
+        "id": "grid00",
+        "grid_id": 0,
+        "xy": [
+          0.15,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid01",
+        "grid_id": 1,
+        "xy": [
+          0.15,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid02",
+        "grid_id": 2,
+        "xy": [
+          0.15,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid03",
+        "grid_id": 3,
+        "xy": [
+          0.15,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid04",
+        "grid_id": 4,
+        "xy": [
+          0.15,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid05",
+        "grid_id": 5,
+        "xy": [
+          0.15,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid06",
+        "grid_id": 6,
+        "xy": [
+          0.15,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid07",
+        "grid_id": 7,
+        "xy": [
+          0.15,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid08",
+        "grid_id": 8,
+        "xy": [
+          0.15,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid09",
+        "grid_id": 9,
+        "xy": [
+          0.15,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid10",
+        "grid_id": 10,
+        "xy": [
+          0.16555555555555554,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid11",
+        "grid_id": 11,
+        "xy": [
+          0.16555555555555554,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid12",
+        "grid_id": 12,
+        "xy": [
+          0.16555555555555554,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid13",
+        "grid_id": 13,
+        "xy": [
+          0.16555555555555554,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid14",
+        "grid_id": 14,
+        "xy": [
+          0.16555555555555554,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid15",
+        "grid_id": 15,
+        "xy": [
+          0.16555555555555554,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid16",
+        "grid_id": 16,
+        "xy": [
+          0.16555555555555554,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid17",
+        "grid_id": 17,
+        "xy": [
+          0.16555555555555554,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid18",
+        "grid_id": 18,
+        "xy": [
+          0.16555555555555554,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid19",
+        "grid_id": 19,
+        "xy": [
+          0.16555555555555554,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid20",
+        "grid_id": 20,
+        "xy": [
+          0.1811111111111111,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid21",
+        "grid_id": 21,
+        "xy": [
+          0.1811111111111111,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid22",
+        "grid_id": 22,
+        "xy": [
+          0.1811111111111111,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid23",
+        "grid_id": 23,
+        "xy": [
+          0.1811111111111111,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid24",
+        "grid_id": 24,
+        "xy": [
+          0.1811111111111111,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid25",
+        "grid_id": 25,
+        "xy": [
+          0.1811111111111111,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid26",
+        "grid_id": 26,
+        "xy": [
+          0.1811111111111111,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid27",
+        "grid_id": 27,
+        "xy": [
+          0.1811111111111111,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid28",
+        "grid_id": 28,
+        "xy": [
+          0.1811111111111111,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid29",
+        "grid_id": 29,
+        "xy": [
+          0.1811111111111111,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid30",
+        "grid_id": 30,
+        "xy": [
+          0.19666666666666666,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid31",
+        "grid_id": 31,
+        "xy": [
+          0.19666666666666666,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid32",
+        "grid_id": 32,
+        "xy": [
+          0.19666666666666666,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid33",
+        "grid_id": 33,
+        "xy": [
+          0.19666666666666666,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid34",
+        "grid_id": 34,
+        "xy": [
+          0.19666666666666666,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid35",
+        "grid_id": 35,
+        "xy": [
+          0.19666666666666666,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid36",
+        "grid_id": 36,
+        "xy": [
+          0.19666666666666666,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid37",
+        "grid_id": 37,
+        "xy": [
+          0.19666666666666666,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid38",
+        "grid_id": 38,
+        "xy": [
+          0.19666666666666666,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid39",
+        "grid_id": 39,
+        "xy": [
+          0.19666666666666666,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid40",
+        "grid_id": 40,
+        "xy": [
+          0.2122222222222222,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid41",
+        "grid_id": 41,
+        "xy": [
+          0.2122222222222222,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid42",
+        "grid_id": 42,
+        "xy": [
+          0.2122222222222222,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid43",
+        "grid_id": 43,
+        "xy": [
+          0.2122222222222222,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid44",
+        "grid_id": 44,
+        "xy": [
+          0.2122222222222222,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid45",
+        "grid_id": 45,
+        "xy": [
+          0.2122222222222222,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid46",
+        "grid_id": 46,
+        "xy": [
+          0.2122222222222222,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid47",
+        "grid_id": 47,
+        "xy": [
+          0.2122222222222222,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid48",
+        "grid_id": 48,
+        "xy": [
+          0.2122222222222222,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid49",
+        "grid_id": 49,
+        "xy": [
+          0.2122222222222222,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid50",
+        "grid_id": 50,
+        "xy": [
+          0.22777777777777775,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid51",
+        "grid_id": 51,
+        "xy": [
+          0.22777777777777775,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid52",
+        "grid_id": 52,
+        "xy": [
+          0.22777777777777775,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid53",
+        "grid_id": 53,
+        "xy": [
+          0.22777777777777775,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid54",
+        "grid_id": 54,
+        "xy": [
+          0.22777777777777775,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid55",
+        "grid_id": 55,
+        "xy": [
+          0.22777777777777775,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid56",
+        "grid_id": 56,
+        "xy": [
+          0.22777777777777775,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid57",
+        "grid_id": 57,
+        "xy": [
+          0.22777777777777775,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid58",
+        "grid_id": 58,
+        "xy": [
+          0.22777777777777775,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid59",
+        "grid_id": 59,
+        "xy": [
+          0.22777777777777775,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid60",
+        "grid_id": 60,
+        "xy": [
+          0.24333333333333332,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid61",
+        "grid_id": 61,
+        "xy": [
+          0.24333333333333332,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid62",
+        "grid_id": 62,
+        "xy": [
+          0.24333333333333332,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid63",
+        "grid_id": 63,
+        "xy": [
+          0.24333333333333332,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid64",
+        "grid_id": 64,
+        "xy": [
+          0.24333333333333332,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid65",
+        "grid_id": 65,
+        "xy": [
+          0.24333333333333332,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid66",
+        "grid_id": 66,
+        "xy": [
+          0.24333333333333332,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid67",
+        "grid_id": 67,
+        "xy": [
+          0.24333333333333332,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid68",
+        "grid_id": 68,
+        "xy": [
+          0.24333333333333332,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid69",
+        "grid_id": 69,
+        "xy": [
+          0.24333333333333332,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid70",
+        "grid_id": 70,
+        "xy": [
+          0.25888888888888884,
+          -0.15
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid71",
+        "grid_id": 71,
+        "xy": [
+          0.25888888888888884,
+          -0.11666666666666667
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid72",
+        "grid_id": 72,
+        "xy": [
+          0.25888888888888884,
+          -0.08333333333333333
+        ],
+        "arm": "right",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid73",
+        "grid_id": 73,
+        "xy": [
+          0.25888888888888884,
+          -0.04999999999999999
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid74",
+        "grid_id": 74,
+        "xy": [
+          0.25888888888888884,
+          -0.016666666666666663
+        ],
+        "arm": "right",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid75",
+        "grid_id": 75,
+        "xy": [
+          0.25888888888888884,
+          0.016666666666666663
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid76",
+        "grid_id": 76,
+        "xy": [
+          0.25888888888888884,
+          0.05000000000000002
+        ],
+        "arm": "left",
+        "prior_lift_successes": 0
+      },
+      {
+        "id": "grid77",
+        "grid_id": 77,
+        "xy": [
+          0.25888888888888884,
+          0.08333333333333334
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid78",
+        "grid_id": 78,
+        "xy": [
+          0.25888888888888884,
+          0.11666666666666667
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      },
+      {
+        "id": "grid79",
+        "grid_id": 79,
+        "xy": [
+          0.25888888888888884,
+          0.15
+        ],
+        "arm": "left",
+        "prior_lift_successes": 3
+      }
+    ],
+    "val": [
+      {
+        "id": "mid00_08",
+        "xy": [
+          0.15777777777777777,
+          0.13333333333333333
+        ],
+        "neighbors": [
+          8,
+          9,
+          18,
+          19
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid02_05",
+        "xy": [
+          0.18888888888888888,
+          0.03333333333333334
+        ],
+        "neighbors": [
+          25,
+          26,
+          35,
+          36
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid03_05",
+        "xy": [
+          0.20444444444444443,
+          0.03333333333333334
+        ],
+        "neighbors": [
+          35,
+          36,
+          45,
+          46
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid04_04",
+        "xy": [
+          0.21999999999999997,
+          0.0
+        ],
+        "neighbors": [
+          44,
+          45,
+          54,
+          55
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid04_06",
+        "xy": [
+          0.21999999999999997,
+          0.06666666666666668
+        ],
+        "neighbors": [
+          46,
+          47,
+          56,
+          57
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid04_08",
+        "xy": [
+          0.21999999999999997,
+          0.13333333333333333
+        ],
+        "neighbors": [
+          48,
+          49,
+          58,
+          59
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid05_07",
+        "xy": [
+          0.23555555555555552,
+          0.1
+        ],
+        "neighbors": [
+          57,
+          58,
+          67,
+          68
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid06_07",
+        "xy": [
+          0.25111111111111106,
+          0.1
+        ],
+        "neighbors": [
+          67,
+          68,
+          77,
+          78
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid00_00",
+        "xy": [
+          0.15777777777777777,
+          -0.13333333333333333
+        ],
+        "neighbors": [
+          0,
+          1,
+          10,
+          11
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid01_01",
+        "xy": [
+          0.17333333333333334,
+          -0.1
+        ],
+        "neighbors": [
+          11,
+          12,
+          21,
+          22
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid02_01",
+        "xy": [
+          0.18888888888888888,
+          -0.1
+        ],
+        "neighbors": [
+          21,
+          22,
+          31,
+          32
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid03_01",
+        "xy": [
+          0.20444444444444443,
+          -0.1
+        ],
+        "neighbors": [
+          31,
+          32,
+          41,
+          42
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid03_03",
+        "xy": [
+          0.20444444444444443,
+          -0.033333333333333326
+        ],
+        "neighbors": [
+          33,
+          34,
+          43,
+          44
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid04_01",
+        "xy": [
+          0.21999999999999997,
+          -0.1
+        ],
+        "neighbors": [
+          41,
+          42,
+          51,
+          52
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid04_03",
+        "xy": [
+          0.21999999999999997,
+          -0.033333333333333326
+        ],
+        "neighbors": [
+          43,
+          44,
+          53,
+          54
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid05_01",
+        "xy": [
+          0.23555555555555552,
+          -0.1
+        ],
+        "neighbors": [
+          51,
+          52,
+          61,
+          62
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid06_00",
+        "xy": [
+          0.25111111111111106,
+          -0.13333333333333333
+        ],
+        "neighbors": [
+          60,
+          61,
+          70,
+          71
+        ],
+        "arm": "right"
+      }
+    ],
+    "test": [
+      {
+        "id": "mid02_04",
+        "xy": [
+          0.18888888888888888,
+          0.0
+        ],
+        "neighbors": [
+          24,
+          25,
+          34,
+          35
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid03_04",
+        "xy": [
+          0.20444444444444443,
+          0.0
+        ],
+        "neighbors": [
+          34,
+          35,
+          44,
+          45
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid03_08",
+        "xy": [
+          0.20444444444444443,
+          0.13333333333333333
+        ],
+        "neighbors": [
+          38,
+          39,
+          48,
+          49
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid04_05",
+        "xy": [
+          0.21999999999999997,
+          0.03333333333333334
+        ],
+        "neighbors": [
+          45,
+          46,
+          55,
+          56
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid04_07",
+        "xy": [
+          0.21999999999999997,
+          0.1
+        ],
+        "neighbors": [
+          47,
+          48,
+          57,
+          58
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid05_06",
+        "xy": [
+          0.23555555555555552,
+          0.06666666666666668
+        ],
+        "neighbors": [
+          56,
+          57,
+          66,
+          67
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid05_08",
+        "xy": [
+          0.23555555555555552,
+          0.13333333333333333
+        ],
+        "neighbors": [
+          58,
+          59,
+          68,
+          69
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid06_08",
+        "xy": [
+          0.25111111111111106,
+          0.13333333333333333
+        ],
+        "neighbors": [
+          68,
+          69,
+          78,
+          79
+        ],
+        "arm": "left"
+      },
+      {
+        "id": "mid01_00",
+        "xy": [
+          0.17333333333333334,
+          -0.13333333333333333
+        ],
+        "neighbors": [
+          10,
+          11,
+          20,
+          21
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid02_00",
+        "xy": [
+          0.18888888888888888,
+          -0.13333333333333333
+        ],
+        "neighbors": [
+          20,
+          21,
+          30,
+          31
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid03_00",
+        "xy": [
+          0.20444444444444443,
+          -0.13333333333333333
+        ],
+        "neighbors": [
+          30,
+          31,
+          40,
+          41
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid03_02",
+        "xy": [
+          0.20444444444444443,
+          -0.06666666666666665
+        ],
+        "neighbors": [
+          32,
+          33,
+          42,
+          43
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid04_00",
+        "xy": [
+          0.21999999999999997,
+          -0.13333333333333333
+        ],
+        "neighbors": [
+          40,
+          41,
+          50,
+          51
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid04_02",
+        "xy": [
+          0.21999999999999997,
+          -0.06666666666666665
+        ],
+        "neighbors": [
+          42,
+          43,
+          52,
+          53
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid05_00",
+        "xy": [
+          0.23555555555555552,
+          -0.13333333333333333
+        ],
+        "neighbors": [
+          50,
+          51,
+          60,
+          61
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid05_02",
+        "xy": [
+          0.23555555555555552,
+          -0.06666666666666665
+        ],
+        "neighbors": [
+          52,
+          53,
+          62,
+          63
+        ],
+        "arm": "right"
+      },
+      {
+        "id": "mid06_01",
+        "xy": [
+          0.25111111111111106,
+          -0.1
+        ],
+        "neighbors": [
+          61,
+          62,
+          71,
+          72
+        ],
+        "arm": "right"
+      }
+    ]
+  },
+  "status": "ALL_RECTANGLE_CELLS_TO_ATTEMPT_EVAL_REQUIRES_PREFLIGHT",
+  "collection_policy": "full_rectangle_all_cells_success_only",
+  "evaluation_rule": "2D cell centers; all four corners historical 3/3; disjoint fixed Val/Test"
+}

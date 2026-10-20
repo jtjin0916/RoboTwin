@@ -1,0 +1,27 @@
+{
+  "renderer": "raster",
+  "frames": 65,
+  "success": true,
+  "state_shape": [
+    65,
+    12
+  ],
+  "action_shape": [
+    65,
+    12
+  ],
+  "head_depth_shape": [
+    65,
+    460,
+    640
+  ],
+  "wrist_shape": [
+    240,
+    320,
+    3
+  ],
+  "pcd_frame": "base_footprint",
+  "first_point_count": 17011,
+  "q_aligned": true,
+  "action_aligned": true
+}
