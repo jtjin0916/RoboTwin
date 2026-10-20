@@ -1,0 +1,18 @@
+{
+  "base_commit": "7cb64ef2c2dd496fc3bf54f5a35f75855c24172d",
+  "pytest_passed": 57,
+  "source_csv_sha256": "50cc4b29af5b4a2bdac0213616cd608165c8946f5044a16fb3029849cbf2b292",
+  "expert_preflight_successes": 18,
+  "expert_preflight_attempts": 18,
+  "collection_successes": 18,
+  "train_episodes": 10,
+  "val_episodes": 4,
+  "test_episodes": 4,
+  "optimizer_steps": 60,
+  "act_rollout_attempts": 4,
+  "act_successes": 0,
+  "act_rollout_physics_steps": 0,
+  "normal_act_closed_loop_verified": false,
+  "final_pretraining_dataset": false,
+  "checkpoint_sha256": "74bfb384756f990b52dc3179545c224f9c7f2621ee9b3c07f8a489fd221b5d93"
+}

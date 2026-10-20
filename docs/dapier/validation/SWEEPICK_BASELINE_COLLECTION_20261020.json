@@ -1,0 +1,332 @@
+{
+  "mode": "collect",
+  "fingerprint": "5a60cf02517307b39448dc9b175eb786bba9dd90a5e9e28e128de50090dccf2f",
+  "attempts": [
+    {
+      "point_id": "grid05",
+      "split": "train",
+      "arm": "left",
+      "xy": [
+        0.15,
+        0.016666666666666663
+      ],
+      "seed": 110000,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.05018258094787598,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid26",
+      "split": "train",
+      "arm": "left",
+      "xy": [
+        0.1811111111111111,
+        0.05000000000000002
+      ],
+      "seed": 110001,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.050283968448638916,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid46",
+      "split": "train",
+      "arm": "left",
+      "xy": [
+        0.2122222222222222,
+        0.05000000000000002
+      ],
+      "seed": 110002,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.050310373306274414,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid59",
+      "split": "train",
+      "arm": "left",
+      "xy": [
+        0.22777777777777775,
+        0.15
+      ],
+      "seed": 110003,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.050343990325927734,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid79",
+      "split": "train",
+      "arm": "left",
+      "xy": [
+        0.25888888888888884,
+        0.15
+      ],
+      "seed": 110004,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.05088317394256592,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid00",
+      "split": "train",
+      "arm": "right",
+      "xy": [
+        0.15,
+        -0.15
+      ],
+      "seed": 110005,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.04988539218902588,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid22",
+      "split": "train",
+      "arm": "right",
+      "xy": [
+        0.1811111111111111,
+        -0.08333333333333333
+      ],
+      "seed": 110006,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.05003279447555542,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid41",
+      "split": "train",
+      "arm": "right",
+      "xy": [
+        0.2122222222222222,
+        -0.11666666666666667
+      ],
+      "seed": 110007,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.05016058683395386,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid53",
+      "split": "train",
+      "arm": "right",
+      "xy": [
+        0.22777777777777775,
+        -0.04999999999999999
+      ],
+      "seed": 110008,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.050681352615356445,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "grid72",
+      "split": "train",
+      "arm": "right",
+      "xy": [
+        0.25888888888888884,
+        -0.08333333333333333
+      ],
+      "seed": 110009,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.05093616247177124,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between08_18",
+      "split": "val",
+      "arm": "left",
+      "xy": [
+        0.15777777777777777,
+        0.11666666666666667
+      ],
+      "seed": 220010,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.0497431755065918,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between19_29",
+      "split": "val",
+      "arm": "left",
+      "xy": [
+        0.17333333333333334,
+        0.15
+      ],
+      "seed": 220011,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.04987001419067383,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between00_10",
+      "split": "val",
+      "arm": "right",
+      "xy": [
+        0.15777777777777777,
+        -0.15
+      ],
+      "seed": 220012,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.049705326557159424,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between10_20",
+      "split": "val",
+      "arm": "right",
+      "xy": [
+        0.17333333333333334,
+        -0.15
+      ],
+      "seed": 220013,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.049840688705444336,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between09_19",
+      "split": "test",
+      "arm": "left",
+      "xy": [
+        0.15777777777777777,
+        0.15
+      ],
+      "seed": 330014,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.04986262321472168,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between25_35",
+      "split": "test",
+      "arm": "left",
+      "xy": [
+        0.18888888888888888,
+        0.016666666666666663
+      ],
+      "seed": 330015,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.050514280796051025,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between01_11",
+      "split": "test",
+      "arm": "right",
+      "xy": [
+        0.15777777777777777,
+        -0.11666666666666667
+      ],
+      "seed": 330016,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.0498538613319397,
+      "hold_seconds": 2.0000000949949026
+    },
+    {
+      "point_id": "between11_21",
+      "split": "test",
+      "arm": "right",
+      "xy": [
+        0.17333333333333334,
+        -0.11666666666666667
+      ],
+      "seed": 330017,
+      "success": true,
+      "lift_success": true,
+      "stow_reached": true,
+      "hold_steps": 500,
+      "hold_valid": true,
+      "failure_stage": "",
+      "lift_delta_z_m": 0.0499919056892395,
+      "hold_seconds": 2.0000000949949026
+    }
+  ],
+  "completed": true,
+  "all_success": true
+}

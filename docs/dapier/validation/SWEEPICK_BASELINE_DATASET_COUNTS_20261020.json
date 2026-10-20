@@ -1,0 +1,32 @@
+[
+  {
+    "split": "train",
+    "episodes": 10,
+    "per_arm": {
+      "left": 5,
+      "right": 5
+    },
+    "frames": 662,
+    "physics_steps": 16401
+  },
+  {
+    "split": "val",
+    "episodes": 4,
+    "per_arm": {
+      "left": 2,
+      "right": 2
+    },
+    "frames": 261,
+    "physics_steps": 6495
+  },
+  {
+    "split": "test",
+    "episodes": 4,
+    "per_arm": {
+      "left": 2,
+      "right": 2
+    },
+    "frames": 261,
+    "physics_steps": 6487
+  }
+]
