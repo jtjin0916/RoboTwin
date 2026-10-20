@@ -49,3 +49,6 @@ visualization/
 
 # Private handover calibration and derived runtime profiles
 /local_sweepick_headcal*/
+
+# Isolated baseline experiment outputs (private profiles remain local)
+/baseline_runs*/
