@@ -126,7 +126,7 @@ def main():
         (stage/'calibration.json').write_text(json.dumps(cal,indent=2)+'\n')
         if cal.get('optical_xyz_in_camera_link_m') is not None:
             import yaml
-            config={'status':cal['status'],'static_camera_list':[sapien_camera(cal,allow_unverified=True)],
+            config={'status':cal['status'],'static_camera_list':[sapien_camera(cal,allow_unverified=cal['status']!='measured_and_reviewed')],
                     'enable_color_stream':False,'rgb':False,'collect_data':False}
             (stage/'sapien_camera_candidate.yml').write_text(yaml.safe_dump(config))
         (stage/'STATUS.txt').write_text('CANDIDATE ONLY. Assembly, optical extrinsic, full robot collisions require review.\nNo optical TF or SAPIEN extrinsic is emitted without supplied optical calibration.\n')

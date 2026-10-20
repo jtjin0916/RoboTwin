@@ -2,6 +2,8 @@
 
 이 결과는 **실제 STEP을 검사해 만든 조립 후보**다. 실제 결합 방향과 depth 광학 원점을 확정한 최종 보정 모델은 아니다. 기존 데이터/실행 설정을 대체하지 않는다. 광학 중심이 null이면 optical TF와 SAPIEN 카메라 extrinsic 파일을 생성하지 않는다.
 
+후속 사용자 확인: 아래판 긴 방향=X, OS30A 후면 M3 직접 체결, 원하는 시선=수평 전방에서 하향 25도. 조립 사진과 팀원의 depth 광학 보정자료는 대기 중이다. `user_confirmed` 필드에 기록했다. 보정값을 채우더라도 실제 모델 각도가 이 요구와 1도 넘게 다르면 검토 완료 상태의 SAPIEN extrinsic 생성을 거부한다.
+
 기준 소스: `jtjin0916/RoboTwin`, `codex/sweepick-workspace-grid100-20261019`, commit `0920801b210293f44b32570b48e6047111ee9b9a`. 2026-10-20 원격 head와 일치함을 확인했다. 새 파일만 추가한다. ROS2 원본 TurtleBot 및 팀의 measured arm base STL은 저장소에 없으므로 로컬 파일을 입력받는 방식이다.
 
 ## CAD 검사 결과
@@ -31,7 +33,7 @@
 
 ### 후보 결합과 유효 높이
 
-아래 CAD X→로봇 -Y, CAD Y→로봇 +X, CAD Z→로봇 +Z로 둔다. 즉 아래판 112mm 방향이 로봇 전후라는 **가정**이다. 위 CAD X→로봇 +X, CAD Y→로봇 +Z, CAD Z→로봇 -Y로 둔다. 위 기둥 저면 중앙을 아래 기둥 어깨면에 놓았다. 위 datum은 CAD `(-50.417992592, -1.199890137, 15.187000275)`다.
+아래 CAD X→로봇 -Y, CAD Y→로봇 +X, CAD Z→로봇 +Z로 둔다. 아래판 112mm 방향이 로봇 전후 X축인 것은 **사용자가 후속 확인했다**. 위 CAD X→로봇 +X, CAD Y→로봇 +Z, CAD Z→로봇 -Y로 둔다. 위 기둥 저면 중앙을 아래 기둥 어깨면에 놓았다. 위 datum은 CAD `(-50.417992592, -1.199890137, 15.187000275)`다.
 
 이 배치에서 BRep 침범 부피는 0 mm³이며 두 부품의 접촉거리는 수치 정밀도 수준이다. 0.15mm 추가 하강 시 약 97.342mm³ 침범이 생긴다. 위 부품을 기둥축으로 180도 돌린 후보도 침범 없이 결합된다. 따라서 기하학적 비침범만으로 조립 yaw를 확정할 수 없다. `fit_probe.py`로 재현한다.
 
@@ -61,7 +63,7 @@
 | mount_top → camera_link | xyz=(0.023697382247,0.000187000275,0.168178426669), pitch=+65° | CAD face 1187에 바디 후면 중앙을 직접 부착한다는 가정 |
 | camera_link → camera_optical_frame | xyz=null; convention rpy=(-π/2,0,-π/2) | 원점 미확정; SDK rectification 회전도 확인 필요 |
 
-camera_link는 후보 후면 체결면의 중앙이다. 바디 proxy는 이 프레임에서 x=0..25.5mm, y=±45mm,z=±12.5mm다. CAD face 1187 normal `(sin25,-cos25,0)`을 조립 회전하면 base 방향 `(sin25,0,-cos25)`가 된다. 이는 **수평 전방에서 하향 65도, 수직 아래에서 전방으로 25도**다. 평면 경사와 법선 경사를 동일한 숫자로 쓰면 25/65도가 뒤바뀐다. 반대 면/반대 조립 yaw에서는 방향도 달라진다. 수평 전방 하향 25도가 사용자의 의도라면 현재 CAD 후면 직접부착 후보와 일치하지 않는다.
+camera_link는 후보 후면 체결면의 중앙이다. 바디 proxy는 이 프레임에서 x=0..25.5mm, y=±45mm,z=±12.5mm다. CAD face 1187 normal `(sin25,-cos25,0)`을 조립 회전하면 base 방향 `(sin25,0,-cos25)`가 된다. 이는 **수평 전방에서 하향 65도, 수직 아래에서 전방으로 25도**다. 평면 경사와 법선 경사를 동일한 숫자로 쓰면 25/65도가 뒤바뀐다. 반대 면/반대 조립 yaw에서는 방향도 달라진다. 사용자는 후속 답변에서 **수평 전방(XY 평면)에서 하향 25도**임을 확인했다. 따라서 현재 CAD 후면 직접부착 후보의 65도와 불일치한다. 조립 사진으로 실제 회전/결합 방향과 플레이트 면을 확인하기 전까지 후보 65도를 실제값으로 승격하거나, 형상과 어긋나게 바디만 25도로 돌리지 않는다.
 
 표준 optical 축은 +Z 시선,+X 영상 오른쪽,+Y 영상 아래다. 표준 변환에서 optical Z→camera X, optical X→-camera Y, optical Y→-camera Z. SAPIEN은 +X forward,+Y left,+Z up이므로 `forward=R_WO[:,2]`, `left=-R_WO[:,0]`. World의 measured 배치는 `R_WB=Rz(+90°), t_WB=(0,-0.2539,tabletop_world_z)`다. table 높이 변화는 한 번만 적용한다.
 
@@ -127,10 +129,10 @@ Depth-only 제약: head RGB collection을 끄고 enable_color_stream=false, coll
 
 ## 남은 확인 및 인수 조건
 
-1. 아래판 112mm 방향이 X인지 Y인지, 위 부품 yaw 0/180 중 실제 방향 및 삽입 끝면/깊이. 실물 정면/측면 사진과 캘리퍼 실측이 필요하다.
-2. 25도의 기준이 수평 전방인지 수직 하방인지. 현재 CAD 직접 후면부착 후보는 수직 하방에서 전방 25도다.
-3. OS30A rear M3 45mm 직접 체결 여부, 어느 플레이트 면에 붙는지, USB/렌즈 방향 및 screw 체결 길이/케이블 여유.
-4. 바디 rear datum→SDK depth optical frame의 실측 3D 위치/회전, 좌/우 IR 기준과 rectification. 제조사 calibration/CameraInfo 또는 보정 타겟을 이용한 hand-eye/extrinsic 측정이 필요하다.
+1. **확인 완료:** 아래판 112mm 방향은 로봇 전후 X축. **사진 대기:** 위 부품 yaw와 실제 삽입 끝면/깊이 및 회전. 사용자가 조립 사진을 다시 제공할 예정이다.
+2. **확인 완료:** 사용자가 지정한 각도는 수평 전방에서 하향 25도. 현재 CAD 후보는 하향 65도여서 불일치하며 조립 사진으로 해소해야 한다.
+3. **확인 완료:** OS30A는 후면 M3 홀로 직접 체결. 사용할 플레이트 면과 USB/렌즈 방향 및 screw 체결 길이/케이블 여유는 사진/실물로 확인해야 한다.
+4. **팀원 자료 대기:** 바디 rear datum→SDK depth optical frame의 실측 3D 위치/회전, 좌/우 IR 기준과 rectification. 제조사 calibration/CameraInfo 또는 보정 타겟을 이용한 hand-eye/extrinsic 측정이 필요하다.
 5. 팀 실제 ROS2 source와 mesh, 기존 generated measured arm unit STL/URDF. 이를 넣은 combined 모델에서 ROS check_urdf/RViz, SAPIEN 정적 로드/시야, optical TF 투영, 양팔 home/작업경로 및 CuRobo 충돌 인수검사.
 
-이번 CPU 검증: 신규 8개 + 기존 관련 48개, **56 passed**. STEP BRep valid, 제안 조립 침범 0, STL watertight와 치수/체적, TF 광학축 부호, World/table 변환, 메시 휴대성/양팔 prefix, Xacro parity, 파일 덮어쓰기 거부, optical null 실패, per-arm AABB 포함성, synthetic RGB 제거를 확인했다. 별도 기존 `test_sweepick_contract.py`는 torch 미설치로 collection 실패하여 이 56개에는 포함하지 않았다. ROS2 check_urdf, 실제 로봇 전체 모델, GPU SAPIEN/CuRobo, 하드웨어 보정은 미실행이다.
+이번 CPU 검증: 신규 9개 + 기존 관련 48개, **57 passed**. STEP BRep valid, 제안 조립 침범 0, STL watertight와 치수/체적, TF 광학축 부호, World/table 변환, 메시 휴대성/양팔 prefix, Xacro parity, 파일 덮어쓰기 거부, optical null 실패, per-arm AABB 포함성, synthetic RGB 제거를 확인했다. 별도 기존 `test_sweepick_contract.py`는 torch 미설치로 collection 실패하여 이 57개에는 포함하지 않았다. ROS2 check_urdf, 실제 로봇 전체 모델, GPU SAPIEN/CuRobo, 하드웨어 보정은 미실행이다.

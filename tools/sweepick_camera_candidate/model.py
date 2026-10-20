@@ -41,6 +41,12 @@ def sapien_camera(calibration,tabletop_world_z=.5,allow_unverified=False):
     if calibration.get('status')!='measured_and_reviewed' and not allow_unverified:
         raise ValueError('Unverified camera calibration; preview requires explicit allow_unverified=True')
     t=camera_tf(calibration)
+    expected=calibration.get('user_confirmed',{}).get('requested_downward_angle_from_horizontal_deg')
+    if expected is not None and not allow_unverified:
+        f=t[:3,2]
+        actual=math.degrees(math.atan2(-f[2],math.hypot(f[0],f[1])))
+        if abs(actual-float(expected))>1.:
+            raise ValueError(f'Assembly angle unresolved: model {actual:.3f}deg down vs user {expected}deg from horizontal')
     w=transform([0,-.2539,tabletop_world_z],[0,0,math.pi/2])@t
     return dict(name='head_camera',position=w[:3,3].tolist(),
                 forward=w[:3,2].tolist(),left=(-w[:3,0]).tolist())

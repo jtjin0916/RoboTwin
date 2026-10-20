@@ -125,3 +125,15 @@ def test_xacro_and_generated_urdf_match(model,tmp_path):
     _,a=fixed_transforms(model);_,b=fixed_transforms(expanded)
     assert a.keys()==b.keys()
     for name in a:assert np.allclose(a[name],b[name])
+
+
+def test_reviewed_calibration_rejects_user_angle_conflict():
+    cal=json.loads((A/'calibration.template.json').read_text())
+    assert cal['user_confirmed']['bottom_long_axis_robot']=='X'
+    assert cal['user_confirmed']['camera_rear_m3_direct_attachment'] is True
+    cal['optical_xyz_in_camera_link_m']=[.02,0,0] # synthetic, math test only
+    cal['status']='measured_and_reviewed'
+    with pytest.raises(ValueError,match='Assembly angle unresolved'):
+        sapien_camera(cal)
+    # Explicit preview may inspect the inconsistent candidate, never relabel it as confirmed.
+    assert sapien_camera(cal,allow_unverified=True)['name']=='head_camera'
