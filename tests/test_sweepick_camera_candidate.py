@@ -137,3 +137,20 @@ def test_reviewed_calibration_rejects_user_angle_conflict():
         sapien_camera(cal)
     # Explicit preview may inspect the inconsistent candidate, never relabel it as confirmed.
     assert sapien_camera(cal,allow_unverified=True)['name']=='head_camera'
+
+
+def test_mechanical_only_defers_optics_even_with_supplied_calibration(tmp_path):
+    cal=json.loads((A/'calibration.template.json').read_text())
+    cal['optical_xyz_in_camera_link_m']=[.02,.003,.001] # synthetic, must be ignored
+    cal['status']='measured_and_reviewed'
+    source=tmp_path/'cal.json';source.write_text(json.dumps(cal))
+    before=source.read_bytes();out=tmp_path/'mechanical'
+    subprocess.run([sys.executable,str(TOOL/'build.py'),'--mechanical-only','--calibration',str(source),'--out',str(out)],check=True)
+    model=out/'sweepick_mechanical.urdf';root,poses=fixed_transforms(model)
+    assert {'base_footprint','mount_bottom','mount_top','camera_link'}==set(poses)
+    assert np.allclose(poses['camera_link'][:3,0],[np.cos(PITCH),0,-np.sin(PITCH)])
+    assert not (out/'sapien_camera_candidate.yml').exists()
+    assert not (out/'sweepick_candidate.urdf').exists()
+    assert (out/'MECHANICAL_ONLY.txt').exists()
+    assert source.read_bytes()==before
+    assert all((out/m.get('filename')).is_file() for m in root.findall('.//mesh'))

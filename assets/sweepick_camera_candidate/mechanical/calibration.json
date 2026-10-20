@@ -1,0 +1,25 @@
+{
+  "status": "unverified",
+  "assembly": {
+    "mount_yaw_rad": 0.0,
+    "top_yaw_rad": 0.0,
+    "seating_delta_m": 0.0,
+    "note": "CONFIRMED: bottom 112mm direction robot X, rear M3 direct attachment. PENDING: seating/yaw and plate side from assembly photo. CAD candidate camera body points 65deg down, inconsistent with requested 25deg; do not treat as calibrated."
+  },
+  "optical_xyz_in_camera_link_m": null,
+  "optical_rpy_in_camera_link_rad": [
+    -1.5707963267948966,
+    0.0,
+    -1.5707963267948966
+  ],
+  "optical_rotation_note": "ROS convention relative to forward/left/up camera_link, assumes rectified optical axis normal to rear face; verify actual SDK.",
+  "measured_by": null,
+  "measurement_evidence": null,
+  "user_confirmed": {
+    "bottom_long_axis_robot": "X",
+    "camera_rear_m3_direct_attachment": true,
+    "requested_downward_angle_from_horizontal_deg": 25.0,
+    "assembly_photo_reviewed": false,
+    "optical_calibration_pending": true
+  }
+}

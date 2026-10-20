@@ -30,7 +30,7 @@ def mesh_link(root,name,filenames):
             ET.SubElement(ET.SubElement(element,'geometry'),'mesh',filename=filename,scale='1 1 1')
     return link
 
-def append_mount(root,cal):
+def append_mount(root,cal,include_optical=True):
     links={e.get('name') for e in root.findall('link')}
     required={'mount_bottom','mount_top','camera_link','camera_optical_frame'}
     if required&links: raise ValueError(f'Frame conflict: {required&links}')
@@ -45,7 +45,7 @@ def append_mount(root,cal):
         e=ET.SubElement(link,tag);ET.SubElement(e,'origin',xyz='.01275 0 0')
         ET.SubElement(ET.SubElement(e,'geometry'),'box',size='.0255 .09 .025')
     joint(root,'camera_body_joint','mount_top','camera_link',ATTACH_XYZ,[0,PITCH,0])
-    if cal.get('optical_xyz_in_camera_link_m') is not None:
+    if include_optical and cal.get('optical_xyz_in_camera_link_m') is not None:
         sapien_camera(cal,allow_unverified=True) # validates values
         ET.SubElement(root,'link',name='camera_optical_frame')
         joint(root,'camera_optical_joint','camera_link','camera_optical_frame',
@@ -103,6 +103,7 @@ def validate_tree(root,out):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--out',type=Path,required=True)
+    p.add_argument('--mechanical-only',action='store_true',help='Write mechanical URDF only; omit optical TF and SAPIEN camera config even if calibration is supplied')
     p.add_argument('--robot-urdf',type=Path)
     p.add_argument('--arm-urdf',type=Path,help='Both measured arms added at confirmed roots; omit if robot already has arms')
     p.add_argument('--package-dir',action='append',default=[])
@@ -121,16 +122,21 @@ def main():
         else:ET.SubElement(root,'link',name='base_footprint')
         if a.arm_urdf:append_arms(root,a.arm_urdf,stage,packages)
         for mesh in (ASSET/'meshes').glob('*.stl'):shutil.copyfile(mesh,stage/'meshes'/mesh.name)
-        append_mount(root,cal);validate_tree(root,stage)
-        ET.indent(root);ET.ElementTree(root).write(stage/'sweepick_candidate.urdf',encoding='utf-8',xml_declaration=True)
+        append_mount(root,cal,include_optical=not a.mechanical_only);validate_tree(root,stage)
+        filename='sweepick_mechanical.urdf' if a.mechanical_only else 'sweepick_candidate.urdf'
+        if a.mechanical_only:
+            root.insert(0,ET.Comment(' Mechanical CAD model; camera_link is body datum, not optical origin. Body pitch follows candidate CAD (65deg down); requested viewing angle 25deg remains unresolved. '))
+        ET.indent(root);ET.ElementTree(root).write(stage/filename,encoding='utf-8',xml_declaration=True)
         (stage/'calibration.json').write_text(json.dumps(cal,indent=2)+'\n')
-        if cal.get('optical_xyz_in_camera_link_m') is not None:
+        if not a.mechanical_only and cal.get('optical_xyz_in_camera_link_m') is not None:
             import yaml
             config={'status':cal['status'],'static_camera_list':[sapien_camera(cal,allow_unverified=cal['status']!='measured_and_reviewed')],
                     'enable_color_stream':False,'rgb':False,'collect_data':False}
             (stage/'sapien_camera_candidate.yml').write_text(yaml.safe_dump(config))
+        if a.mechanical_only:
+            (stage/'MECHANICAL_ONLY.txt').write_text('Mechanical model only: no optical TF, camera intrinsics, sensor plugin or SAPIEN camera extrinsic. Camera housing is an approximate box on the CAD attachment face; 25deg/65deg angle remains unresolved. Existing RoboTwin camera settings are unchanged.\n')
         (stage/'STATUS.txt').write_text('CANDIDATE ONLY. Assembly, optical extrinsic, full robot collisions require review.\nNo optical TF or SAPIEN extrinsic is emitted without supplied optical calibration.\n')
         shutil.copytree(stage,out)
-    print(out/'sweepick_candidate.urdf')
+    print(out/filename)
 
 if __name__=='__main__':main()

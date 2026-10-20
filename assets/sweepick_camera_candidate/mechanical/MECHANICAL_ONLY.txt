@@ -1,0 +1,1 @@
+Mechanical model only: no optical TF, camera intrinsics, sensor plugin or SAPIEN camera extrinsic. Camera housing is an approximate box on the CAD attachment face; 25deg/65deg angle remains unresolved. Existing RoboTwin camera settings are unchanged.

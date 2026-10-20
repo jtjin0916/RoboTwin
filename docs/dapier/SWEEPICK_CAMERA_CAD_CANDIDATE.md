@@ -76,6 +76,23 @@ camera_link는 후보 후면 체결면의 중앙이다. 바디 proxy는 이 프�
 - `envs/sweepick_block40_measured.py`: table bias를 arms/static camera에 적용하고, 저장 pointcloud를 World→base로 변환한다. 기존 housing proxy는 실측 확정체가 아니다.
 - `envs/robot/planner.py`: CuRobo `world_config`에는 table만 있다. measured `curobo.yml`은 별도 `so101_pgripper_calib.urdf`, collision spheres 설정은 null이다. chassis, rails, 새 mount, 반대 팔 간 충돌을 검증한 상태가 아니다.
 
+## 광학정보 수령 전: 기계 URDF 먼저 사용
+
+후속 사용자 요청에 따라 `--mechanical-only` 경로를 추가했다. 준비된 파일은 `assets/sweepick_camera_candidate/mechanical/sweepick_mechanical.urdf`와 인접한 `meshes/`다. root는 base_footprint이며 두 mount와 OS30A 바디 proxy를 포함한다. 실제 TurtleBot/양팔은 로컬 팀 원본을 아래 명령으로 합친다.
+
+```bash
+python tools/sweepick_camera_candidate/build.py --mechanical-only \
+  --robot-urdf /absolute/path/team-expanded.urdf \
+  --arm-urdf /absolute/path/so101_pgripper_sweepick_unit.urdf \
+  --out /tmp/sweepick-mechanical-01
+```
+
+팀 robot URDF에 양팔이 이미 있으면 `--arm-urdf`는 생략한다. package URI가 있으면 기존 안내대로 `--package-dir`를 추가한다. 생성파일 이름은 `sweepick_mechanical.urdf`다. `--mechanical-only`는 calibration JSON에 광학값이 채워져 있어도 optical TF나 SAPIEN camera config를 만들지 않는다. 기존 작동 RoboTwin 카메라 설정은 이 모드로 바뀌지 않는다.
+
+지금 넣는 `camera_link`는 카메라 바디의 체결 기준이며 실제 촬영 원점이 아니다. 바디 방향은 CAD 후보의 하향 65도를 유지하며 사용자 시선 하향 25도와의 차이는 미확정 상태다. 두 mount의 visual/collision에는 CAD 메시를, 카메라 바디에는 치수 기반 box proxy를 쓴다. 공칭 질량을 임의 분배한 inertia는 추가하지 않았고 정적 마운트용이다. 실제 SAPIEN/CuRobo 접촉/충돌/동역학 검증은 별도다.
+
+광학자료 수령 후 같은 기계 장착 변환에 body→optical 보정을 연결하고 `--mechanical-only` 없이 새 출력 폴더로 생성한다. URDF optical TF와 RoboTwin static camera 설정은 같은 변환에서 함께 만들므로 위치를 따로 손으로 맞추지 않는다. 아직 남은 기계 조립 방향/각도 차이도 그 전에 확인해야 한다.
+
 ## 재현/사용
 
 작동 중인 checkout을 바꾸지 말고 새 경로에 새 브랜치를 clone한다. 필요 라이브러리는 도구 폴더의 requirements를 별도 venv에 설치한다. CAD 재생성 외에는 cadquery가 필요하지 않다.
@@ -135,4 +152,4 @@ Depth-only 제약: head RGB collection을 끄고 enable_color_stream=false, coll
 4. **팀원 자료 대기:** 바디 rear datum→SDK depth optical frame의 실측 3D 위치/회전, 좌/우 IR 기준과 rectification. 제조사 calibration/CameraInfo 또는 보정 타겟을 이용한 hand-eye/extrinsic 측정이 필요하다.
 5. 팀 실제 ROS2 source와 mesh, 기존 generated measured arm unit STL/URDF. 이를 넣은 combined 모델에서 ROS check_urdf/RViz, SAPIEN 정적 로드/시야, optical TF 투영, 양팔 home/작업경로 및 CuRobo 충돌 인수검사.
 
-이번 CPU 검증: 신규 9개 + 기존 관련 48개, **57 passed**. STEP BRep valid, 제안 조립 침범 0, STL watertight와 치수/체적, TF 광학축 부호, World/table 변환, 메시 휴대성/양팔 prefix, Xacro parity, 파일 덮어쓰기 거부, optical null 실패, per-arm AABB 포함성, synthetic RGB 제거를 확인했다. 별도 기존 `test_sweepick_contract.py`는 torch 미설치로 collection 실패하여 이 57개에는 포함하지 않았다. ROS2 check_urdf, 실제 로봇 전체 모델, GPU SAPIEN/CuRobo, 하드웨어 보정은 미실행이다.
+이번 CPU 검증: 신규 10개 + 기존 관련 48개, **58 passed**. STEP BRep valid, 제안 조립 침범 0, STL watertight와 치수/체적, TF 광학축 부호, World/table 변환, 메시 휴대성/양팔 prefix, Xacro parity, 파일 덮어쓰기 거부, optical null 실패, per-arm AABB 포함성, synthetic RGB 제거를 확인했다. 별도 기존 `test_sweepick_contract.py`는 torch 미설치로 collection 실패하여 이 58개에는 포함하지 않았다. ROS2 check_urdf, 실제 로봇 전체 모델, GPU SAPIEN/CuRobo, 하드웨어 보정은 미실행이다.
