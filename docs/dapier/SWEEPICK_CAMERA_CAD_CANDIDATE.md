@@ -76,6 +76,10 @@ camera_link는 후보 후면 체결면의 중앙이다. 바디 proxy는 이 프�
 - `envs/sweepick_block40_measured.py`: table bias를 arms/static camera에 적용하고, 저장 pointcloud를 World→base로 변환한다. 기존 housing proxy는 실측 확정체가 아니다.
 - `envs/robot/planner.py`: CuRobo `world_config`에는 table만 있다. measured `curobo.yml`은 별도 `so101_pgripper_calib.urdf`, collision spheres 설정은 null이다. chassis, rails, 새 mount, 반대 팔 간 충돌을 검증한 상태가 아니다.
 
+## 2026-10-20 실제 SDK 자료 수령 후
+
+실제 데이터의 K, depth 계약과 두 경험적 extrinsic을 수령했다. optical TF 포함 비교 URDF와 exact K 어댑터는 `received_20261020/` 및 `SWEEPICK_OS30A_RECEIVED_20261020.md`를 참고한다. 기존 mechanical/preview 모델은 광학값을 자동 주입하지 않고 그대로 보존한다. 자료에는 미승인 candidate가 포함되며 절대 보정 완료 상태가 아니다.
+
 ## 광학정보 수령 전: 기계 URDF 먼저 사용
 
 후속 사용자 요청에 따라 `--mechanical-only` 경로를 추가했다. 준비된 파일은 `assets/sweepick_camera_candidate/mechanical/sweepick_mechanical.urdf`와 인접한 `meshes/`다. root는 base_footprint이며 두 mount와 OS30A 바디 proxy를 포함한다. 실제 TurtleBot/양팔은 로컬 팀 원본을 아래 명령으로 합친다.

@@ -39,3 +39,5 @@ and a simulated optical extrinsic rather than fabricating either.
 Follow-up: user confirmed X long-axis, rear M3 direct mount and requested 25deg downward from horizontal. New test rejects reviewed extrinsic output while the CAD candidate remains at 65deg. Assembly photograph and optical calibration remain pending.
 
 Mechanical-only mode verified with synthetic optical calibration present: optical TF and SAPIEN extrinsic remain omitted, body CAD transform preserved, inputs unchanged and mesh paths portable.
+
+Received SDK-data follow-up: 68 CPU tests passed (10 new received-camera tests + 58 previous). Real depth PNG FNV matches trace record 6. Received profile URDF chains reproduce both supplied optical matrices; full K adapters tested with a stub. Physical optical calibration and GPU runtime remain unverified.

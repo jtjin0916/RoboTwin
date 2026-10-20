@@ -1,0 +1,183 @@
+{
+  "archive_sha256": "466aefd3e8de5f3d479a263222de1a2332545542aa575ca5046f63c1dac50a5a",
+  "evidence_sha256": {
+    "sweepick_261020_os30a_data/sample_20261020_094913/top.png": "2a0241e7524957d8cda0b918668be8be0fd96f9305f55d42f93ef7a33c720463",
+    "sweepick_261020_os30a_data/sample_20261020_094913/SCENE.json": "ac38c2f35b3d567673c01e55d0afdc140b2c6d1b1ca0ffcd8512b8b7813bfc97",
+    "sweepick_261020_os30a_data/sample_20261020_094913/top_000006.jpg": "9e2e2202b15c117afa2b8de830e2f30b12b662cb0d00e62eb91d704b578d2f08",
+    "sweepick_261020_os30a_data/sample_20261020_094913/depth_000006.png": "45c889d720a63481bb36f2648e14675bcfb8cb5d8f95f18496e2da30796082aa",
+    "sweepick_261020_os30a_data/sample_20261020_094913/depth_mm.npy": "b6e72024d4d4cee19a000189ecbd7a98cf76a326c173ddee7886dc38ae15887a",
+    "sweepick_261020_os30a_data/README_OS30A_DATA.md": "e250b1e4e13738d462f0a8cb0a01b6d73e05c1b3252d8cbf3a66a5ff2eab9086",
+    "sweepick_261020_os30a_data/sdk/sdk.trace.log": "56db2a6313deaecaa80577d26a92b5279c25f8c03782ea89427fd58236835685",
+    "sweepick_261020_os30a_data/sdk/h201_depth_stream-live.cpp": "ce6ad4b7d9c9f9b9bf9cfdf19bc6a121d4384b3452cfff34398915bf1346e44c",
+    "sweepick_261020_os30a_data/sdk/sdk.stderr.log": "f1bb984a9c79783ef58205433b00b01e6969b9f977bedd09d604736ad0f27f88",
+    "sweepick_261020_os30a_data/extrinsic/T_base_footprint_from_os30a_optical_CANDIDATE_20261020.json": "1bbd55d8f114ba2fd1cb13d2b8dbe2e3c738679eff82c9d770635e6f839a1834",
+    "sweepick_261020_os30a_data/extrinsic/T_base_footprint_from_os30a_optical_IN_USE_20261018.json": "f641e1cb03b323f8c63a88c4fbb0765e1509d84d580c743f1fd09dee8c520592"
+  },
+  "raw_depth": {
+    "shape": [
+      460,
+      640
+    ],
+    "dtype": "uint16",
+    "zeros": 109963,
+    "value_16384_pixels": 7,
+    "fnv1a64": "1b804e8ead724ba8",
+    "matching_trace_context": [
+      "received sn=11,11,11 timestamps_us=1792457369172242,1792457369173491,1792457369172242,1792457369173491 xyz_nonzero_z=184428 sdk_conversion_return=UNAVAILABLE",
+      "prewrite_fnv1a64 color_bgr=42290b644763f6c9 depth_zd=1b804e8ead724ba8 pc_xyz=cbe718af4558b3bf",
+      "record=6 full=1 written=1 loadRectifyLogData_return=0"
+    ]
+  },
+  "median_depth": {
+    "shape": [
+      460,
+      640
+    ],
+    "dtype": "float32",
+    "fractional_pixels": 17146,
+    "note": "30-frame per-pixel median, not same acquisition as raw frame 6"
+  },
+  "depth_K": [
+    [
+      409.29998779296875,
+      0.0,
+      313.14874267578125
+    ],
+    [
+      0.0,
+      409.29998779296875,
+      231.207763671875
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "K_mapping": "u_reference=2*u_depth; v_reference=2*v_depth; no half-pixel correction (team convention, full factory log unavailable)",
+  "images": {
+    "top.png": {
+      "shape": [
+        920,
+        1280,
+        3
+      ],
+      "equal_rgb_channel_share": 1.0
+    },
+    "top_000006.jpg": {
+      "shape": [
+        460,
+        640,
+        3
+      ],
+      "equal_rgb_channel_share": 1.0
+    }
+  },
+  "frameset_delivery": {
+    "record_count": 6692,
+    "depth_sdk_span_s": 223.5261151790619,
+    "average_depth_timestamp_rate_hz": 29.933862513737985,
+    "note": "Delivered FrameSets by SDK depth stamps, not independent color exposure FPS or host acquisition latency"
+  },
+  "profiles": {
+    "in_use": {
+      "down_deg": 69.56059529261422,
+      "R_determinant": 0.9999999999999934,
+      "T_body_from_optical_derived": [
+        [
+          0.009686905878040476,
+          -0.07907326510230449,
+          0.9968217406339847,
+          0.0031614368581578955
+        ],
+        [
+          -0.9978120697194266,
+          -0.06596322063031296,
+          0.0044639720323631305,
+          0.021880149021137593
+        ],
+        [
+          0.06540059156260869,
+          -0.9946840062402397,
+          -0.07953923782086156,
+          0.002158173802948332
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "raw_sample_valid_points": 184430,
+      "raw_sample_points_in_task_crop": 7994,
+      "crop_note": "Same raw frame reprojected with each empirical TF; no independent ground truth or P5 refit in this archive"
+    },
+    "candidate": {
+      "down_deg": 65.49572099051305,
+      "R_determinant": 0.9999999999999942,
+      "T_body_from_optical_derived": [
+        [
+          -0.0049591704300155715,
+          -0.009022878733377123,
+          0.9999469957392767,
+          0.026842317805236104
+        ],
+        [
+          -0.9979160502892341,
+          -0.06428829275558286,
+          -0.005529194308599001,
+          0.026429270892406
+        ],
+        [
+          0.06433477445189259,
+          -0.9978905767036446,
+          -0.008685258907420126,
+          -0.010443723680751138
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "raw_sample_valid_points": 184430,
+      "raw_sample_points_in_task_crop": 1879,
+      "crop_note": "Same raw frame reprojected with each empirical TF; no independent ground truth or P5 refit in this archive"
+    }
+  },
+  "scene_diagnostic_reexpression": {
+    "old_reported_object_center_m": [
+      0.16704209817248203,
+      0.046470743392249506,
+      0.022316284847896314
+    ],
+    "same_point_under_candidate_m": [
+      0.20002430066498228,
+      0.045699275028346,
+      0.010759471015056754
+    ],
+    "old_reported_floor_z_equals_ax_by_c": [
+      -0.06315808676513343,
+      -0.04558245850927736,
+      0.01498459491027636
+    ],
+    "same_plane_under_candidate_z_equals_ax_by_c": [
+      0.007586601883246322,
+      -0.05395514529765259,
+      -0.008261505865403777
+    ],
+    "note": "Algebraic re-expression of SCENE median-observation diagnostics, NOT independent truth or re-detection on raw sample 6"
+  },
+  "scene_uses_in_use_transform": true,
+  "scene_frame_warning": "SCENE T_world_camera is numerically the base optical transform. RoboTwin World requires Rz(+90deg) and (0,-.2539,tabletop_z). Do not use SCENE world name as RoboTwin World.",
+  "not_verified": [
+    "Full factory calibration R/T/D, firmware, SDK pointcloud mapping and Z-depth definition",
+    "Independent physical body optical origin and absolute robot extrinsic",
+    "P5 fit metrics (reported by provider only; fitting poses and pointclouds absent)",
+    "Scale 1/1.016 (reported from separate board experiment; board evidence absent)",
+    "Cause of reported tool-minus-block XY residual (+27..31,+15)mm",
+    "GPU SAPIEN/CuRobo runtime or physical collision safety"
+  ]
+}

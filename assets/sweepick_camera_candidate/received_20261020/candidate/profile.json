@@ -1,0 +1,206 @@
+{
+  "id": "candidate",
+  "status": "CANDIDATE 2026-10-20, NOT APPROVED, NOT IN USE",
+  "method": "same ICP as 2026-10-18 (head depth x1/1.016 onto the arm meshes, 4 torque-off poses P1-P4, validation pose P5 not used in the fit) re-run with the team URDF arm bases (-0.060, +-0.150, 0.123)",
+  "T_base_from_optical": [
+    [
+      0.05621127107618772,
+      -0.9082092336032034,
+      0.4147243433919434,
+      -0.03442379215886593
+    ],
+    [
+      -0.9979160502892341,
+      -0.06428829275558286,
+      -0.005529194308599001,
+      0.0266162711670642
+    ],
+    [
+      0.03168358532630381,
+      -0.4135492756763713,
+      -0.9099302978846322,
+      0.4861497724213838
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "depth_resolution": [
+    640,
+    460
+  ],
+  "depth_intrinsic_K": [
+    [
+      409.29998779296875,
+      0.0,
+      313.14874267578125
+    ],
+    [
+      0.0,
+      409.29998779296875,
+      231.207763671875
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "reference_resolution": [
+    1280,
+    920
+  ],
+  "reference_intrinsic_K": [
+    [
+      818.5999755859375,
+      0.0,
+      626.2974853515625
+    ],
+    [
+      0.0,
+      818.5999755859375,
+      462.41552734375
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "depth_unit": "mm",
+  "empirical_depth_multiplier": 0.984251968503937,
+  "raw_invalid_codes": [
+    0,
+    16384
+  ],
+  "depth_axis_definition": "Z-depth assumed by team; SDK pointcloud equivalence not yet checked",
+  "source_extrinsic": {
+    "parent": "base_footprint (TurtleBot3, x forward, y left, z up, z=0 floor)",
+    "child": "os30a_rectified_left_optical (OpenCV: +x image right, +y image down, +z forward)",
+    "convention": "p_parent = R_parent_child @ p_child + t_parent_child",
+    "T_parent_child": [
+      [
+        0.05621127107618772,
+        -0.9082092336032034,
+        0.4147243433919434,
+        -0.03442379215886593
+      ],
+      [
+        -0.9979160502892341,
+        -0.06428829275558286,
+        -0.005529194308599001,
+        0.0266162711670642
+      ],
+      [
+        0.03168358532630381,
+        -0.4135492756763713,
+        -0.9099302978846322,
+        0.4861497724213838
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "translation_m": [
+      -0.03442,
+      0.02662,
+      0.48615
+    ],
+    "quaternion_xyzw": [
+      0.712466,
+      -0.668848,
+      0.156642,
+      -0.143172
+    ],
+    "optical_axis_in_parent": [
+      0.4147,
+      -0.0055,
+      -0.9099
+    ],
+    "optical_axis_down_from_horizontal_deg": 65.5,
+    "status": "CANDIDATE 2026-10-20, NOT APPROVED, NOT IN USE",
+    "method": "same ICP as 2026-10-18 (head depth x1/1.016 onto the arm meshes, 4 torque-off poses P1-P4, validation pose P5 not used in the fit) re-run with the team URDF arm bases (-0.060, +-0.150, 0.123)",
+    "fit_quality": {
+      "train": {
+        "P1_left_far_right": {
+          "before": {
+            "n": 71467,
+            "median_mm": 19.2,
+            "share_within_5mm": 0.054
+          },
+          "after": {
+            "n": 73610,
+            "median_mm": 7.4,
+            "share_within_5mm": 0.3
+          }
+        },
+        "P2_right_far_left": {
+          "before": {
+            "n": 63487,
+            "median_mm": 12.6,
+            "share_within_5mm": 0.176
+          },
+          "after": {
+            "n": 62525,
+            "median_mm": 6.9,
+            "share_within_5mm": 0.351
+          }
+        },
+        "P3_left_front_low": {
+          "before": {
+            "n": 43188,
+            "median_mm": 9.9,
+            "share_within_5mm": 0.168
+          },
+          "after": {
+            "n": 43204,
+            "median_mm": 7.3,
+            "share_within_5mm": 0.32
+          }
+        },
+        "P4_right_high_front": {
+          "before": {
+            "n": 54341,
+            "median_mm": 12.3,
+            "share_within_5mm": 0.137
+          },
+          "after": {
+            "n": 54509,
+            "median_mm": 7.0,
+            "share_within_5mm": 0.329
+          }
+        }
+      },
+      "validation_P5": {
+        "before": {
+          "n": 18912,
+          "median_mm": 14.3,
+          "share_within_5mm": 0.112
+        },
+        "after": {
+          "n": 16380,
+          "median_mm": 5.6,
+          "share_within_5mm": 0.462
+        }
+      }
+    },
+    "change_from_in_use": {
+      "position_mm": [
+        -1.4,
+        4.5,
+        -26.8
+      ],
+      "rotation_deg": 4.11
+    }
+  },
+  "intrinsic_provenance": "SCENE.json K; SDK NewCamMat1 according to team README; full factory log absent",
+  "body_from_optical_provenance": "Computed inverse(CAD candidate body TF) @ empirical base optical TF; NOT an independently measured body optical calibration",
+  "requested_downward_angle_from_horizontal_deg": 25.0,
+  "automatically_activated": false
+}

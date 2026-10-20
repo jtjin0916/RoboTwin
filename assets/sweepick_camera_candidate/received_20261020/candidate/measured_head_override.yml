@@ -1,0 +1,32 @@
+profile_status: CANDIDATE 2026-10-20, NOT APPROVED, NOT IN USE
+static_camera_list:
+- name: head_camera
+  position:
+  - -0.026616271167064203
+  - -0.28832379215886594
+  - 0.9861497724213838
+  forward:
+  - 0.005529194308599026
+  - 0.4147243433919434
+  - -0.9099302978846322
+  left:
+  - -0.9979160502892341
+  - -0.05621127107618766
+  - -0.03168358532630381
+  intrinsic_K:
+  - - 409.29998779296875
+    - 0.0
+    - 313.14874267578125
+  - - 0.0
+    - 409.29998779296875
+    - 231.207763671875
+  - - 0.0
+    - 0.0
+    - 1.0
+  w: 640
+  h: 460
+  near: 0.2
+  far: 2.5
+  status: CANDIDATE 2026-10-20, NOT APPROVED, NOT IN USE
+note: Manual opt-in only. Apply exact K using received_data.apply_to_sapien_camera;
+  fovy-only cameras ignore the principal-point offset.
