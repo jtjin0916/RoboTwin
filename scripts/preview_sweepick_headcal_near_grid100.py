@@ -40,13 +40,20 @@ def main():
         depth=-position[...,2];valid=(position[...,3]<1)&np.isfinite(depth)&(depth>0)&(depth<2.5)
         model=camera.get_model_matrix();world=position[valid,:3]@model[:3,:3].T+model[:3,3]
         base=world_to_base(world,tabletop_world_z=task.tabletop_world_z)
+        # Diagnostic occupancy is not actor segmentation; visually inspect too.
+        inside_crop=np.isfinite(base).all(1)&(base>=CROP_MIN).all(1)&(base<=CROP_MAX).all(1)
+        cropped=base[inside_crop]
+        bx,by=cell(a.grid_id)
+        vicinity=(np.abs(cropped[:,0]-bx)<.023)&(np.abs(cropped[:,1]-by)<.023)&(cropped[:,2]>.010)&(cropped[:,2]<.045)
+        near_object_points=int(vicinity.sum())
         measured_k=np.asarray(camera.get_intrinsic_matrix())
         if not np.allclose(measured_k,np.array(profile['depth_K']),atol=1e-3):raise RuntimeError('Renderer K does not match selected K')
         report.update(tabletop_world_z=task.tabletop_world_z,actual_renderer_K=measured_k.tolist(),valid_points=len(base),
             grid_id=a.grid_id,block_xy_base_m=list(cell(a.grid_id)),candidate_crop_min=CROP_MIN.tolist(),candidate_crop_max=CROP_MAX.tolist(),
+            cropped_base_points=int(len(cropped)),near_object_points_proxy=near_object_points,
             note='Synthetic geometry only. Real validation scene was not supplied here; no 1cm sim-real match is claimed.')
         out.mkdir(parents=True)
-        np.savez_compressed(out/'HEAD_VIEW.npz',depth_m=np.where(valid,depth,np.nan),valid=valid,xyz_base=base,K=measured_k)
+        np.savez_compressed(out/'HEAD_VIEW.npz',depth_m=np.where(valid,depth,np.nan),valid=valid,xyz_base=base,xyz_crop_base=cropped,K=measured_k)
         from PIL import Image
         Image.fromarray(np.where(valid,depth*1000,0).clip(0,65535).astype(np.uint16)).save(out/'HEAD_DEPTH_MM.png')
         (out/'CAPTURE.json').write_text(json.dumps(report,indent=2)+'\n');print(out)
