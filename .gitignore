@@ -46,3 +46,6 @@ visualization/
 # Sweepick diagnostic CSVs are local experiment outputs
 /data_sweepick_workspace_grid100*/
 /data_sweepick_grid100_diagnostic_unused/
+
+# Private handover calibration and derived runtime profiles
+/local_sweepick_headcal*/
